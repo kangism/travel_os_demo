@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel OS · 高德3D地图版 (杭州)</title>
+<!-- 高德地图 JS API v2.0 -->
+<script src="https://webapi.amap.com/maps?v=2.0&key=904dba6005663355da096a2341b97846&plugin=AMap.Scale,AMap.ToolBar,AMap.MapType,AMap.ControlBar,AMap.Driving"></script>
+<style>
+  :root {
+    --bg:#f0f4f8; --panel:rgba(255,255,255,0.96);
+    --cyan:#0066cc; --gold:#cc8800; --green:#008844;
+    --red:#cc2222; --purple:#6600aa; --orange:#cc6600;
+    --blue:#0044aa; --pink:#aa0066; --text:#1a1a2e;
+    --text-dim:#5a6a7a; --border:rgba(0,102,204,0.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:100%;height:100%;overflow:hidden;font-family:'Inter','PingFang SC','Microsoft YaHei',system-ui,sans-serif}
+  .app{width:100%;height:100%;background:var(--bg);color:var(--text);display:flex;flex-direction:column;overflow:hidden}
+
+  .header{height:44px;background:linear-gradient(90deg,rgba(0,102,204,0.08),rgba(102,0,170,0.08));
+    border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;
+    padding:0 14px;flex-shrink:0;z-index:1000;position:relative;backdrop-filter:blur(8px)}
+  .logo{display:flex;align-items:center;gap:6px}
+  .logo-icon{width:22px;height:22px;background:linear-gradient(135deg,var(--cyan),var(--purple));
+    border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:bold;color:#fff}
+  .logo-text{font-size:13px;font-weight:700;background:linear-gradient(90deg,var(--cyan),var(--purple));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .mode-tabs{display:flex;gap:2px;background:rgba(0,0,0,0.04);border-radius:16px;padding:2px}
+  .mode-tab{padding:5px 14px;border-radius:12px;border:none;background:transparent;
+    color:var(--text-dim);font-size:11px;font-weight:600;cursor:pointer;transition:all 0.25s}
+  .mode-tab.active{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff;
+    box-shadow:0 0 10px rgba(0,102,204,0.25)}
+  .ctrl-group{display:flex;align-items:center;gap:6px}
+  .badge{padding:3px 8px;border-radius:6px;font-size:9px;font-weight:600;
+    background:rgba(0,136,68,0.1);color:var(--green);border:1px solid rgba(0,136,68,0.2)}
+  .btn-sm{padding:3px 10px;border-radius:6px;font-size:9px;font-weight:600;border:none;cursor:pointer;transition:all 0.2s}
+  .btn-cyan{background:rgba(0,102,204,0.1);color:var(--cyan);border:1px solid rgba(0,102,204,0.25)}
+  .btn-cyan:hover{background:rgba(0,102,204,0.2)}
+  .btn-gold{background:rgba(204,136,0,0.1);color:var(--gold);border:1px solid rgba(204,136,0,0.25)}
+  .btn-purple{background:rgba(102,0,170,0.1);color:var(--purple);border:1px solid rgba(102,0,170,0.25)}
+  .btn-purple:hover{background:rgba(102,0,170,0.2)}
+  .btn-red{background:rgba(204,34,34,0.1);color:var(--red);border:1px solid rgba(204,34,34,0.25)}
+
+  .body{flex:1;display:flex;overflow:hidden;position:relative}
+
+  .left{width:170px;flex-shrink:0;background:var(--panel);border-right:1px solid var(--border);
+    padding:10px;display:flex;flex-direction:column;gap:8px;overflow-y:auto;z-index:1000;
+    box-shadow:2px 0 8px rgba(0,0,0,0.05)}
+  .sec-title{font-size:9px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:1px}
+  .card{background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06);border-radius:6px;padding:6px}
+  .card-title{font-size:9px;font-weight:600;color:var(--gold);margin-bottom:4px}
+  .row{display:flex;align-items:center;justify-content:space-between;padding:4px 0;font-size:10px;color:var(--text-dim);cursor:pointer}
+  .row:hover{color:var(--text)}
+  .tog{width:24px;height:12px;border-radius:6px;background:rgba(0,0,0,0.1);position:relative;cursor:pointer}
+  .tog.on{background:var(--cyan)}
+  .tog::after{content:'';position:absolute;width:8px;height:8px;background:#fff;border-radius:50%;top:2px;left:2px;transition:transform 0.3s;box-shadow:0 1px 3px rgba(0,0,0,0.2)}
+  .tog.on::after{transform:translateX(12px)}
+
+  .center{flex:1;position:relative;overflow:hidden}
+  #map{width:100%;height:100%}
+
+  .map-overlay{position:absolute;top:10px;left:10px;z-index:10;background:rgba(255,255,255,0.9);
+    padding:6px 10px;border-radius:6px;font-size:10px;color:var(--text-dim);border:1px solid var(--border);
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);backdrop-filter:blur(4px)}
+  .map-overlay b{color:var(--cyan)}
+
+  .tl{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);width:45%;min-width:280px;
+    height:34px;background:var(--panel);border:1px solid var(--border);border-radius:17px;
+    display:flex;align-items:center;padding:0 10px;gap:8px;backdrop-filter:blur(6px);z-index:1000;
+    box-shadow:0 2px 12px rgba(0,0,0,0.08)}
+  .play{width:20px;height:20px;border-radius:50%;background:var(--cyan);border:none;color:#fff;
+    font-size:8px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .tl-trk{flex:1;height:3px;background:rgba(0,0,0,0.08);border-radius:2px;position:relative;cursor:pointer}
+  .tl-fl{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--cyan),var(--purple));position:relative;width:35%}
+  .tl-th{position:absolute;right:-5px;top:-3px;width:9px;height:9px;background:#fff;border-radius:50%;box-shadow:0 0 4px rgba(0,102,204,0.4)}
+  .tl-tm{font-size:10px;font-weight:700;color:var(--cyan);min-width:60px;text-align:center}
+
+  .right{width:310px;flex-shrink:0;background:var(--panel);border-left:1px solid var(--border);
+    padding:10px;display:flex;flex-direction:column;gap:6px;overflow-y:auto;z-index:1000;
+    box-shadow:-2px 0 8px rgba(0,0,0,0.05)}
+  .blk2{background:rgba(0,0,0,0.015);border:1px solid rgba(0,0,0,0.05);border-radius:6px;padding:8px}
+  .bh{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700;margin-bottom:6px}
+  .bhi{width:16px;height:16px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:8px}
+  .ic{background:rgba(0,102,204,0.1);color:var(--cyan)}
+  .ig{background:rgba(204,136,0,0.1);color:var(--gold)}
+  .igr{background:rgba(0,136,68,0.1);color:var(--green)}
+  .ir{background:rgba(204,34,34,0.1);color:var(--red)}
+  .ip{background:rgba(102,0,170,0.1);color:var(--purple)}
+  .io{background:rgba(204,102,0,0.1);color:var(--orange)}
+  .ib{background:rgba(0,68,170,0.1);color:var(--blue)}
+  .ipk{background:rgba(170,0,102,0.1);color:var(--pink)}
+
+  .rev{background:rgba(0,0,0,0.015);border-radius:4px;padding:5px 6px;margin-bottom:4px;border-left:2px solid var(--cyan)}
+  .rev.gold{border-left-color:var(--gold)}
+  .rev.green{border-left-color:var(--green)}
+  .rev.purple{border-left-color:var(--purple)}
+  .rev.red{border-left-color:var(--red)}
+  .rev.orange{border-left-color:var(--orange)}
+  .rev-lbl{font-size:8px;color:var(--text-dim)}
+  .rev-val{font-size:13px;font-weight:700}
+  .rev-sub{font-size:7px;color:var(--text-dim);margin-top:1px}
+
+  .sl{margin-top:3px}
+  .sl-l{display:flex;justify-content:space-between;font-size:8px;color:var(--text-dim);margin-bottom:2px}
+  .sl-trk{width:100%;height:3px;background:rgba(0,0,0,0.06);border-radius:2px;position:relative;cursor:pointer}
+  .sl-fl{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--cyan),var(--purple));position:relative}
+  .sl-th{position:absolute;right:-3px;top:-2px;width:6px;height:6px;background:#fff;border-radius:50%;box-shadow:0 0 3px rgba(0,102,204,0.4)}
+
+  .metric{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(0,0,0,0.04);font-size:10px}
+  .metric-k{color:var(--text-dim)}
+  .metric-v{font-weight:600}
+
+  .line-chart{height:50px;position:relative;margin-top:4px}
+  .lc-svg{width:100%;height:100%}
+
+  .pie-wrap{display:flex;align-items:center;gap:8px;margin-top:4px}
+  .pie{width:36px;height:36px;border-radius:50%;position:relative}
+  .pie-legend{flex:1;font-size:8px}
+  .pie-item{display:flex;align-items:center;gap:3px;margin-bottom:2px}
+  .pie-dot{width:5px;height:5px;border-radius:50%}
+
+  .comp{margin-top:4px}
+  .comp-row{display:flex;align-items:center;gap:4px;margin-bottom:3px}
+  .comp-label{width:32px;font-size:8px;color:var(--text-dim);text-align:right}
+  .comp-bar-wrap{flex:1;height:10px;background:rgba(0,0,0,0.05);border-radius:2px;position:relative;overflow:hidden}
+  .comp-bar{height:100%;border-radius:2px;transition:width 0.6s ease}
+  .comp-val{position:absolute;right:3px;top:0;font-size:7px;font-weight:600}
+
+  .ftable{width:100%;border-collapse:collapse;font-size:9px;margin-top:4px}
+  .ftable th{text-align:left;padding:3px 4px;color:var(--text-dim);border-bottom:1px solid rgba(0,0,0,0.08);font-weight:600}
+  .ftable td{padding:3px 4px;border-bottom:1px solid rgba(0,0,0,0.03)}
+  .ftable tr:hover{background:rgba(0,0,0,0.02)}
+
+  .des-flow{display:flex;flex-direction:column;gap:4px;margin-top:4px}
+  .des-step{display:flex;align-items:center;gap:6px;padding:5px;border-radius:4px;background:rgba(0,0,0,0.015);border:1px solid rgba(0,0,0,0.05);position:relative;overflow:hidden}
+  .des-step.active{border-color:var(--cyan);background:rgba(0,102,204,0.05)}
+  .des-icon{width:20px;height:20px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700}
+  .des-content{flex:1}
+  .des-title{font-size:9px;font-weight:600;margin-bottom:1px}
+  .des-desc{font-size:7px;color:var(--text-dim)}
+  .des-arrow{text-align:center;color:var(--text-dim);font-size:10px}
+
+  .wm-controls{display:flex;gap:4px;margin-bottom:6px;flex-wrap:wrap}
+  .wm-btn{padding:3px 8px;border-radius:3px;border:1px solid rgba(0,102,204,0.2);background:rgba(0,102,204,0.05);
+    color:var(--cyan);font-size:8px;cursor:pointer;transition:all 0.2s}
+  .wm-btn:hover{background:rgba(0,102,204,0.12)}
+  .wm-btn.active{background:var(--cyan);color:#fff}
+  .wm-status{font-size:8px;color:var(--text-dim);margin-top:4px;padding:4px;background:rgba(0,0,0,0.02);border-radius:3px}
+  .wm-status b{color:var(--green)}
+
+  .fw{display:flex;flex-direction:column;align-items:center;gap:2px}
+  .fw-n{width:100%;padding:5px;border-radius:4px;text-align:center;font-size:9px;font-weight:600}
+  .fw-in{background:linear-gradient(135deg,rgba(0,102,204,0.08),rgba(0,102,204,0.02));border:1px solid rgba(0,102,204,0.15);color:var(--cyan)}
+  .fw-pr{background:linear-gradient(135deg,rgba(102,0,170,0.08),rgba(102,0,170,0.02));border:1px solid rgba(102,0,170,0.15);color:var(--purple)}
+  .fw-out{background:linear-gradient(135deg,rgba(0,136,68,0.08),rgba(0,136,68,0.02));border:1px solid rgba(0,136,68,0.15);color:var(--green)}
+  .fw-ar{color:var(--text-dim);font-size:10px}
+  .fw-s{font-size:7px;opacity:0.7;font-weight:400;margin-top:1px}
+
+  .auto-progress{position:absolute;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--gold),var(--green));
+    width:0%;transition:width 0.5s linear;z-index:1001}
+  .auto-label{position:absolute;top:4px;right:10px;font-size:9px;color:var(--cyan);background:rgba(255,255,255,0.8);
+    padding:2px 6px;border-radius:3px;z-index:1001;border:1px solid var(--border)}
+
+  .hidden{display:none!important}
+  ::-webkit-scrollbar{width:2px}
+  ::-webkit-scrollbar-thumb{background:rgba(0,102,204,0.2)}
+
+  .mod-bg{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;z-index:2000}
+  .mod-bg.show{display:flex}
+  .mod-box{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px;width:340px;box-shadow:0 8px 32px rgba(0,0,0,0.15)}
+  .mod-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .mod-t{font-size:13px;font-weight:700;color:var(--cyan)}
+  .mod-x{width:20px;height:20px;border-radius:50%;background:rgba(0,0,0,0.05);border:none;color:var(--text-dim);cursor:pointer}
+
+  :fullscreen .app{width:100vw;height:100vh}
+  :-webkit-full-screen .app{width:100vw;height:100vh}
+</style>
+</head>
+<body>
+
+<div class="app" id="app">
+  <div class="auto-progress" id="autoProgress"></div>
+  <div class="auto-label" id="autoLabel"></div>
+
+  <div class="header">
+    <div class="logo"><div class="logo-icon">◈</div><div class="logo-text">Travel OS · 高德3D地图版 (杭州)</div></div>
+    <div class="mode-tabs">
+      <button class="mode-tab active" data-mode="gov" onclick="swMode('gov')">🏛 政务</button>
+      <button class="mode-tab" data-mode="biz" onclick="swMode('biz')">💼 投资</button>
+      <button class="mode-tab" data-mode="wm" onclick="swMode('wm')">🤖 世界模型</button>
+      <button class="mode-tab" data-mode="sec" onclick="swMode('sec')">🔒 安全</button>
+    </div>
+    <div class="ctrl-group">
+      <div class="badge" id="statusBadge">● 就绪</div>
+      <button class="btn-sm btn-purple" onclick="toggle3D()" id="btn3D">🏢 3D模式</button>
+      <button class="btn-sm btn-cyan" onclick="toggleAuto()" id="autoBtn">▶ 自动轮播</button>
+      <button class="btn-sm btn-gold" onclick="toggleFS()">⛶ 全屏</button>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="left">
+      <div class="sec-title">图层</div>
+      <div class="card">
+        <div class="card-title">🏛 政府公共</div>
+        <div class="row" onclick="togLayer(this,'gis')"><span>地图底图</span><div class="tog on" data-l="gis"></div></div>
+        <div class="row" onclick="togLayer(this,'heat')"><span>客流热力</span><div class="tog on" data-l="heat"></div></div>
+        <div class="row" onclick="togLayer(this,'traf')"><span>交通仿真</span><div class="tog on" data-l="traf"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">🏨 文旅业态</div>
+        <div class="row" onclick="togLayer(this,'hot')"><span>酒店</span><div class="tog on" data-l="hot"></div></div>
+        <div class="row" onclick="togLayer(this,'path')"><span>用户动线</span><div class="tog on" data-l="path"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">🤖 世界模型</div>
+        <div class="row" onclick="togLayer(this,'robot')"><span>虚拟机器人</span><div class="tog" data-l="robot"></div></div>
+        <div class="row" onclick="togLayer(this,'obstacle')"><span>障碍物</span><div class="tog" data-l="obstacle"></div></div>
+      </div>
+    </div>
+
+    <div class="center">
+      <div id="map"></div>
+      <div class="map-overlay" id="mapOverlay">
+        <b>🗺 地图模式:</b> <span id="mapModeText">2D平面</span> | 
+        <b>🚦 交通:</b> <span style="color:var(--green)">●畅通</span> <span style="color:var(--gold)">●缓行</span> <span style="color:var(--red)">●拥堵</span>
+      </div>
+
+      <div class="tl">
+        <button class="play" id="pb" onclick="tPlay()">▶</button>
+        <div class="tl-trk" onclick="sTime(event)"><div class="tl-fl" id="tf" style="width:35%"><div class="tl-th"></div></div></div>
+        <div class="tl-tm" id="tt">14:30 周五</div>
+      </div>
+    </div>
+
+    <div class="right" id="rp">
+      <div id="pGov">
+        <div class="blk2">
+          <div class="bh"><span class="bhi ir">⚠</span>客流安全预警</div>
+          <div class="rev red">
+            <div class="rev-lbl">预警等级</div>
+            <div class="rev-val" style="color:var(--red)">🟡 二级预警</div>
+            <div class="rev-sub">湖滨商圈 91% | 西湖景区 82%</div>
+          </div>
+          <div class="sl">
+            <div class="sl-l"><span>预警阈值</span><span id="thDisp">80%</span></div>
+            <div class="sl-trk" onclick="adjTh(event)"><div class="sl-fl" style="width:80%"><div class="sl-th"></div></div></div>
+          </div>
+          <div style="margin-top:4px;font-size:8px;color:var(--text-dim);line-height:1.4;background:rgba(204,34,34,0.04);padding:4px;border-radius:3px">
+            <b style="color:var(--red)">应急方案:</b> ①分流至河坊街 ②增派公交12班 ③灵隐寺预约限流
+          </div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi io">📅</span>节假日人流推演</div>
+          <div style="display:flex;gap:4px;margin-bottom:4px">
+            <input type="number" id="hdays" value="3" style="width:50px;background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.1);border-radius:3px;padding:3px 6px;color:var(--text);font-size:10px">
+            <input type="number" id="hmult" value="1.8" step="0.1" style="width:60px;background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.1);border-radius:3px;padding:3px 6px;color:var(--text);font-size:10px">
+            <button class="btn-sm btn-cyan" onclick="runHoliday()" style="padding:3px 10px">推演</button>
+          </div>
+          <table class="ftable" id="hTable">
+            <tr><th>区域</th><th>峰值</th><th>负载</th><th>预警</th></tr>
+            <tr><td>西湖景区</td><td>208,800</td><td style="color:var(--red)">100%</td><td style="color:var(--red)">🔴</td></tr>
+            <tr><td>灵隐寺</td><td>65,250</td><td style="color:var(--red)">100%</td><td style="color:var(--red)">🔴</td></tr>
+            <tr><td>湖滨商圈</td><td>130,500</td><td style="color:var(--red)">100%</td><td style="color:var(--red)">🔴</td></tr>
+          </table>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi ic">📊</span>产业决策</div>
+          <div class="metric"><span class="metric-k">总营收</span><span class="metric-v">¥4.2亿/月</span></div>
+          <div class="metric"><span class="metric-k">增长同比</span><span class="metric-v" style="color:var(--green)">+18.5%</span></div>
+          <div class="pie-wrap">
+            <div class="pie" style="background:conic-gradient(var(--cyan) 0% 35%,var(--gold) 35% 58%,var(--green) 58% 75%,var(--purple) 75% 88%,var(--red) 88% 100%)"></div>
+            <div class="pie-legend">
+              <div class="pie-item"><span class="pie-dot" style="background:var(--cyan)"></span>上海35%</div>
+              <div class="pie-item"><span class="pie-dot" style="background:var(--gold)"></span>苏州23%</div>
+              <div class="pie-item"><span class="pie-dot" style="background:var(--green)"></span>安徽17%</div>
+              <div class="pie-item"><span class="pie-dot" style="background:var(--purple)"></span>其他25%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi igr">🏗</span>服务优化推演</div>
+          <div style="display:flex;gap:4px;margin-bottom:4px">
+            <input type="number" id="optPark" value="2" style="width:50px;background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.1);border-radius:3px;padding:3px 6px;color:var(--text);font-size:10px">
+            <input type="number" id="optRoute" value="1" style="width:50px;background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.1);border-radius:3px;padding:3px 6px;color:var(--text);font-size:10px">
+            <button class="btn-sm btn-cyan" onclick="runOptimize()" style="padding:3px 10px">推演</button>
+          </div>
+          <div id="optResult">
+            <div class="metric"><span class="metric-k">拥堵率</span><span class="metric-v">0.75→<span style="color:var(--green)">0.47</span></span></div>
+            <div class="metric"><span class="metric-k">满意度</span><span class="metric-v" style="color:var(--green)">93.0%</span></div>
+          </div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi ig">💰</span>G端收益</div>
+          <div class="rev gold">
+            <div class="rev-lbl">年度订阅服务费</div>
+            <div class="rev-val" style="color:var(--gold)">¥1,200万/年</div>
+            <div class="rev-sub">3年合约 | 3城市 | 稳定现金流</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="pBiz" class="hidden">
+        <div class="blk2">
+          <div class="bh"><span class="bhi ic">🛒</span>Travel OS主业</div>
+          <div class="rev"><div class="rev-lbl">① C端消费分成(3.5%)</div><div class="rev-val" id="cRev2">¥186万/月</div><div class="rev-sub">5,314笔 | ¥420客单 | 毛利65%</div></div>
+          <div class="sl"><div class="sl-l"><span>月订单量</span><span id="oDisp">5,314</span></div><div class="sl-trk" onclick="adjBiz(event,'o')"><div class="sl-fl" style="width:53%"><div class="sl-th"></div></div></div></div>
+          <div class="rev gold"><div class="rev-lbl">② B端商户订阅</div><div class="rev-val" id="sRev2">¥420万/年</div><div class="rev-sub">标准120/专业45/企业8家</div></div>
+          <div class="sl"><div class="sl-l"><span>商户总数</span><span id="mDisp">173</span></div><div class="sl-trk" onclick="adjBiz(event,'m')"><div class="sl-fl" style="width:35%"><div class="sl-th"></div></div></div></div>
+          <div class="rev green"><div class="rev-lbl">③ API阶梯计费</div><div class="rev-val" id="aRev2">¥68万/月</div><div class="rev-sub">240万次 | 0.25→0.20→0.15</div></div>
+          <div class="sl"><div class="sl-l"><span>API(万次/月)</span><span id="aDisp">240</span></div><div class="sl-trk" onclick="adjBiz(event,'a')"><div class="sl-fl" style="width:48%"><div class="sl-th"></div></div></div></div>
+          <div style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(0,0,0,0.06)">
+            <div class="metric"><span class="metric-k">主业毛利率</span><span class="metric-v" style="color:var(--green)">62%</span></div>
+            <div class="metric"><span class="metric-k">主业年收入</span><span class="metric-v" style="color:var(--gold)">¥3,012万</span></div>
+          </div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi ip">🤖</span>具身智能增值</div>
+          <div class="rev purple"><div class="rev-lbl">数据集年度订阅</div><div class="rev-val">¥580万/年</div><div class="rev-sub">12家企业 | 城市45GB+文旅68GB</div></div>
+          <div class="rev"><div class="rev-lbl">数据API授权</div><div class="rev-val">¥156万/月</div><div class="rev-sub">600元/小时 | 月均2,600小时</div></div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi io">🧠</span>世界模型WMaaS</div>
+          <div class="rev"><div class="rev-lbl">① 一次性授权</div><div class="rev-val">¥400万</div><div class="rev-sub">5家×¥80万 | 永久买断</div></div>
+          <div class="rev gold"><div class="rev-lbl">② 年度订阅</div><div class="rev-val">¥180万/年</div><div class="rev-sub">5家×¥36万 | 运维+接口</div></div>
+          <div class="rev purple"><div class="rev-lbl">③ 定制项目</div><div class="rev-val">¥360万/年</div><div class="rev-sub">3项目×¥120万 | 本体适配</div></div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi io">📈</span>5年收入预测</div>
+          <div class="line-chart">
+            <svg class="lc-svg" viewBox="0 0 280 50">
+              <defs><linearGradient id="lg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--green)" stop-opacity="0.3"/><stop offset="100%" stop-color="var(--green)" stop-opacity="0"/></linearGradient></defs>
+              <polyline points="10,42 70,35 130,27 190,19 250,9" fill="none" stroke="var(--green)" stroke-width="1.5"/>
+              <polygon points="10,42 70,35 130,27 190,19 250,9 250,50 10,50" fill="url(#lg1)"/>
+              <polyline points="10,45 70,43 130,39 190,41 250,37" fill="none" stroke="var(--red)" stroke-width="1" stroke-dasharray="3,2"/>
+              <text x="10" y="49" fill="var(--text-dim)" font-size="6">2026</text>
+              <text x="70" y="49" fill="var(--text-dim)" font-size="6">2027</text>
+              <text x="130" y="49" fill="var(--text-dim)" font-size="6">2028</text>
+              <text x="190" y="49" fill="var(--text-dim)" font-size="6">2029</text>
+              <text x="250" y="49" fill="var(--text-dim)" font-size="6">2030</text>
+            </svg>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:4px;font-size:7px">
+            <span style="color:var(--green)">— 我方(稳定增长)</span>
+            <span style="color:var(--red)">- - 传统(波动大)</span>
+          </div>
+          <table class="ftable">
+            <tr><th>年</th><th>主业</th><th>增值</th><th>政务</th><th>总计</th></tr>
+            <tr><td>2026</td><td>3,012</td><td>2,452</td><td>3,600</td><td style="color:var(--green);font-weight:700">9,999</td></tr>
+            <tr><td>2027</td><td>3,566</td><td>2,857</td><td>3,780</td><td style="color:var(--green);font-weight:700">10,587</td></tr>
+            <tr><td>2028</td><td>4,121</td><td>3,263</td><td>3,969</td><td style="color:var(--green);font-weight:700">11,175</td></tr>
+            <tr><td>2029</td><td>4,675</td><td>3,668</td><td>4,167</td><td style="color:var(--green);font-weight:700">11,763</td></tr>
+            <tr><td>2030</td><td>5,230</td><td>4,074</td><td>4,376</td><td style="color:var(--green);font-weight:700">12,351</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div id="pWM" class="hidden">
+        <div class="blk2">
+          <div class="bh"><span class="bhi ipk">🤖</span>世界模型推演仿真</div>
+          <div class="wm-controls">
+            <button class="wm-btn" id="btnNav" onclick="setWM('nav')">自主导航</button>
+            <button class="wm-btn" id="btnAvoid" onclick="setWM('avoid')">人流避让</button>
+            <button class="wm-btn" id="btnInteract" onclick="setWM('interact')">游客交互</button>
+            <button class="wm-btn" id="btnObs" onclick="setWM('obs')">障碍识别</button>
+            <button class="wm-btn" id="btnRandom" onclick="startRandomWalk()">🎲 随机行走</button>
+          </div>
+          <div class="wm-status" id="wmStatus">
+            <b>状态:</b> 等待指令...<br>
+            开启「虚拟机器人」图层，点击地图任意位置，机器人将使用<b>高德真实道路</b>自动规划路线<br>
+            或点击「🎲 随机行走」让机器人在各景点间自动漫游
+          </div>
+          <div style="margin-top:6px;font-size:8px;color:var(--text-dim);line-height:1.5">
+            <b style="color:var(--cyan)">Sim-to-Real 对比:</b><br>
+            传统仿真: 静态场景 + 预设路径 → 虚实鸿沟大<br>
+            我方世界模型: <b>高德真实道路</b> + 实时路况 + 动态人流 → 迁移率提升 <span style="color:var(--green)">60%</span>
+          </div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi ig">💰</span>WMaaS 三层收费拆解</div>
+          <div class="rev"><div class="rev-lbl">① 一次性基础授权</div><div class="rev-val">¥400万</div><div class="rev-sub">永久买断底座使用权</div></div>
+          <div class="rev gold"><div class="rev-lbl">② 年度算力&接口订阅</div><div class="rev-val">¥180万/年</div><div class="rev-sub">平台运维 + 推理接口</div></div>
+          <div class="rev purple"><div class="rev-lbl">③ 定制场景微调</div><div class="rev-val">¥360万/年</div><div class="rev-sub">按项目打包收费</div></div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi ib">📊</span>客户价值量化</div>
+          <div class="metric"><span class="metric-k">研发周期缩短</span><span class="metric-v" style="color:var(--green)">60%</span></div>
+          <div class="metric"><span class="metric-k">Sim-to-Real迁移率</span><span class="metric-v" style="color:var(--green)">85%</span></div>
+          <div class="metric"><span class="metric-k">训练数据成本</span><span class="metric-v" style="color:var(--green)">↓70%</span></div>
+          <div class="metric"><span class="metric-k">客单价对比</span><span class="metric-v">我方 <span style="color:var(--gold)">¥188万</span> vs 行业 ¥45万</span></div>
+        </div>
+      </div>
+
+      <div id="pSec" class="hidden">
+        <div class="blk2">
+          <div class="bh"><span class="bhi ir">🔒</span>数据脱敏流程仿真</div>
+          <div class="des-flow">
+            <div class="des-step active" id="des1">
+              <div class="des-icon" style="background:rgba(0,102,204,0.12);color:var(--cyan)">1</div>
+              <div class="des-content">
+                <div class="des-title">差分隐私 (Differential Privacy)</div>
+                <div class="des-desc">原始数据 + calibrated noise → 个体信息不可区分</div>
+              </div>
+            </div>
+            <div class="des-arrow">▼</div>
+            <div class="des-step" id="des2">
+              <div class="des-icon" style="background:rgba(102,0,170,0.12);color:var(--purple)">2</div>
+              <div class="des-content">
+                <div class="des-title">k-匿名化 (k-Anonymity)</div>
+                <div class="des-desc">准标识符泛化 → 每条记录至少与k-1条不可区分</div>
+              </div>
+            </div>
+            <div class="des-arrow">▼</div>
+            <div class="des-step" id="des3">
+              <div class="des-icon" style="background:rgba(0,136,68,0.12);color:var(--green)">3</div>
+              <div class="des-content">
+                <div class="des-title">联邦学习 (Federated Learning)</div>
+                <div class="des-desc">本地训练 → 安全聚合 → 全局模型更新，原始数据不出域</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:4px;margin-top:6px">
+            <button class="btn-sm btn-cyan" onclick="playDesAnim()" style="flex:1">▶ 播放流程</button>
+            <button class="btn-sm btn-gold" onclick="resetDesAnim()" style="flex:1">↺ 重置</button>
+          </div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi ic">📋</span>模拟审计台账</div>
+          <table class="ftable">
+            <tr><th>时间</th><th>操作</th><th>数据类型</th><th>状态</th></tr>
+            <tr><td>09:00</td><td>数据脱敏</td><td>客流热力</td><td style="color:var(--green)">✓ 成功</td></tr>
+            <tr><td>09:05</td><td>差分隐私</td><td>用户行为</td><td style="color:var(--green)">✓ 成功</td></tr>
+            <tr><td>09:10</td><td>k-匿名化</td><td>消费记录</td><td style="color:var(--green)">✓ 成功</td></tr>
+            <tr><td>09:15</td><td>联邦聚合</td><td>模型参数</td><td style="color:var(--green)">✓ 成功</td></tr>
+            <tr><td>10:00</td><td>授权导出</td><td>聚合统计</td><td style="color:var(--green)">✓ 成功</td></tr>
+          </table>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi ib">🌐</span>内网隔离链路</div>
+          <div style="font-size:8px;color:var(--text-dim);line-height:1.6;padding:4px;background:rgba(0,0,0,0.02);border-radius:3px">
+            <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px"><span style="color:var(--red)">●</span> <b>政务内网</b> ← 原始政务数据存储</div>
+            <div style="padding-left:12px;border-left:1px dashed var(--text-dim);margin-bottom:3px">↓ 脱敏加工</div>
+            <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px"><span style="color:var(--gold)">●</span> <b>脱敏区</b> ← 差分隐私 + k-匿名</div>
+            <div style="padding-left:12px;border-left:1px dashed var(--text-dim);margin-bottom:3px">↓ 安全聚合</div>
+            <div style="display:flex;align-items:center;gap:4px"><span style="color:var(--green)">●</span> <b>外网输出</b> ← 脱敏数据集 + 模型接口</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blk2">
+        <div class="bh"><span class="bhi ic">🔄</span>全链路数据飞轮</div>
+        <div class="fw">
+          <div class="fw-n fw-in"><div>📥 数据流入</div><div class="fw-s">政府脱敏数据 + 文旅运营 + C端行为</div></div>
+          <div class="fw-ar">▼</div>
+          <div class="fw-n fw-pr"><div>⚙ AI数据加工</div><div class="fw-s">清洗脱敏 → 时空对齐 → 4D数据集 → 世界模型</div></div>
+          <div class="fw-ar">▼</div>
+          <div class="fw-n fw-out"><div>📤 三路价值输出</div><div class="fw-s">Travel OS | 具身企业 | 城市治理</div></div>
+          <div class="fw-ar">▲</div>
+          <div class="fw-n fw-in" style="opacity:0.7"><div>🔄 数据回流闭环</div><div class="fw-s">消费行为 + 机器人反馈 → 模型迭代</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mod-bg" id="zm" onclick="closeM(event)">
+  <div class="mod-box" onclick="event.stopPropagation()">
+    <div class="mod-h"><div class="mod-t" id="mt">区域详情</div><button class="mod-x" onclick="closeM()">×</button></div>
+    <div id="mb">
+      <div class="metric"><span class="metric-k">实时客流</span><span class="metric-v" id="mf">12,543人</span></div>
+      <div class="metric"><span class="metric-k">业态订单</span><span class="metric-v" id="mo">3,421笔/日</span></div>
+      <div class="metric"><span class="metric-k">消费总额</span><span class="metric-v" id="mr">¥284.6万/日</span></div>
+      <div class="metric"><span class="metric-k">资源负载</span><span class="metric-v" id="ml" style="color:var(--red)">82% (高)</span></div>
+      <div class="metric"><span class="metric-k">预警状态</span><span class="metric-v" id="ma" style="color:var(--gold)">🟡 二级预警</span></div>
+      <div class="metric"><span class="metric-k">容量上限</span><span class="metric-v" id="mc">80,000人</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===================== 配置 =====================
+// ⚠️ 请替换为您的高德地图 Key (https://lbs.amap.com/)
+const GAODE_KEY = '904dba6005663355da096a2341b97846';
+
+const zones = [
+  {id:'z1', name:'西湖景区', lat:30.2458, lng:120.1400, type:'scenic', icon:'🏞', flow:12543, orders:3421, rev:284.6, load:0.82, cap:80000, alert:'🟡 二级预警'},
+  {id:'z2', name:'灵隐寺', lat:30.2400, lng:120.1000, type:'scenic', icon:'🏯', flow:8320, orders:1860, rev:156.2, load:0.67, cap:25000, alert:'🟢 正常'},
+  {id:'z3', name:'湖滨商圈', lat:30.2550, lng:120.1600, type:'commercial', icon:'🏬', flow:28400, orders:12500, rev:284.0, load:0.91, cap:50000, alert:'🔴 一级预警'},
+  {id:'z4', name:'杭州东站', lat:30.2900, lng:120.2100, type:'traffic', icon:'🚄', flow:45200, orders:8600, rev:0, load:0.45, cap:200000, alert:'🟢 正常'},
+  {id:'z5', name:'钱江新城', lat:30.2450, lng:120.2100, type:'hotel', icon:'🏨', flow:18600, orders:4200, rev:198.5, load:0.73, cap:30000, alert:'🟢 正常'},
+  {id:'z6', name:'河坊街', lat:30.2350, lng:120.1650, type:'commercial', icon:'🏮', flow:15600, orders:6800, rev:156.0, load:0.78, cap:30000, alert:'🟡 二级预警'},
+  {id:'z7', name:'西溪湿地', lat:30.2650, lng:120.0600, type:'scenic', icon:'🌿', flow:6800, orders:1200, rev:89.3, load:0.35, cap:45000, alert:'🟢 正常'},
+  {id:'z8', name:'萧山机场', lat:30.2300, lng:120.4300, type:'traffic', icon:'✈', flow:32000, orders:5400, rev:0, load:0.38, cap:150000, alert:'🟢 正常'}
+];
+
+// 杭州主要道路网络 (真实坐标序列)
+const roadNetwork = [
+  {id:'r1', name:'延安路', type:'arterial', coords:[[120.155,30.265],[120.157,30.260],[120.158,30.255],[120.160,30.250],[120.162,30.245],[120.163,30.240],[120.165,30.235]], baseCongestion:0.75},
+  {id:'r2', name:'西湖大道', type:'main', coords:[[120.130,30.245],[120.140,30.245],[120.150,30.245],[120.160,30.245],[120.170,30.245],[120.180,30.245]], baseCongestion:0.60},
+  {id:'r3', name:'环城西路', type:'arterial', coords:[[120.130,30.270],[120.135,30.265],[120.138,30.260],[120.140,30.255],[120.142,30.250],[120.145,30.245],[120.148,30.240]], baseCongestion:0.55},
+  {id:'r4', name:'庆春路', type:'main', coords:[[120.150,30.260],[120.160,30.260],[120.170,30.260],[120.180,30.260]], baseCongestion:0.70},
+  {id:'r5', name:'机场高速', type:'highway', coords:[[120.210,30.290],[120.250,30.270],[120.300,30.250],[120.350,30.240],[120.430,30.230]], baseCongestion:0.35},
+  {id:'r6', name:'天目山路', type:'main', coords:[[120.060,30.265],[120.080,30.265],[120.100,30.265],[120.120,30.265],[120.140,30.265]], baseCongestion:0.50},
+  {id:'r7', name:'灵隐路', type:'secondary', coords:[[120.100,30.240],[120.105,30.242],[120.110,30.245],[120.115,30.248],[120.120,30.250]], baseCongestion:0.65},
+  {id:'r8', name:'南山路', type:'secondary', coords:[[120.140,30.240],[120.145,30.242],[120.150,30.245],[120.155,30.248],[120.160,30.250]], baseCongestion:0.80}
+];
+
+const obstacles = [
+  {id:'obs1', lat:30.250, lng:120.155, name:'施工路段'},
+  {id:'obs2', lat:30.248, lng:120.158, name:'临时管制'},
+  {id:'obs3', lat:30.252, lng:120.152, name:'事故处理'}
+];
+
+// ===================== 初始化高德地图 =====================
+let map, is3D = false;
+let roadPolylines = [];
+let heatCircles = [];
+let zoneMarkers = {};
+let robotMarker = null;
+let obstacleMarkers = [];
+let robotActive = false;
+let robotAnimFrame = null;
+let drivingService = null;
+let randomWalkTimer = null;
+let isRandomWalking = false;
+
+function initMap() {
+  map = new AMap.Map('map', {
+    zoom: 12.5,
+    center: [120.15, 30.25],
+    viewMode: '3D',
+    pitch: 0,
+    mapStyle: 'amap://styles/normal', // 亮色清晰风格
+    features: ['bg', 'road', 'building', 'point'],
+    showBuildingBlock: true,
+    showLabel: true
+  });
+
+  // 添加控件
+  map.addControl(new AMap.Scale({position:'LB'}));
+  map.addControl(new AMap.ToolBar({position:'RB', liteStyle:true}));
+
+  // 添加区域标记
+  addZoneMarkers();
+
+  // 添加热力圈
+  addHeatCircles();
+
+  // 添加道路网络
+  addRoadNetwork();
+
+  // 添加障碍物
+  addObstacles();
+
+  // 初始化真实路径规划服务
+  drivingService = new AMap.Driving({
+    policy: AMap.DrivingPolicy.LEAST_TIME
+  });
+
+  // 启动交通模拟
+  startTrafficSim();
+}
+
+// ===================== 3D 切换 =====================
+function toggle3D() {
+  is3D = !is3D;
+  const btn = document.getElementById('btn3D');
+  const txt = document.getElementById('mapModeText');
+
+  if(is3D) {
+    btn.textContent = '🏢 退出3D';
+    txt.textContent = '3D立体 (建筑+地形)';
+    map.setPitch(55);
+    map.setRotation(-20);
+    // 高德3D模式下自动显示建筑高度
+  } else {
+    btn.textContent = '🏢 3D模式';
+    txt.textContent = '2D平面';
+    map.setPitch(0);
+    map.setRotation(0);
+  }
+}
+
+// ===================== 区域标记 =====================
+function addZoneMarkers() {
+  zones.forEach(z => {
+    const content = document.createElement('div');
+    content.style.cssText = `
+      width:32px;height:32px;border-radius:50%;border:2px solid #fff;
+      background:${getZoneGradient(z.type)};display:flex;align-items:center;justify-content:center;
+      font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.25);
+      transition:transform 0.3s;font-weight:700;
+    `;
+    content.innerHTML = z.icon;
+    content.addEventListener('mouseenter', () => content.style.transform = 'scale(1.2)');
+    content.addEventListener('mouseleave', () => content.style.transform = 'scale(1)');
+    content.addEventListener('click', () => openZoneModal(z));
+
+    const marker = new AMap.Marker({
+      position: [z.lng, z.lat],
+      content: content,
+      anchor: 'center',
+      offset: new AMap.Pixel(0, 0),
+      zIndex: 100
+    });
+    marker.setMap(map);
+
+    // 信息窗体
+    const info = new AMap.InfoWindow({
+      content: `<div style="font-size:11px;font-weight:700">${z.name}</div><div style="font-size:9px;color:#666">${z.type==='scenic'?'实时客流':'日营收/吞吐量'}</div>`,
+      offset: new AMap.Pixel(0, -20)
+    });
+    marker.on('mouseover', () => info.open(map, [z.lng, z.lat]));
+    marker.on('mouseout', () => info.close());
+
+    zoneMarkers[z.id] = marker;
+  });
+}
+
+function getZoneGradient(type) {
+  const colors = {scenic:'linear-gradient(135deg,#00aaff,#0066cc)', commercial:'linear-gradient(135deg,#ffcc00,#cc8800)', 
+                  traffic:'linear-gradient(135deg,#00dd66,#008844)', hotel:'linear-gradient(135deg,#aa55ff,#6600aa)'};
+  return colors[type] || '#00aaff';
+}
+
+// ===================== 热力圈 =====================
+function addHeatCircles() {
+  zones.forEach(z => {
+    const radius = z.type === 'scenic' ? 800 : z.type === 'commercial' ? 600 : 400;
+    const color = z.load > 0.8 ? 'rgba(255,50,50,0.25)' : z.load > 0.6 ? 'rgba(255,170,0,0.2)' : 'rgba(0,170,255,0.15)';
+    const circle = new AMap.Circle({
+      center: [z.lng, z.lat],
+      radius: radius,
+      fillColor: color,
+      fillOpacity: 0.5,
+      strokeColor: 'transparent',
+      strokeWeight: 0,
+      zIndex: 10
+    });
+    circle.setMap(map);
+    heatCircles.push(circle);
+  });
+}
+
+// ===================== 道路网络 + 拥堵模拟 =====================
+function addRoadNetwork() {
+  roadNetwork.forEach(road => {
+    const color = getCongestionColor(road.baseCongestion);
+    const polyline = new AMap.Polyline({
+      path: road.coords,
+      strokeColor: color,
+      strokeWeight: 5,
+      strokeOpacity: 0.8,
+      strokeStyle: 'solid',
+      strokeLinecap: 'round',
+      zIndex: 50,
+      extData: {id: road.id, base: road.baseCongestion}
+    });
+    polyline.setMap(map);
+    roadPolylines.push(polyline);
+
+    // 道路标签
+    const midIdx = Math.floor(road.coords.length / 2);
+    const text = new AMap.Text({
+      text: road.name,
+      position: road.coords[midIdx],
+      style: {'font-size':'9px', color:'#555', 'background-color':'rgba(255,255,255,0.8)', padding:'1px 4px', border:'none'},
+      zIndex: 60
+    });
+    text.setMap(map);
+  });
+}
+
+function getCongestionColor(congestion) {
+  if(congestion < 0.3) return '#00aa44';
+  if(congestion < 0.7) return '#ccaa00';
+  return '#cc2222';
+}
+
+function startTrafficSim() {
+  setInterval(() => {
+    const hour = new Date().getHours();
+    const factor = (hour >= 7 && hour <= 9) || (hour >= 17 && hour <= 19) ? 1.5 : 
+                   (hour >= 10 && hour <= 16) ? 1.0 : 0.6;
+
+    roadNetwork.forEach((road, idx) => {
+      const congestion = Math.min(0.95, road.baseCongestion * factor * (0.8 + Math.random()*0.4));
+      const color = getCongestionColor(congestion);
+      if(roadPolylines[idx]) {
+        roadPolylines[idx].setOptions({strokeColor: color});
+        roadPolylines[idx].setExtData({id: road.id, base: road.baseCongestion, current: congestion});
+      }
+    });
+  }, 5000);
+}
+
+// ===================== 障碍物 =====================
+function addObstacles() {
+  obstacles.forEach(o => {
+    const marker = new AMap.Marker({
+      position: [o.lng, o.lat],
+      content: `<div style="width:16px;height:16px;background:#ff3333;border-radius:50%;border:2px solid #fff;box-shadow:0 0 6px #ff3333;animation:obsPulse 2s infinite"></div>`,
+      anchor: 'center',
+      offset: new AMap.Pixel(0, 0),
+      zIndex: 90
+    });
+    marker.setMap(map);
+    obstacleMarkers.push(marker);
+
+    // 标签
+    const text = new AMap.Text({
+      text: o.name,
+      position: [o.lng, o.lat],
+      offset: new AMap.Pixel(0, -15),
+      style: {'font-size':'8px', color:'#cc2222', 'background-color':'transparent', border:'none'},
+      zIndex: 95
+    });
+    text.setMap(map);
+    obstacleMarkers.push(text);
+  });
+}
+
+// ===================== 机器人系统 =====================
+function toggleRobot(show) {
+  robotActive = show;
+  if(show) {
+    if(!robotMarker) {
+      robotMarker = new AMap.Marker({
+        position: [120.140, 30.245],
+        content: `<div style="width:28px;height:28px;background:linear-gradient(135deg,#ec4899,#6600aa);border-radius:50%;border:2px solid #fff;box-shadow:0 0 12px #ec4899;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:grab;z-index:1000;">🤖</div>`,
+        anchor: 'center',
+        offset: new AMap.Pixel(0, 0),
+        zIndex: 1000
+      });
+    }
+    robotMarker.setMap(map);
+    map.on('click', onMapClickForRobot);
+  } else {
+    if(robotMarker) robotMarker.setMap(null);
+    map.off('click', onMapClickForRobot);
+    if(robotAnimFrame) cancelAnimationFrame(robotAnimFrame);
+  }
+}
+
+function onMapClickForRobot(e) {
+  if(!robotActive || !robotMarker) return;
+  const target = e.lnglat;
+  const start = robotMarker.getPosition();
+
+  planPath([start.lng, start.lat], [target.lng, target.lat], function(path, congestionInfo) {
+    animateRobotAlongPath(path, congestionInfo);
+  });
+}
+
+function planPath(start, target, callback) {
+  if (!drivingService) {
+    callback(interpolateDirect(start, target, 20), []);
+    return;
+  }
+
+  drivingService.search(
+    new AMap.LngLat(start[0], start[1]),
+    new AMap.LngLat(target[0], target[1]),
+    function(status, result) {
+      if (status === 'complete' && result.routes && result.routes.length > 0) {
+        const route = result.routes[0];
+        const path = [];
+        const congestionSegments = []; // 路况分段 [{startIdx, endIdx, status}]
+
+        route.steps.forEach(step => {
+          if (step.tmcs && step.tmcs.length > 0) {
+            // 使用真实路况数据
+            step.tmcs.forEach(tmc => {
+              if (tmc.path && tmc.path.length > 0) {
+                const segStart = path.length;
+                tmc.path.forEach(pt => {
+                  path.push([pt.lng, pt.lat]);
+                });
+                congestionSegments.push({
+                  startIdx: segStart,
+                  endIdx: path.length - 1,
+                  status: tmc.status || '畅通'
+                });
+              }
+            });
+          } else if (step.path && step.path.length > 0) {
+            step.path.forEach(pt => {
+              path.push([pt.lng, pt.lat]);
+            });
+          }
+        });
+
+        callback(path, congestionSegments);
+      } else {
+        // 路径规划失败时使用直线路径
+        callback(interpolateDirect(start, target, 20), []);
+      }
+    }
+  );
+}
+
+function findNearestIndex(coords, point) {
+  let minIdx = -1, minD = Infinity;
+  coords.forEach((c, i) => {
+    const d = distance(c, point);
+    if(d < minD) { minD = d; minIdx = i; }
+  });
+  return minIdx;
+}
+
+function distance(a, b) {
+  return Math.sqrt(Math.pow(a[0]-b[0],2) + Math.pow(a[1]-b[1],2));
+}
+
+function interpolateDirect(a, b, steps) {
+  const pts = [];
+  for(let i=0; i<=steps; i++) {
+    const t = i/steps;
+    pts.push([a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t]);
+  }
+  return pts;
+}
+
+function animateRobotAlongPath(path, congestionSegments) {
+  if(robotAnimFrame) cancelAnimationFrame(robotAnimFrame);
+  if(path.length < 2) return;
+
+  let idx = 0;
+  let progress = 0;
+  const baseSpeed = 0.015; // 降低基础速度，让移动更真实
+
+  function getCongestionAtPoint(pointIdx) {
+    if (!congestionSegments || congestionSegments.length === 0) return 0.3;
+    const seg = congestionSegments.find(s => pointIdx >= s.startIdx && pointIdx <= s.endIdx);
+    if (!seg) return 0.3;
+
+    const statusMap = {
+      '畅通': 0.1,
+      '未知': 0.3,
+      '缓行': 0.5,
+      '拥堵': 0.8,
+      '严重拥堵': 0.95
+    };
+    return statusMap[seg.status] || 0.3;
+  }
+
+  function step() {
+    if(idx >= path.length-1) {
+      updateRobotStatus(0, path.length, path.length, '已到达');
+      // 如果正在随机行走，到达后自动进行下一次
+      if(isRandomWalking) {
+        setTimeout(() => { if(isRandomWalking) doRandomWalk(); }, 2000);
+      }
+      return;
+    }
+
+    const current = path[idx];
+    const next = path[idx+1];
+
+    const congestion = getCongestionAtPoint(idx);
+    const speed = baseSpeed / (1 + congestion * 3);
+
+    progress += speed;
+    if(progress >= 1) {
+      progress = 0;
+      idx++;
+    }
+
+    const lng = current[0] + (next[0]-current[0])*progress;
+    const lat = current[1] + (next[1]-current[1])*progress;
+    robotMarker.setPosition([lng, lat]);
+
+    updateRobotStatus(congestion, idx, path.length);
+
+    if(idx < path.length-1) {
+      robotAnimFrame = requestAnimationFrame(step);
+    } else {
+      updateRobotStatus(0, path.length, path.length, '已到达');
+      if(isRandomWalking) {
+        setTimeout(() => { if(isRandomWalking) doRandomWalk(); }, 2000);
+      }
+    }
+  }
+
+  step();
+}
+
+function getCongestionAt(coord) {
+  let minDist = Infinity, congestion = 0.3;
+  roadNetwork.forEach(road => {
+    road.coords.forEach(pt => {
+      const d = distance(pt, coord);
+      if(d < minDist) { minDist = d; congestion = road.baseCongestion; }
+    });
+  });
+  return congestion;
+}
+
+function updateRobotStatus(congestion, currentIdx, total, extraStatus) {
+  const s = document.getElementById('wmStatus');
+  if (extraStatus === '已到达') {
+    s.innerHTML = `<b>状态:</b> <span style="color:var(--green)">✓ 已到达目的地</span><br><b>总路段:</b> ${total} 段 | <b>基于高德真实道路数据</b>`;
+    return;
+  }
+  const statusText = congestion < 0.3 ? '畅通' : congestion < 0.7 ? '缓行' : '拥堵';
+  const color = congestion < 0.3 ? 'var(--green)' : congestion < 0.7 ? 'var(--gold)' : 'var(--red)';
+  s.innerHTML = `<b>行驶中:</b> 沿高德真实道路导航...<br><b>路段状态:</b> <span style="color:${color}">${statusText}</span> (拥堵指数:${(congestion*100).toFixed(0)}%)<br><b>进度:</b> ${currentIdx}/${total} 路段 | <b>速度:</b> ${(30/(1+congestion*3)).toFixed(1)}km/h`;
+}
+
+// ===================== 弹窗 =====================
+function openZoneModal(z) {
+  document.getElementById('mt').textContent = z.name;
+  document.getElementById('mf').textContent = z.flow.toLocaleString()+'人';
+  document.getElementById('mo').textContent = z.orders.toLocaleString()+'笔/日';
+  document.getElementById('mr').textContent = '¥'+z.rev+'万/日';
+  document.getElementById('ml').textContent = Math.round(z.load*100)+'% ('+(z.load>0.8?'高':z.load>0.6?'中':'正常')+')';
+  document.getElementById('ml').style.color = z.load>0.8?'var(--red)':z.load>0.6?'var(--gold)':'var(--green)';
+  document.getElementById('ma').textContent = z.alert;
+  document.getElementById('ma').style.color = z.alert.includes('🔴')?'var(--red)':z.alert.includes('🟡')?'var(--gold)':'var(--green)';
+  document.getElementById('mc').textContent = z.cap.toLocaleString()+'人';
+  document.getElementById('zm').classList.add('show');
+}
+
+// ===================== 原有面板逻辑 =====================
+let mode='gov', playing=false, timer, prog=35, autoPlaying=false, autoTimer;
+
+function swMode(m){mode=m;document.querySelectorAll('.mode-tab').forEach(b=>b.classList.toggle('active',b.dataset.mode===m));
+  document.getElementById('pGov').classList.toggle('hidden',m!=='gov');
+  document.getElementById('pBiz').classList.toggle('hidden',m!=='biz');
+  document.getElementById('pWM').classList.toggle('hidden',m!=='wm');
+  document.getElementById('pSec').classList.toggle('hidden',m!=='sec');
+}
+
+function togLayer(el,k){
+  const t=el.querySelector('.tog'); t.classList.toggle('on');
+  const on = t.classList.contains('on');
+  if(k==='heat') heatCircles.forEach(c => c.setMap(on ? map : null));
+  if(k==='robot') toggleRobot(on);
+  if(k==='obstacle') obstacleMarkers.forEach(m => m.setMap(on ? map : null));
+  if(k==='traf') roadPolylines.forEach(p => p.setMap(on ? map : null));
+}
+
+function tPlay(){playing=!playing;document.getElementById('pb').textContent=playing?'⏸':'▶';
+  if(playing){timer=setInterval(()=>{prog=(prog+0.4)%100;updT();},100);}else clearInterval(timer);
+}
+function sTime(e){const r=e.currentTarget.getBoundingClientRect();prog=((e.clientX-r.left)/r.width)*100;updT();}
+function updT(){
+  document.getElementById('tf').style.width=prog+'%';
+  const h=Math.floor(6+(prog/100)*18), m=Math.floor((prog%2.78)*21.6);
+  const d=['周五','周六','周日','周一'][Math.min(Math.floor(prog/25),3)];
+  document.getElementById('tt').textContent=h.toString().padStart(2,'0')+':'+m.toString().padStart(2,'0')+' '+d;
+}
+
+function closeM(e){if(!e||e.target===document.getElementById('zm'))document.getElementById('zm').classList.remove('show');}
+function adjTh(e){const r=e.currentTarget.getBoundingClientRect();const p=Math.min(100,Math.max(0,((e.clientX-r.left)/r.width)*100));e.currentTarget.querySelector('.sl-fl').style.width=p+'%';document.getElementById('thDisp').textContent=Math.round(p)+'%';}
+function adjBiz(e,t){const r=e.currentTarget.getBoundingClientRect();const p=Math.min(100,Math.max(0,((e.clientX-r.left)/r.width)*100));e.currentTarget.querySelector('.sl-fl').style.width=p+'%';if(t==='o'){const v=Math.round(p*100);document.getElementById('oDisp').textContent=v.toLocaleString();document.getElementById('cRev2').textContent='¥'+(v*0.35).toFixed(0)+'万/月';}else if(t==='m'){const v=Math.round(p*500);document.getElementById('mDisp').textContent=v;document.getElementById('sRev2').textContent='¥'+(v*2.42).toFixed(0)+'万/年';}else if(t==='a'){const v=Math.round(p*500);document.getElementById('aDisp').textContent=v;let rev=0;if(v<=100)rev=v*0.25;else if(v<=500)rev=25+(v-100)*0.20;else rev=105+(v-500)*0.15;document.getElementById('aRev2').textContent='¥'+rev.toFixed(0)+'万/月';}}
+
+function runHoliday(){const days=parseFloat(document.getElementById('hdays').value)||3;const mult=parseFloat(document.getElementById('hmult').value)||1.8;
+  let html='<tr><th>区域</th><th>峰值</th><th>负载</th><th>预警</th></tr>';
+  zones.forEach(z=>{const peak=Math.round(z.cap*mult*(1+days*0.15));const lr=Math.min(peak/z.cap,1);const alert=lr>0.8?'🔴':lr>0.6?'🟡':'🟢';const color=lr>0.8?'var(--red)':lr>0.6?'var(--gold)':'var(--green)';html+=`<tr><td>${z.name}</td><td>${peak.toLocaleString()}</td><td style="color:${color}">${Math.round(lr*100)}%</td><td style="color:${color}">${alert}</td></tr>`;});document.getElementById('hTable').innerHTML=html;}
+function runOptimize(){const park=parseInt(document.getElementById('optPark').value)||0;const route=parseInt(document.getElementById('optRoute').value)||0;const base=0.75;const nc=Math.max(0.2,base-park*0.08-route*0.12);const sat=Math.min(95,65+(base-nc)*100);document.getElementById('optResult').innerHTML=`<div class="metric"><span class="metric-k">拥堵率</span><span class="metric-v">${base} → <span style="color:var(--green)">${nc.toFixed(2)}</span></span></div><div class="metric"><span class="metric-k">满意度</span><span class="metric-v" style="color:var(--green)">${sat.toFixed(1)}%</span></div>`;}
+
+let wmMode='';
+function setWM(m){wmMode=m;document.querySelectorAll('.wm-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn'+m.charAt(0).toUpperCase()+m.slice(1)).classList.add('active');
+  const s=document.getElementById('wmStatus');
+  if(m==='nav'){s.innerHTML='<b>自主导航:</b> 点击地图任意位置，机器人将沿真实道路自动规划最优路线并避开拥堵路段';}
+  else if(m==='avoid'){s.innerHTML='<b>人流避让:</b> 实时检测动态人流...<br><b>检测人数:</b> 156人 | <b>避让次数:</b> 23次 | <b>安全距离:</b> 1.2m';}
+  else if(m==='interact'){s.innerHTML='<b>游客交互:</b> 多模态识别与响应...<br><b>识别语言:</b> 中英日韩 | <b>响应准确率:</b> 94% | <b>满意度:</b> 4.7/5';}
+  else if(m==='obs'){s.innerHTML='<b>障碍识别:</b> 激光雷达+视觉融合...<br><b>识别障碍物:</b> 3个 | <b>识别精度:</b> 99.2% | <b>绕行成功率:</b> 100%';}
+}
+
+// ===================== 随机行走系统 =====================
+function startRandomWalk() {
+  // 如果机器人图层未开启，自动开启
+  if (!robotActive) {
+    const robotToggle = document.querySelector('.tog[data-l="robot"]');
+    if (robotToggle && !robotToggle.classList.contains('on')) {
+      robotToggle.click();
+    }
+  }
+
+  isRandomWalking = !isRandomWalking;
+  const btn = document.getElementById('btnRandom');
+
+  if (isRandomWalking) {
+    btn.textContent = '⏹ 停止随机';
+    btn.classList.add('active');
+    // 立即开始第一次行走
+    doRandomWalk();
+  } else {
+    btn.textContent = '🎲 随机行走';
+    btn.classList.remove('active');
+    if (robotAnimFrame) cancelAnimationFrame(robotAnimFrame);
+  }
+}
+
+function doRandomWalk() {
+  if (!robotMarker || !isRandomWalking) return;
+
+  // 随机选择两个不同的区域作为起点和终点
+  const startZone = zones[Math.floor(Math.random() * zones.length)];
+  let endZone = zones[Math.floor(Math.random() * zones.length)];
+  let attempts = 0;
+  while (endZone.id === startZone.id && attempts < 10) {
+    endZone = zones[Math.floor(Math.random() * zones.length)];
+    attempts++;
+  }
+
+  const s = document.getElementById('wmStatus');
+  s.innerHTML = `<b>🎲 随机行走:</b> ${startZone.icon} ${startZone.name} → ${endZone.icon} ${endZone.name}<br><b>状态:</b> 正在使用高德真实道路规划路径...`;
+
+  // 使用高德真实路径规划
+  planPath([startZone.lng, startZone.lat], [endZone.lng, endZone.lat], function(path, congestionInfo) {
+    if (!isRandomWalking) return;
+    s.innerHTML = `<b>🎲 随机行走:</b> ${startZone.icon} ${startZone.name} → ${endZone.icon} ${endZone.name}<br><b>状态:</b> 路径规划完成，共 ${path.length} 个坐标点，开始移动`;
+    animateRobotAlongPath(path, congestionInfo);
+  });
+}
+
+let desStep=0;
+function playDesAnim(){desStep=0;document.querySelectorAll('.des-step').forEach(s=>s.classList.remove('active'));nextDesStep();}
+function nextDesStep(){if(desStep>=3)return;document.querySelectorAll('.des-step').forEach((s,i)=>s.classList.toggle('active',i===desStep));desStep++;if(desStep<3)setTimeout(nextDesStep,1500);}
+function resetDesAnim(){desStep=0;document.querySelectorAll('.des-step').forEach(s=>s.classList.remove('active'));}
+
+const autoSchedule=[
+  {t:0,mode:'gov',action:()=>{},label:'0:00 数字孪生底图'},{t:15,mode:'sec',action:()=>playDesAnim(),label:'0:15 脱敏安全流程'},
+  {t:45,mode:'gov',action:()=>{},label:'0:45 政务治理模式'},{t:60,mode:'gov',action:()=>runHoliday(),label:'1:00 客流预警推演'},
+  {t:90,mode:'gov',action:()=>runOptimize(),label:'1:30 服务优化推演'},{t:120,mode:'biz',action:()=>{},label:'2:00 商业投资模式'},
+  {t:150,mode:'biz',action:()=>{},label:'2:30 收入测算面板'},{t:210,mode:'wm',action:()=>setWM('nav'),label:'3:30 世界模型推演'},
+  {t:240,mode:'wm',action:()=>setWM('avoid'),label:'4:00 人流避让'},{t:270,mode:'wm',action:()=>setWM('obs'),label:'4:30 障碍识别'},
+  {t:300,mode:'biz',action:()=>{},label:'5:00 现金流对比'},{t:330,mode:'sec',action:()=>{},label:'5:30 数据飞轮闭环'},
+];
+function toggleAuto(){autoPlaying=!autoPlaying;const btn=document.getElementById('autoBtn');const badge=document.getElementById('statusBadge');
+  if(autoPlaying){btn.textContent='⏸ 停止';btn.classList.remove('btn-cyan');btn.classList.add('btn-red');badge.textContent='● 自动轮播中';badge.style.color='var(--gold)';badge.style.borderColor='var(--gold)';startAuto();}
+  else{btn.textContent='▶ 自动轮播';btn.classList.remove('btn-red');btn.classList.add('btn-cyan');badge.textContent='● 就绪';badge.style.color='var(--green)';badge.style.borderColor='rgba(0,136,68,0.2)';stopAuto();}
+}
+function startAuto(){let idx=0;const totalDuration=600;
+  autoTimer=setInterval(()=>{idx++;const progress=(idx/totalDuration)*100;document.getElementById('autoProgress').style.width=progress+'%';
+    const current=autoSchedule.findLast(s=>s.t<=idx)||autoSchedule[0];document.getElementById('autoLabel').textContent=current.label;
+    if(idx%15===0){swMode(current.mode);current.action();}
+    if(idx>=totalDuration){toggleAuto();document.getElementById('autoProgress').style.width='0%';document.getElementById('autoLabel').textContent='';}
+  },100);
+}
+function stopAuto(){clearInterval(autoTimer);document.getElementById('autoProgress').style.width='0%';document.getElementById('autoLabel').textContent='';}
+
+function toggleFS(){const el=document.getElementById('app');if(!document.fullscreenElement){el.requestFullscreen().catch(()=>alert('请按F11'));}else document.exitFullscreen();}
+document.addEventListener('fullscreenchange',()=>{document.querySelector('.btn-gold').textContent=document.fullscreenElement?'⛶ 退出':'⛶ 全屏';});
+
+// 页面加载完成后初始化地图
+window.onload = initMap;
+</script>
+
+</body>
+</html>

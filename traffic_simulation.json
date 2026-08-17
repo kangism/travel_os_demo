@@ -1,0 +1,8402 @@
+[
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 60
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 115
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 136
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 183
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 104
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 68
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 113
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 192
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 168
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 159
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 102
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 80
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 126
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 81
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 56
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 99
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 102
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 43
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 121
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 139
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 55
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 137
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 87
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 137
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 83
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 51
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 46
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 190
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 69
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 177
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 46
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 40.0,
+    "congestion_index": 0.4,
+    "free_parking": 46
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 44
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 66.7,
+    "congestion_index": 0.4,
+    "free_parking": 146
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 109
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 7,
+    "vehicle_flow": 4129,
+    "avg_speed_kmh": 15.6,
+    "congestion_index": 0.826,
+    "free_parking": 75
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 7,
+    "vehicle_flow": 4027,
+    "avg_speed_kmh": 19.7,
+    "congestion_index": 0.805,
+    "free_parking": 77
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 7,
+    "vehicle_flow": 4324,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.865,
+    "free_parking": 93
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 7,
+    "vehicle_flow": 4979,
+    "avg_speed_kmh": 17.0,
+    "congestion_index": 0.996,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 7,
+    "vehicle_flow": 4424,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.885,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 8,
+    "vehicle_flow": 4169,
+    "avg_speed_kmh": 15.3,
+    "congestion_index": 0.834,
+    "free_parking": 4
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 8,
+    "vehicle_flow": 4534,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.907,
+    "free_parking": 62
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 8,
+    "vehicle_flow": 4471,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.894,
+    "free_parking": 13
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 8,
+    "vehicle_flow": 4725,
+    "avg_speed_kmh": 21.3,
+    "congestion_index": 0.945,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 8,
+    "vehicle_flow": 4281,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.856,
+    "free_parking": 99
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 9,
+    "vehicle_flow": 4312,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.862,
+    "free_parking": 66
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 9,
+    "vehicle_flow": 4373,
+    "avg_speed_kmh": 16.3,
+    "congestion_index": 0.875,
+    "free_parking": 27
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 9,
+    "vehicle_flow": 4809,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.962,
+    "free_parking": 93
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 9,
+    "vehicle_flow": 4631,
+    "avg_speed_kmh": 22.8,
+    "congestion_index": 0.926,
+    "free_parking": 39
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 9,
+    "vehicle_flow": 4077,
+    "avg_speed_kmh": 16.0,
+    "congestion_index": 0.815,
+    "free_parking": 23
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 24
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 29.4,
+    "congestion_index": 0.612,
+    "free_parking": 124
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 78
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 49.0,
+    "congestion_index": 0.612,
+    "free_parking": 110
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 36
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 102
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 27.5,
+    "congestion_index": 0.649,
+    "free_parking": 106
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 53
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 45.9,
+    "congestion_index": 0.649,
+    "free_parking": 109
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 7
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 78
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 26.1,
+    "congestion_index": 0.677,
+    "free_parking": 31
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 99
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 43.6,
+    "congestion_index": 0.677,
+    "free_parking": 97
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 60
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 25.3,
+    "congestion_index": 0.694,
+    "free_parking": 2
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 51
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 42.1,
+    "congestion_index": 0.694,
+    "free_parking": 109
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 39
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 25.0,
+    "congestion_index": 0.7,
+    "free_parking": 77
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 31
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 41.7,
+    "congestion_index": 0.7,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 75
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 25.3,
+    "congestion_index": 0.694,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 42.1,
+    "congestion_index": 0.694,
+    "free_parking": 10
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 83
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 69
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 26.1,
+    "congestion_index": 0.677,
+    "free_parking": 60
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 123
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 43.6,
+    "congestion_index": 0.677,
+    "free_parking": 84
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 46
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 17,
+    "vehicle_flow": 4430,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.886,
+    "free_parking": 62
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 17,
+    "vehicle_flow": 4547,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.909,
+    "free_parking": 46
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 17,
+    "vehicle_flow": 4415,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.883,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 17,
+    "vehicle_flow": 4405,
+    "avg_speed_kmh": 26.6,
+    "congestion_index": 0.881,
+    "free_parking": 88
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 17,
+    "vehicle_flow": 4445,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.889,
+    "free_parking": 48
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 18,
+    "vehicle_flow": 4330,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.866,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 18,
+    "vehicle_flow": 4220,
+    "avg_speed_kmh": 17.8,
+    "congestion_index": 0.844,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 18,
+    "vehicle_flow": 3824,
+    "avg_speed_kmh": 18.1,
+    "congestion_index": 0.765,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 18,
+    "vehicle_flow": 3992,
+    "avg_speed_kmh": 33.5,
+    "congestion_index": 0.798,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 18,
+    "vehicle_flow": 4332,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.866,
+    "free_parking": 48
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 19,
+    "vehicle_flow": 4198,
+    "avg_speed_kmh": 15.0,
+    "congestion_index": 0.84,
+    "free_parking": 44
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 19,
+    "vehicle_flow": 3868,
+    "avg_speed_kmh": 21.3,
+    "congestion_index": 0.774,
+    "free_parking": 52
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 19,
+    "vehicle_flow": 4221,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.844,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 19,
+    "vehicle_flow": 4431,
+    "avg_speed_kmh": 26.1,
+    "congestion_index": 0.886,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 19,
+    "vehicle_flow": 3968,
+    "avg_speed_kmh": 16.9,
+    "congestion_index": 0.794,
+    "free_parking": 87
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 144
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 34.3,
+    "congestion_index": 0.515,
+    "free_parking": 84
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 35
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 57.1,
+    "congestion_index": 0.515,
+    "free_parking": 44
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 121
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 110
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 37.1,
+    "congestion_index": 0.459,
+    "free_parking": 79
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 103
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 61.8,
+    "congestion_index": 0.459,
+    "free_parking": 98
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 130
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 20
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 40.0,
+    "congestion_index": 0.4,
+    "free_parking": 100
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 99
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 66.7,
+    "congestion_index": 0.4,
+    "free_parking": 100
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 133
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周一",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 66
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周一",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 138
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周一",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 148
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周一",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 79
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周一",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 147
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 107
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 44
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 85
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 126
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 152
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 129
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 86
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 114
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 150
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 163
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 109
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 170
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 124
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 157
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 138
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 43
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 161
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 173
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 62
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 141
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 145
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 66
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 174
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 63
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 164
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 153
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 131
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 89
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 50
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 129
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 101
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 40.0,
+    "congestion_index": 0.4,
+    "free_parking": 96
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 116
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 66.7,
+    "congestion_index": 0.4,
+    "free_parking": 99
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 148
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 7,
+    "vehicle_flow": 4426,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.885,
+    "free_parking": 22
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 7,
+    "vehicle_flow": 4645,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.929,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 7,
+    "vehicle_flow": 4529,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.906,
+    "free_parking": 82
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 7,
+    "vehicle_flow": 4879,
+    "avg_speed_kmh": 18.7,
+    "congestion_index": 0.976,
+    "free_parking": 77
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 7,
+    "vehicle_flow": 4975,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.995,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 8,
+    "vehicle_flow": 4750,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.95,
+    "free_parking": 43
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 8,
+    "vehicle_flow": 4975,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.995,
+    "free_parking": 43
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 8,
+    "vehicle_flow": 4786,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.957,
+    "free_parking": 65
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 8,
+    "vehicle_flow": 4134,
+    "avg_speed_kmh": 31.1,
+    "congestion_index": 0.827,
+    "free_parking": 56
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 8,
+    "vehicle_flow": 4514,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.903,
+    "free_parking": 55
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 9,
+    "vehicle_flow": 4043,
+    "avg_speed_kmh": 16.3,
+    "congestion_index": 0.809,
+    "free_parking": 73
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 9,
+    "vehicle_flow": 4165,
+    "avg_speed_kmh": 18.3,
+    "congestion_index": 0.833,
+    "free_parking": 106
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 9,
+    "vehicle_flow": 4738,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.948,
+    "free_parking": 7
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 9,
+    "vehicle_flow": 4861,
+    "avg_speed_kmh": 19.0,
+    "congestion_index": 0.972,
+    "free_parking": 50
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 9,
+    "vehicle_flow": 4061,
+    "avg_speed_kmh": 16.2,
+    "congestion_index": 0.812,
+    "free_parking": 68
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 54
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 29.4,
+    "congestion_index": 0.612,
+    "free_parking": 3
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 132
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 49.0,
+    "congestion_index": 0.612,
+    "free_parking": 69
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 121
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 88
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 27.5,
+    "congestion_index": 0.649,
+    "free_parking": 122
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 7
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 45.9,
+    "congestion_index": 0.649,
+    "free_parking": 92
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 1
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 17
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 26.1,
+    "congestion_index": 0.677,
+    "free_parking": 82
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 130
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 43.6,
+    "congestion_index": 0.677,
+    "free_parking": 49
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 51
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 97
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 25.3,
+    "congestion_index": 0.694,
+    "free_parking": 19
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 110
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 42.1,
+    "congestion_index": 0.694,
+    "free_parking": 92
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 32
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 28
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 25.0,
+    "congestion_index": 0.7,
+    "free_parking": 51
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 59
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 41.7,
+    "congestion_index": 0.7,
+    "free_parking": 104
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 91
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 123
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 25.3,
+    "congestion_index": 0.694,
+    "free_parking": 77
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 128
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 42.1,
+    "congestion_index": 0.694,
+    "free_parking": 61
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 89
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 130
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 26.1,
+    "congestion_index": 0.677,
+    "free_parking": 125
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 89
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 43.6,
+    "congestion_index": 0.677,
+    "free_parking": 8
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 17,
+    "vehicle_flow": 3972,
+    "avg_speed_kmh": 16.9,
+    "congestion_index": 0.794,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 17,
+    "vehicle_flow": 4141,
+    "avg_speed_kmh": 18.6,
+    "congestion_index": 0.828,
+    "free_parking": 85
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 17,
+    "vehicle_flow": 4368,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.874,
+    "free_parking": 84
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 17,
+    "vehicle_flow": 3882,
+    "avg_speed_kmh": 35.3,
+    "congestion_index": 0.776,
+    "free_parking": 104
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 17,
+    "vehicle_flow": 4052,
+    "avg_speed_kmh": 16.2,
+    "congestion_index": 0.81,
+    "free_parking": 116
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 18,
+    "vehicle_flow": 4336,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.867,
+    "free_parking": 101
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 18,
+    "vehicle_flow": 4480,
+    "avg_speed_kmh": 15.2,
+    "congestion_index": 0.896,
+    "free_parking": 6
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 18,
+    "vehicle_flow": 3913,
+    "avg_speed_kmh": 17.4,
+    "congestion_index": 0.783,
+    "free_parking": 34
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 18,
+    "vehicle_flow": 3978,
+    "avg_speed_kmh": 33.7,
+    "congestion_index": 0.796,
+    "free_parking": 89
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 18,
+    "vehicle_flow": 4483,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.897,
+    "free_parking": 76
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 19,
+    "vehicle_flow": 3801,
+    "avg_speed_kmh": 18.3,
+    "congestion_index": 0.76,
+    "free_parking": 94
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 19,
+    "vehicle_flow": 3903,
+    "avg_speed_kmh": 21.0,
+    "congestion_index": 0.781,
+    "free_parking": 68
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 19,
+    "vehicle_flow": 4083,
+    "avg_speed_kmh": 16.0,
+    "congestion_index": 0.817,
+    "free_parking": 16
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 19,
+    "vehicle_flow": 4591,
+    "avg_speed_kmh": 23.5,
+    "congestion_index": 0.918,
+    "free_parking": 19
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 19,
+    "vehicle_flow": 4575,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.915,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 43
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 34.3,
+    "congestion_index": 0.515,
+    "free_parking": 123
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 52
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 57.1,
+    "congestion_index": 0.515,
+    "free_parking": 92
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 30
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 23
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 37.1,
+    "congestion_index": 0.459,
+    "free_parking": 51
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 38
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 61.8,
+    "congestion_index": 0.459,
+    "free_parking": 146
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 11
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 64
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 40.0,
+    "congestion_index": 0.4,
+    "free_parking": 153
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 107
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 66.7,
+    "congestion_index": 0.4,
+    "free_parking": 34
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 115
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周二",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 48
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周二",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 68
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周二",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 110
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周二",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 111
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周二",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 64
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 136
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 57
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 88
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 190
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 164
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 84
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 176
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 182
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 149
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 183
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 65
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 192
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 65
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 115
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 152
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 93
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 46
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 180
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 163
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 188
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 98
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 178
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 62
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 180
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 174
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 102
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 84
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 189
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 124
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 90
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 75
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 40.0,
+    "congestion_index": 0.4,
+    "free_parking": 60
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 102
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 66.7,
+    "congestion_index": 0.4,
+    "free_parking": 140
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 85
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 7,
+    "vehicle_flow": 4813,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.963,
+    "free_parking": 73
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 7,
+    "vehicle_flow": 4638,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.928,
+    "free_parking": 25
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 7,
+    "vehicle_flow": 4029,
+    "avg_speed_kmh": 16.4,
+    "congestion_index": 0.806,
+    "free_parking": 15
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 7,
+    "vehicle_flow": 4046,
+    "avg_speed_kmh": 32.6,
+    "congestion_index": 0.809,
+    "free_parking": 37
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 7,
+    "vehicle_flow": 4913,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.983,
+    "free_parking": 93
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 8,
+    "vehicle_flow": 4725,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.945,
+    "free_parking": 62
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 8,
+    "vehicle_flow": 4391,
+    "avg_speed_kmh": 16.1,
+    "congestion_index": 0.878,
+    "free_parking": 43
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 8,
+    "vehicle_flow": 4083,
+    "avg_speed_kmh": 16.0,
+    "congestion_index": 0.817,
+    "free_parking": 53
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 8,
+    "vehicle_flow": 4138,
+    "avg_speed_kmh": 31.0,
+    "congestion_index": 0.828,
+    "free_parking": 72
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 8,
+    "vehicle_flow": 4798,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.96,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 9,
+    "vehicle_flow": 4110,
+    "avg_speed_kmh": 15.7,
+    "congestion_index": 0.822,
+    "free_parking": 22
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 9,
+    "vehicle_flow": 4743,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.949,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 9,
+    "vehicle_flow": 4016,
+    "avg_speed_kmh": 16.5,
+    "congestion_index": 0.803,
+    "free_parking": 1
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 9,
+    "vehicle_flow": 4680,
+    "avg_speed_kmh": 22.0,
+    "congestion_index": 0.936,
+    "free_parking": 15
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 9,
+    "vehicle_flow": 4525,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.905,
+    "free_parking": 49
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 9
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 29.4,
+    "congestion_index": 0.612,
+    "free_parking": 39
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 56
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 49.0,
+    "congestion_index": 0.612,
+    "free_parking": 114
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 50
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 75
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 27.5,
+    "congestion_index": 0.649,
+    "free_parking": 133
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 76
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 45.9,
+    "congestion_index": 0.649,
+    "free_parking": 129
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 119
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 81
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 26.1,
+    "congestion_index": 0.677,
+    "free_parking": 116
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 124
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 43.6,
+    "congestion_index": 0.677,
+    "free_parking": 30
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 5
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 22
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 25.3,
+    "congestion_index": 0.694,
+    "free_parking": 17
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 120
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 42.1,
+    "congestion_index": 0.694,
+    "free_parking": 51
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 93
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 27
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 25.0,
+    "congestion_index": 0.7,
+    "free_parking": 110
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 127
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 41.7,
+    "congestion_index": 0.7,
+    "free_parking": 130
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 62
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 25.3,
+    "congestion_index": 0.694,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 69
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 42.1,
+    "congestion_index": 0.694,
+    "free_parking": 105
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 96
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 26.1,
+    "congestion_index": 0.677,
+    "free_parking": 93
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 119
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 43.6,
+    "congestion_index": 0.677,
+    "free_parking": 26
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 70
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 17,
+    "vehicle_flow": 4561,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.912,
+    "free_parking": 17
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 17,
+    "vehicle_flow": 3965,
+    "avg_speed_kmh": 20.3,
+    "congestion_index": 0.793,
+    "free_parking": 12
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 17,
+    "vehicle_flow": 4261,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.852,
+    "free_parking": 104
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 17,
+    "vehicle_flow": 4257,
+    "avg_speed_kmh": 29.0,
+    "congestion_index": 0.851,
+    "free_parking": 45
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 17,
+    "vehicle_flow": 4244,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.849,
+    "free_parking": 21
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 18,
+    "vehicle_flow": 3989,
+    "avg_speed_kmh": 16.8,
+    "congestion_index": 0.798,
+    "free_parking": 25
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 18,
+    "vehicle_flow": 3959,
+    "avg_speed_kmh": 20.4,
+    "congestion_index": 0.792,
+    "free_parking": 69
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 18,
+    "vehicle_flow": 4460,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.892,
+    "free_parking": 27
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 18,
+    "vehicle_flow": 4184,
+    "avg_speed_kmh": 30.3,
+    "congestion_index": 0.837,
+    "free_parking": 26
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 18,
+    "vehicle_flow": 4142,
+    "avg_speed_kmh": 15.5,
+    "congestion_index": 0.828,
+    "free_parking": 39
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 19,
+    "vehicle_flow": 4485,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.897,
+    "free_parking": 89
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 19,
+    "vehicle_flow": 4055,
+    "avg_speed_kmh": 19.5,
+    "congestion_index": 0.811,
+    "free_parking": 110
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 19,
+    "vehicle_flow": 4304,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.861,
+    "free_parking": 21
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 19,
+    "vehicle_flow": 3813,
+    "avg_speed_kmh": 36.5,
+    "congestion_index": 0.763,
+    "free_parking": 18
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 19,
+    "vehicle_flow": 4082,
+    "avg_speed_kmh": 16.0,
+    "congestion_index": 0.816,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 89
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 34.3,
+    "congestion_index": 0.515,
+    "free_parking": 13
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 65
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 57.1,
+    "congestion_index": 0.515,
+    "free_parking": 35
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 32
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 70
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 37.1,
+    "congestion_index": 0.459,
+    "free_parking": 34
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 146
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 61.8,
+    "congestion_index": 0.459,
+    "free_parking": 9
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 56
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 123
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 40.0,
+    "congestion_index": 0.4,
+    "free_parking": 78
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 16
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 66.7,
+    "congestion_index": 0.4,
+    "free_parking": 74
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 138
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周三",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 42
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周三",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 125
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周三",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 191
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周三",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 192
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周三",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 42
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 175
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 63
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 105
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 191
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 187
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 51
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 133
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 52
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 170
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 125
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 128
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 188
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 60
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 180
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 73
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 136
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 172
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 72
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 159
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 129
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 102
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 116
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 164
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 117
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 66
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 149
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 148
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 166
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 44
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 125
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 108
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 40.0,
+    "congestion_index": 0.4,
+    "free_parking": 138
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 159
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 66.7,
+    "congestion_index": 0.4,
+    "free_parking": 119
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 67
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 7,
+    "vehicle_flow": 4132,
+    "avg_speed_kmh": 15.6,
+    "congestion_index": 0.826,
+    "free_parking": 48
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 7,
+    "vehicle_flow": 4620,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.924,
+    "free_parking": 76
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 7,
+    "vehicle_flow": 4534,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.907,
+    "free_parking": 48
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 7,
+    "vehicle_flow": 4260,
+    "avg_speed_kmh": 29.0,
+    "congestion_index": 0.852,
+    "free_parking": 19
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 7,
+    "vehicle_flow": 4235,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.847,
+    "free_parking": 71
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 8,
+    "vehicle_flow": 4409,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.882,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 8,
+    "vehicle_flow": 4233,
+    "avg_speed_kmh": 17.7,
+    "congestion_index": 0.847,
+    "free_parking": 3
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 8,
+    "vehicle_flow": 4279,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.856,
+    "free_parking": 75
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 8,
+    "vehicle_flow": 4614,
+    "avg_speed_kmh": 23.1,
+    "congestion_index": 0.923,
+    "free_parking": 50
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 8,
+    "vehicle_flow": 4133,
+    "avg_speed_kmh": 15.6,
+    "congestion_index": 0.827,
+    "free_parking": 86
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 9,
+    "vehicle_flow": 4720,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.944,
+    "free_parking": 71
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 9,
+    "vehicle_flow": 4282,
+    "avg_speed_kmh": 17.2,
+    "congestion_index": 0.856,
+    "free_parking": 95
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 9,
+    "vehicle_flow": 4908,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.982,
+    "free_parking": 39
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 9,
+    "vehicle_flow": 4420,
+    "avg_speed_kmh": 26.3,
+    "congestion_index": 0.884,
+    "free_parking": 25
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 9,
+    "vehicle_flow": 4396,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.879,
+    "free_parking": 6
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 111
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 29.4,
+    "congestion_index": 0.612,
+    "free_parking": 79
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 70
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 49.0,
+    "congestion_index": 0.612,
+    "free_parking": 27
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 70
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 68
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 27.5,
+    "congestion_index": 0.649,
+    "free_parking": 83
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 50
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 45.9,
+    "congestion_index": 0.649,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 28
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 102
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 26.1,
+    "congestion_index": 0.677,
+    "free_parking": 82
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 125
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 43.6,
+    "congestion_index": 0.677,
+    "free_parking": 118
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 90
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 50
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 25.3,
+    "congestion_index": 0.694,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 42.1,
+    "congestion_index": 0.694,
+    "free_parking": 4
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 78
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 62
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 25.0,
+    "congestion_index": 0.7,
+    "free_parking": 27
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 118
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 41.7,
+    "congestion_index": 0.7,
+    "free_parking": 58
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 34
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 49
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 25.3,
+    "congestion_index": 0.694,
+    "free_parking": 74
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 42.1,
+    "congestion_index": 0.694,
+    "free_parking": 2
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 130
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 73
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 26.1,
+    "congestion_index": 0.677,
+    "free_parking": 79
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 49
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 43.6,
+    "congestion_index": 0.677,
+    "free_parking": 6
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 112
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 17,
+    "vehicle_flow": 3914,
+    "avg_speed_kmh": 17.4,
+    "congestion_index": 0.783,
+    "free_parking": 87
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 17,
+    "vehicle_flow": 4157,
+    "avg_speed_kmh": 18.4,
+    "congestion_index": 0.831,
+    "free_parking": 34
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 17,
+    "vehicle_flow": 4077,
+    "avg_speed_kmh": 16.0,
+    "congestion_index": 0.815,
+    "free_parking": 17
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 17,
+    "vehicle_flow": 4451,
+    "avg_speed_kmh": 25.8,
+    "congestion_index": 0.89,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 17,
+    "vehicle_flow": 4246,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.849,
+    "free_parking": 15
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 18,
+    "vehicle_flow": 3874,
+    "avg_speed_kmh": 17.7,
+    "congestion_index": 0.775,
+    "free_parking": 86
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 18,
+    "vehicle_flow": 4223,
+    "avg_speed_kmh": 17.8,
+    "congestion_index": 0.845,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 18,
+    "vehicle_flow": 4007,
+    "avg_speed_kmh": 16.6,
+    "congestion_index": 0.801,
+    "free_parking": 103
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 18,
+    "vehicle_flow": 4029,
+    "avg_speed_kmh": 32.9,
+    "congestion_index": 0.806,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 18,
+    "vehicle_flow": 4081,
+    "avg_speed_kmh": 16.0,
+    "congestion_index": 0.816,
+    "free_parking": 105
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 19,
+    "vehicle_flow": 4594,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.919,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 19,
+    "vehicle_flow": 4042,
+    "avg_speed_kmh": 19.6,
+    "congestion_index": 0.808,
+    "free_parking": 112
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 19,
+    "vehicle_flow": 4499,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.9,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 19,
+    "vehicle_flow": 4429,
+    "avg_speed_kmh": 26.2,
+    "congestion_index": 0.886,
+    "free_parking": 67
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 19,
+    "vehicle_flow": 4007,
+    "avg_speed_kmh": 16.6,
+    "congestion_index": 0.801,
+    "free_parking": 110
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 96
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 34.3,
+    "congestion_index": 0.515,
+    "free_parking": 29
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 149
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 57.1,
+    "congestion_index": 0.515,
+    "free_parking": 144
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 88
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 71
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 37.1,
+    "congestion_index": 0.459,
+    "free_parking": 117
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 8
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 61.8,
+    "congestion_index": 0.459,
+    "free_parking": 154
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 117
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 44
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 40.0,
+    "congestion_index": 0.4,
+    "free_parking": 142
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 49
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 66.7,
+    "congestion_index": 0.4,
+    "free_parking": 55
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 142
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周四",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 168
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周四",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 55
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周四",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 72
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周四",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 110
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周四",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 143
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 53
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 113
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 101
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 126
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 0,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 69
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 149
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 169
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 79
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 172
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 1,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 129
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 46
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 84
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 131
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 167
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 2,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 84
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 181
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 175
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 62
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 108
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 3,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 185
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 122
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 89
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 191
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 119
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 4,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 92
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 112
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 99
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 47
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 116
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 5,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 67
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 114
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 40.0,
+    "congestion_index": 0.4,
+    "free_parking": 35
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 34
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 66.7,
+    "congestion_index": 0.4,
+    "free_parking": 39
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 6,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 152
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 7,
+    "vehicle_flow": 4870,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.974,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 7,
+    "vehicle_flow": 4738,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.948,
+    "free_parking": 19
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 7,
+    "vehicle_flow": 4419,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.884,
+    "free_parking": 19
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 7,
+    "vehicle_flow": 4325,
+    "avg_speed_kmh": 27.9,
+    "congestion_index": 0.865,
+    "free_parking": 80
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 7,
+    "vehicle_flow": 4398,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.88,
+    "free_parking": 83
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 8,
+    "vehicle_flow": 4774,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.955,
+    "free_parking": 98
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 8,
+    "vehicle_flow": 4043,
+    "avg_speed_kmh": 19.6,
+    "congestion_index": 0.809,
+    "free_parking": 32
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 8,
+    "vehicle_flow": 4330,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.866,
+    "free_parking": 98
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 8,
+    "vehicle_flow": 4805,
+    "avg_speed_kmh": 19.9,
+    "congestion_index": 0.961,
+    "free_parking": 27
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 8,
+    "vehicle_flow": 4708,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.942,
+    "free_parking": 94
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 9,
+    "vehicle_flow": 4699,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.94,
+    "free_parking": 28
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 9,
+    "vehicle_flow": 4329,
+    "avg_speed_kmh": 16.7,
+    "congestion_index": 0.866,
+    "free_parking": 37
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 9,
+    "vehicle_flow": 4262,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.852,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 9,
+    "vehicle_flow": 4623,
+    "avg_speed_kmh": 23.0,
+    "congestion_index": 0.925,
+    "free_parking": 52
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 9,
+    "vehicle_flow": 4766,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.953,
+    "free_parking": 2
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 91
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 29.4,
+    "congestion_index": 0.612,
+    "free_parking": 127
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 122
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 49.0,
+    "congestion_index": 0.612,
+    "free_parking": 81
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 10,
+    "vehicle_flow": 3060,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.612,
+    "free_parking": 105
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 32
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 27.5,
+    "congestion_index": 0.649,
+    "free_parking": 64
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 45.9,
+    "congestion_index": 0.649,
+    "free_parking": 132
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 11,
+    "vehicle_flow": 3247,
+    "avg_speed_kmh": 22.9,
+    "congestion_index": 0.649,
+    "free_parking": 39
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 37
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 26.1,
+    "congestion_index": 0.677,
+    "free_parking": 93
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 60
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 43.6,
+    "congestion_index": 0.677,
+    "free_parking": 105
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 12,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 94
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 50
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 25.3,
+    "congestion_index": 0.694,
+    "free_parking": 107
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 39
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 42.1,
+    "congestion_index": 0.694,
+    "free_parking": 89
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 13,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 68
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 32
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 25.0,
+    "congestion_index": 0.7,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 41.7,
+    "congestion_index": 0.7,
+    "free_parking": 8
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 14,
+    "vehicle_flow": 3500,
+    "avg_speed_kmh": 20.8,
+    "congestion_index": 0.7,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 50
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 25.3,
+    "congestion_index": 0.694,
+    "free_parking": 22
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 32
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 42.1,
+    "congestion_index": 0.694,
+    "free_parking": 95
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 15,
+    "vehicle_flow": 3471,
+    "avg_speed_kmh": 21.1,
+    "congestion_index": 0.694,
+    "free_parking": 64
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 81
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 26.1,
+    "congestion_index": 0.677,
+    "free_parking": 74
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 14
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 43.6,
+    "congestion_index": 0.677,
+    "free_parking": 71
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 16,
+    "vehicle_flow": 3385,
+    "avg_speed_kmh": 21.8,
+    "congestion_index": 0.677,
+    "free_parking": 13
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 17,
+    "vehicle_flow": 4269,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.854,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 17,
+    "vehicle_flow": 3901,
+    "avg_speed_kmh": 21.0,
+    "congestion_index": 0.78,
+    "free_parking": 78
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 17,
+    "vehicle_flow": 4271,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.854,
+    "free_parking": 75
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 17,
+    "vehicle_flow": 4484,
+    "avg_speed_kmh": 25.3,
+    "congestion_index": 0.897,
+    "free_parking": 15
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 17,
+    "vehicle_flow": 4231,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.846,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 18,
+    "vehicle_flow": 4387,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.877,
+    "free_parking": 27
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 18,
+    "vehicle_flow": 4467,
+    "avg_speed_kmh": 15.3,
+    "congestion_index": 0.893,
+    "free_parking": 26
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 18,
+    "vehicle_flow": 4292,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.858,
+    "free_parking": 14
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 18,
+    "vehicle_flow": 4532,
+    "avg_speed_kmh": 24.5,
+    "congestion_index": 0.906,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 18,
+    "vehicle_flow": 3994,
+    "avg_speed_kmh": 16.7,
+    "congestion_index": 0.799,
+    "free_parking": 16
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 19,
+    "vehicle_flow": 4088,
+    "avg_speed_kmh": 15.9,
+    "congestion_index": 0.818,
+    "free_parking": 49
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 19,
+    "vehicle_flow": 4012,
+    "avg_speed_kmh": 19.9,
+    "congestion_index": 0.802,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 19,
+    "vehicle_flow": 4481,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.896,
+    "free_parking": 47
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 19,
+    "vehicle_flow": 4433,
+    "avg_speed_kmh": 26.1,
+    "congestion_index": 0.887,
+    "free_parking": 75
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 19,
+    "vehicle_flow": 4598,
+    "avg_speed_kmh": 15,
+    "congestion_index": 0.92,
+    "free_parking": 52
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 119
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 34.3,
+    "congestion_index": 0.515,
+    "free_parking": 21
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 7
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 57.1,
+    "congestion_index": 0.515,
+    "free_parking": 149
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 20,
+    "vehicle_flow": 2574,
+    "avg_speed_kmh": 28.5,
+    "congestion_index": 0.515,
+    "free_parking": 125
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 67
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 37.1,
+    "congestion_index": 0.459,
+    "free_parking": 64
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 152
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 61.8,
+    "congestion_index": 0.459,
+    "free_parking": 62
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 21,
+    "vehicle_flow": 2292,
+    "avg_speed_kmh": 30.9,
+    "congestion_index": 0.459,
+    "free_parking": 149
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 113
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 40.0,
+    "congestion_index": 0.4,
+    "free_parking": 156
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 45
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 66.7,
+    "congestion_index": 0.4,
+    "free_parking": 154
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 22,
+    "vehicle_flow": 2000,
+    "avg_speed_kmh": 33.3,
+    "congestion_index": 0.4,
+    "free_parking": 18
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周五",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 186
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周五",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 56.0,
+    "congestion_index": 0.08,
+    "free_parking": 144
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周五",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 93
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周五",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 93.3,
+    "congestion_index": 0.08,
+    "free_parking": 114
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周五",
+    "hour": 23,
+    "vehicle_flow": 400,
+    "avg_speed_kmh": 46.7,
+    "congestion_index": 0.08,
+    "free_parking": 43
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 0,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 122
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 0,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 75
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 0,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 113
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 0,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 144
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 0,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 114
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 1,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 189
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 1,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 145
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 1,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 110
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 1,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 73
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 1,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 54
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 2,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 149
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 2,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 44
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 2,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 157
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 2,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 141
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 2,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 71
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 3,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 183
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 3,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 163
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 3,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 72
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 3,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 134
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 3,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 113
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 4,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 178
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 4,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 128
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 4,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 50
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 4,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 152
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 4,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 112
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 5,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 72
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 5,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 104
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 5,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 160
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 5,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 101
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 5,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 158
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 6,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 43.3,
+    "congestion_index": 0.16,
+    "free_parking": 80
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 6,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 52.0,
+    "congestion_index": 0.16,
+    "free_parking": 127
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 6,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 43.3,
+    "congestion_index": 0.16,
+    "free_parking": 75
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 6,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 86.7,
+    "congestion_index": 0.16,
+    "free_parking": 87
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 6,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 43.3,
+    "congestion_index": 0.16,
+    "free_parking": 134
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 7,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 36.9,
+    "congestion_index": 0.315,
+    "free_parking": 137
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 7,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 44.2,
+    "congestion_index": 0.315,
+    "free_parking": 135
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 7,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 36.9,
+    "congestion_index": 0.315,
+    "free_parking": 27
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 7,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 73.7,
+    "congestion_index": 0.315,
+    "free_parking": 80
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 7,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 36.9,
+    "congestion_index": 0.315,
+    "free_parking": 39
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 8,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.46,
+    "free_parking": 115
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 8,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 37.0,
+    "congestion_index": 0.46,
+    "free_parking": 87
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 8,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.46,
+    "free_parking": 13
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 8,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 61.7,
+    "congestion_index": 0.46,
+    "free_parking": 28
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 8,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.46,
+    "free_parking": 77
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 9,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 25.7,
+    "congestion_index": 0.584,
+    "free_parking": 12
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 9,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.584,
+    "free_parking": 101
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 9,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 25.7,
+    "congestion_index": 0.584,
+    "free_parking": 100
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 9,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 51.3,
+    "congestion_index": 0.584,
+    "free_parking": 117
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 9,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 25.7,
+    "congestion_index": 0.584,
+    "free_parking": 36
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 10,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 21.7,
+    "congestion_index": 0.68,
+    "free_parking": 31
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 10,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 26.0,
+    "congestion_index": 0.68,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 10,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 21.7,
+    "congestion_index": 0.68,
+    "free_parking": 55
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 10,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 43.4,
+    "congestion_index": 0.68,
+    "free_parking": 40
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 10,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 21.7,
+    "congestion_index": 0.68,
+    "free_parking": 106
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 11,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 19.2,
+    "congestion_index": 0.74,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 11,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 23.0,
+    "congestion_index": 0.74,
+    "free_parking": 125
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 11,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 19.2,
+    "congestion_index": 0.74,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 11,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 38.4,
+    "congestion_index": 0.74,
+    "free_parking": 63
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 11,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 19.2,
+    "congestion_index": 0.74,
+    "free_parking": 33
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 12,
+    "vehicle_flow": 3800,
+    "avg_speed_kmh": 18.3,
+    "congestion_index": 0.76,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 12,
+    "vehicle_flow": 3800,
+    "avg_speed_kmh": 22.0,
+    "congestion_index": 0.76,
+    "free_parking": 19
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 12,
+    "vehicle_flow": 3800,
+    "avg_speed_kmh": 18.3,
+    "congestion_index": 0.76,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 12,
+    "vehicle_flow": 3800,
+    "avg_speed_kmh": 36.7,
+    "congestion_index": 0.76,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 12,
+    "vehicle_flow": 3800,
+    "avg_speed_kmh": 18.3,
+    "congestion_index": 0.76,
+    "free_parking": 103
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 13,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 19.2,
+    "congestion_index": 0.74,
+    "free_parking": 12
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 13,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 23.0,
+    "congestion_index": 0.74,
+    "free_parking": 14
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 13,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 19.2,
+    "congestion_index": 0.74,
+    "free_parking": 123
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 13,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 38.4,
+    "congestion_index": 0.74,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 13,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 19.2,
+    "congestion_index": 0.74,
+    "free_parking": 15
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 14,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 21.7,
+    "congestion_index": 0.68,
+    "free_parking": 34
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 14,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 26.0,
+    "congestion_index": 0.68,
+    "free_parking": 40
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 14,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 21.7,
+    "congestion_index": 0.68,
+    "free_parking": 19
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 14,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 43.4,
+    "congestion_index": 0.68,
+    "free_parking": 33
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 14,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 21.7,
+    "congestion_index": 0.68,
+    "free_parking": 80
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 15,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 25.7,
+    "congestion_index": 0.584,
+    "free_parking": 17
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 15,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.584,
+    "free_parking": 130
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 15,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 25.7,
+    "congestion_index": 0.584,
+    "free_parking": 51
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 15,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 51.3,
+    "congestion_index": 0.584,
+    "free_parking": 44
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 15,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 25.7,
+    "congestion_index": 0.584,
+    "free_parking": 32
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 16,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.46,
+    "free_parking": 47
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 16,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 37.0,
+    "congestion_index": 0.46,
+    "free_parking": 84
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 16,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.46,
+    "free_parking": 17
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 16,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 61.7,
+    "congestion_index": 0.46,
+    "free_parking": 143
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 16,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.46,
+    "free_parking": 92
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 17,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 36.9,
+    "congestion_index": 0.315,
+    "free_parking": 120
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 17,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 44.2,
+    "congestion_index": 0.315,
+    "free_parking": 69
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 17,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 36.9,
+    "congestion_index": 0.315,
+    "free_parking": 26
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 17,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 73.7,
+    "congestion_index": 0.315,
+    "free_parking": 83
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 17,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 36.9,
+    "congestion_index": 0.315,
+    "free_parking": 76
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 18,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 43.3,
+    "congestion_index": 0.16,
+    "free_parking": 84
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 18,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 52.0,
+    "congestion_index": 0.16,
+    "free_parking": 113
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 18,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 43.3,
+    "congestion_index": 0.16,
+    "free_parking": 182
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 18,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 86.7,
+    "congestion_index": 0.16,
+    "free_parking": 177
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 18,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 43.3,
+    "congestion_index": 0.16,
+    "free_parking": 172
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 19,
+    "vehicle_flow": 23,
+    "avg_speed_kmh": 49.8,
+    "congestion_index": 0.005,
+    "free_parking": 183
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 19,
+    "vehicle_flow": 23,
+    "avg_speed_kmh": 59.8,
+    "congestion_index": 0.005,
+    "free_parking": 71
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 19,
+    "vehicle_flow": 23,
+    "avg_speed_kmh": 49.8,
+    "congestion_index": 0.005,
+    "free_parking": 175
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 19,
+    "vehicle_flow": 23,
+    "avg_speed_kmh": 99.6,
+    "congestion_index": 0.005,
+    "free_parking": 116
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 19,
+    "vehicle_flow": 23,
+    "avg_speed_kmh": 49.8,
+    "congestion_index": 0.005,
+    "free_parking": 64
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 20,
+    "vehicle_flow": -699,
+    "avg_speed_kmh": 55.8,
+    "congestion_index": -0.14,
+    "free_parking": 101
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 20,
+    "vehicle_flow": -699,
+    "avg_speed_kmh": 67.0,
+    "congestion_index": -0.14,
+    "free_parking": 181
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 20,
+    "vehicle_flow": -699,
+    "avg_speed_kmh": 55.8,
+    "congestion_index": -0.14,
+    "free_parking": 143
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 20,
+    "vehicle_flow": -699,
+    "avg_speed_kmh": 111.7,
+    "congestion_index": -0.14,
+    "free_parking": 75
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 20,
+    "vehicle_flow": -699,
+    "avg_speed_kmh": 55.8,
+    "congestion_index": -0.14,
+    "free_parking": 72
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 21,
+    "vehicle_flow": -1321,
+    "avg_speed_kmh": 61.0,
+    "congestion_index": -0.264,
+    "free_parking": 179
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 21,
+    "vehicle_flow": -1321,
+    "avg_speed_kmh": 73.2,
+    "congestion_index": -0.264,
+    "free_parking": 167
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 21,
+    "vehicle_flow": -1321,
+    "avg_speed_kmh": 61.0,
+    "congestion_index": -0.264,
+    "free_parking": 192
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 21,
+    "vehicle_flow": -1321,
+    "avg_speed_kmh": 122.0,
+    "congestion_index": -0.264,
+    "free_parking": 95
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 21,
+    "vehicle_flow": -1321,
+    "avg_speed_kmh": 61.0,
+    "congestion_index": -0.264,
+    "free_parking": 141
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 22,
+    "vehicle_flow": -1798,
+    "avg_speed_kmh": 65.0,
+    "congestion_index": -0.36,
+    "free_parking": 184
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 22,
+    "vehicle_flow": -1798,
+    "avg_speed_kmh": 78.0,
+    "congestion_index": -0.36,
+    "free_parking": 192
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 22,
+    "vehicle_flow": -1798,
+    "avg_speed_kmh": 65.0,
+    "congestion_index": -0.36,
+    "free_parking": 213
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 22,
+    "vehicle_flow": -1798,
+    "avg_speed_kmh": 130.0,
+    "congestion_index": -0.36,
+    "free_parking": 198
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 22,
+    "vehicle_flow": -1798,
+    "avg_speed_kmh": 65.0,
+    "congestion_index": -0.36,
+    "free_parking": 107
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周六",
+    "hour": 23,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 139
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周六",
+    "hour": 23,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 159
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周六",
+    "hour": 23,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 170
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周六",
+    "hour": 23,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 113
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周六",
+    "hour": 23,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 122
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 0,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 91
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 0,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 106
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 0,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 73
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 0,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 136
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 0,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 78
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 1,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 155
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 1,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 51
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 1,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 45
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 1,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 69
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 1,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 51
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 2,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 60
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 2,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 172
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 2,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 110
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 2,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 63
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 2,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 44
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 3,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 143
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 3,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 88
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 3,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 129
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 3,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 136
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 3,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 84
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 4,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 126
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 4,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 106
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 4,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 189
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 4,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 126
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 4,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 111
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 5,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 181
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 5,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 92
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 5,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 96
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 5,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 176
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 5,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 63
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 6,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 43.3,
+    "congestion_index": 0.16,
+    "free_parking": 68
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 6,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 52.0,
+    "congestion_index": 0.16,
+    "free_parking": 59
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 6,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 43.3,
+    "congestion_index": 0.16,
+    "free_parking": 48
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 6,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 86.7,
+    "congestion_index": 0.16,
+    "free_parking": 142
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 6,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 43.3,
+    "congestion_index": 0.16,
+    "free_parking": 166
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 7,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 36.9,
+    "congestion_index": 0.315,
+    "free_parking": 99
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 7,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 44.2,
+    "congestion_index": 0.315,
+    "free_parking": 38
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 7,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 36.9,
+    "congestion_index": 0.315,
+    "free_parking": 79
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 7,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 73.7,
+    "congestion_index": 0.315,
+    "free_parking": 84
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 7,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 36.9,
+    "congestion_index": 0.315,
+    "free_parking": 36
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 8,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.46,
+    "free_parking": 6
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 8,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 37.0,
+    "congestion_index": 0.46,
+    "free_parking": 35
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 8,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.46,
+    "free_parking": 137
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 8,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 61.7,
+    "congestion_index": 0.46,
+    "free_parking": 87
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 8,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.46,
+    "free_parking": 33
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 9,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 25.7,
+    "congestion_index": 0.584,
+    "free_parking": 28
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 9,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.584,
+    "free_parking": 69
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 9,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 25.7,
+    "congestion_index": 0.584,
+    "free_parking": 132
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 9,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 51.3,
+    "congestion_index": 0.584,
+    "free_parking": 34
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 9,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 25.7,
+    "congestion_index": 0.584,
+    "free_parking": 87
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 10,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 21.7,
+    "congestion_index": 0.68,
+    "free_parking": 86
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 10,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 26.0,
+    "congestion_index": 0.68,
+    "free_parking": 41
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 10,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 21.7,
+    "congestion_index": 0.68,
+    "free_parking": 80
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 10,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 43.4,
+    "congestion_index": 0.68,
+    "free_parking": 98
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 10,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 21.7,
+    "congestion_index": 0.68,
+    "free_parking": 86
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 11,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 19.2,
+    "congestion_index": 0.74,
+    "free_parking": 45
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 11,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 23.0,
+    "congestion_index": 0.74,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 11,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 19.2,
+    "congestion_index": 0.74,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 11,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 38.4,
+    "congestion_index": 0.74,
+    "free_parking": 14
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 11,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 19.2,
+    "congestion_index": 0.74,
+    "free_parking": 105
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 12,
+    "vehicle_flow": 3800,
+    "avg_speed_kmh": 18.3,
+    "congestion_index": 0.76,
+    "free_parking": 1
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 12,
+    "vehicle_flow": 3800,
+    "avg_speed_kmh": 22.0,
+    "congestion_index": 0.76,
+    "free_parking": 7
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 12,
+    "vehicle_flow": 3800,
+    "avg_speed_kmh": 18.3,
+    "congestion_index": 0.76,
+    "free_parking": 52
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 12,
+    "vehicle_flow": 3800,
+    "avg_speed_kmh": 36.7,
+    "congestion_index": 0.76,
+    "free_parking": 10
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 12,
+    "vehicle_flow": 3800,
+    "avg_speed_kmh": 18.3,
+    "congestion_index": 0.76,
+    "free_parking": 118
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 13,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 19.2,
+    "congestion_index": 0.74,
+    "free_parking": 82
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 13,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 23.0,
+    "congestion_index": 0.74,
+    "free_parking": 102
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 13,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 19.2,
+    "congestion_index": 0.74,
+    "free_parking": 122
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 13,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 38.4,
+    "congestion_index": 0.74,
+    "free_parking": 118
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 13,
+    "vehicle_flow": 3697,
+    "avg_speed_kmh": 19.2,
+    "congestion_index": 0.74,
+    "free_parking": 55
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 14,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 21.7,
+    "congestion_index": 0.68,
+    "free_parking": 120
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 14,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 26.0,
+    "congestion_index": 0.68,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 14,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 21.7,
+    "congestion_index": 0.68,
+    "free_parking": 7
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 14,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 43.4,
+    "congestion_index": 0.68,
+    "free_parking": 55
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 14,
+    "vehicle_flow": 3398,
+    "avg_speed_kmh": 21.7,
+    "congestion_index": 0.68,
+    "free_parking": 53
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 15,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 25.7,
+    "congestion_index": 0.584,
+    "free_parking": 90
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 15,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.584,
+    "free_parking": 136
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 15,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 25.7,
+    "congestion_index": 0.584,
+    "free_parking": 0
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 15,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 51.3,
+    "congestion_index": 0.584,
+    "free_parking": 118
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 15,
+    "vehicle_flow": 2921,
+    "avg_speed_kmh": 25.7,
+    "congestion_index": 0.584,
+    "free_parking": 106
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 16,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.46,
+    "free_parking": 73
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 16,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 37.0,
+    "congestion_index": 0.46,
+    "free_parking": 68
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 16,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.46,
+    "free_parking": 102
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 16,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 61.7,
+    "congestion_index": 0.46,
+    "free_parking": 123
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 16,
+    "vehicle_flow": 2300,
+    "avg_speed_kmh": 30.8,
+    "congestion_index": 0.46,
+    "free_parking": 35
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 17,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 36.9,
+    "congestion_index": 0.315,
+    "free_parking": 92
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 17,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 44.2,
+    "congestion_index": 0.315,
+    "free_parking": 143
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 17,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 36.9,
+    "congestion_index": 0.315,
+    "free_parking": 151
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 17,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 73.7,
+    "congestion_index": 0.315,
+    "free_parking": 115
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 17,
+    "vehicle_flow": 1576,
+    "avg_speed_kmh": 36.9,
+    "congestion_index": 0.315,
+    "free_parking": 61
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 18,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 43.3,
+    "congestion_index": 0.16,
+    "free_parking": 44
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 18,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 52.0,
+    "congestion_index": 0.16,
+    "free_parking": 84
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 18,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 43.3,
+    "congestion_index": 0.16,
+    "free_parking": 77
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 18,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 86.7,
+    "congestion_index": 0.16,
+    "free_parking": 59
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 18,
+    "vehicle_flow": 800,
+    "avg_speed_kmh": 43.3,
+    "congestion_index": 0.16,
+    "free_parking": 116
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 19,
+    "vehicle_flow": 23,
+    "avg_speed_kmh": 49.8,
+    "congestion_index": 0.005,
+    "free_parking": 186
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 19,
+    "vehicle_flow": 23,
+    "avg_speed_kmh": 59.8,
+    "congestion_index": 0.005,
+    "free_parking": 122
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 19,
+    "vehicle_flow": 23,
+    "avg_speed_kmh": 49.8,
+    "congestion_index": 0.005,
+    "free_parking": 157
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 19,
+    "vehicle_flow": 23,
+    "avg_speed_kmh": 99.6,
+    "congestion_index": 0.005,
+    "free_parking": 110
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 19,
+    "vehicle_flow": 23,
+    "avg_speed_kmh": 49.8,
+    "congestion_index": 0.005,
+    "free_parking": 86
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 20,
+    "vehicle_flow": -699,
+    "avg_speed_kmh": 55.8,
+    "congestion_index": -0.14,
+    "free_parking": 167
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 20,
+    "vehicle_flow": -699,
+    "avg_speed_kmh": 67.0,
+    "congestion_index": -0.14,
+    "free_parking": 119
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 20,
+    "vehicle_flow": -699,
+    "avg_speed_kmh": 55.8,
+    "congestion_index": -0.14,
+    "free_parking": 158
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 20,
+    "vehicle_flow": -699,
+    "avg_speed_kmh": 111.7,
+    "congestion_index": -0.14,
+    "free_parking": 88
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 20,
+    "vehicle_flow": -699,
+    "avg_speed_kmh": 55.8,
+    "congestion_index": -0.14,
+    "free_parking": 75
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 21,
+    "vehicle_flow": -1321,
+    "avg_speed_kmh": 61.0,
+    "congestion_index": -0.264,
+    "free_parking": 223
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 21,
+    "vehicle_flow": -1321,
+    "avg_speed_kmh": 73.2,
+    "congestion_index": -0.264,
+    "free_parking": 119
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 21,
+    "vehicle_flow": -1321,
+    "avg_speed_kmh": 61.0,
+    "congestion_index": -0.264,
+    "free_parking": 123
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 21,
+    "vehicle_flow": -1321,
+    "avg_speed_kmh": 122.0,
+    "congestion_index": -0.264,
+    "free_parking": 82
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 21,
+    "vehicle_flow": -1321,
+    "avg_speed_kmh": 61.0,
+    "congestion_index": -0.264,
+    "free_parking": 209
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 22,
+    "vehicle_flow": -1798,
+    "avg_speed_kmh": 65.0,
+    "congestion_index": -0.36,
+    "free_parking": 134
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 22,
+    "vehicle_flow": -1798,
+    "avg_speed_kmh": 78.0,
+    "congestion_index": -0.36,
+    "free_parking": 147
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 22,
+    "vehicle_flow": -1798,
+    "avg_speed_kmh": 65.0,
+    "congestion_index": -0.36,
+    "free_parking": 207
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 22,
+    "vehicle_flow": -1798,
+    "avg_speed_kmh": 130.0,
+    "congestion_index": -0.36,
+    "free_parking": 197
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 22,
+    "vehicle_flow": -1798,
+    "avg_speed_kmh": 65.0,
+    "congestion_index": -0.36,
+    "free_parking": 88
+  },
+  {
+    "road_id": "r1",
+    "road_name": "延安路",
+    "day": "周日",
+    "hour": 23,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 70
+  },
+  {
+    "road_id": "r2",
+    "road_name": "环城西路",
+    "day": "周日",
+    "hour": 23,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 55.0,
+    "congestion_index": 0.1,
+    "free_parking": 186
+  },
+  {
+    "road_id": "r3",
+    "road_name": "西湖大道",
+    "day": "周日",
+    "hour": 23,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 98
+  },
+  {
+    "road_id": "r4",
+    "road_name": "机场高速",
+    "day": "周日",
+    "hour": 23,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 91.7,
+    "congestion_index": 0.1,
+    "free_parking": 54
+  },
+  {
+    "road_id": "r5",
+    "road_name": "庆春路",
+    "day": "周日",
+    "hour": 23,
+    "vehicle_flow": 500,
+    "avg_speed_kmh": 45.8,
+    "congestion_index": 0.1,
+    "free_parking": 76
+  }
+]

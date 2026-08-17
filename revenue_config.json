@@ -1,0 +1,139 @@
+{
+  "c_end": {
+    "name": "C端消费交易分成",
+    "commission_rate": 0.035,
+    "avg_order_value": 420,
+    "categories": {
+      "ticket": {
+        "rate": 0.05,
+        "avg_price": 120,
+        "weight": 0.25
+      },
+      "hotel": {
+        "rate": 0.08,
+        "avg_price": 580,
+        "weight": 0.3
+      },
+      "restaurant": {
+        "rate": 0.03,
+        "avg_price": 85,
+        "weight": 0.2
+      },
+      "car_rental": {
+        "rate": 0.06,
+        "avg_price": 280,
+        "weight": 0.15
+      },
+      "taxi": {
+        "rate": 0.02,
+        "avg_price": 35,
+        "weight": 0.1
+      }
+    }
+  },
+  "b_subscription": {
+    "name": "B端商户年度订阅",
+    "tiers": [
+      {
+        "name": "标准版",
+        "price_yearly": 12000,
+        "max_merchants": 100,
+        "features": [
+          "基础数据",
+          "标准API"
+        ]
+      },
+      {
+        "name": "专业版",
+        "price_yearly": 36000,
+        "max_merchants": 50,
+        "features": [
+          "高级分析",
+          "优先API",
+          "定制报表"
+        ]
+      },
+      {
+        "name": "企业版",
+        "price_yearly": 120000,
+        "max_merchants": 20,
+        "features": [
+          "全功能",
+          "专属客服",
+          "私有化部署"
+        ]
+      }
+    ],
+    "current_distribution": {
+      "标准版": 120,
+      "专业版": 45,
+      "企业版": 8
+    }
+  },
+  "b_api": {
+    "name": "B端API按量调用",
+    "tiers": [
+      {
+        "range": "0-100万",
+        "price_per_1k": 0.25
+      },
+      {
+        "range": "100-500万",
+        "price_per_1k": 0.2
+      },
+      {
+        "range": "500万+",
+        "price_per_1k": 0.15
+      }
+    ],
+    "current_monthly_calls": 2400000
+  },
+  "embodied_dataset": {
+    "name": "脱敏时空数据集",
+    "packages": [
+      {
+        "name": "城市全域交通时序数据集",
+        "size_gb": 45,
+        "price_yearly": 480000,
+        "scenes": [
+          "城市道路",
+          "交叉口",
+          "停车场"
+        ]
+      },
+      {
+        "name": "文旅密集人流场景数据集",
+        "size_gb": 68,
+        "price_yearly": 720000,
+        "scenes": [
+          "景区步道",
+          "商圈街道",
+          "交通枢纽"
+        ]
+      }
+    ],
+    "api_price_per_hour": 600,
+    "current_clients": 12
+  },
+  "world_model": {
+    "name": "文旅世界模型WMaaS",
+    "license_fee": 800000,
+    "yearly_subscription": 360000,
+    "custom_project": {
+      "min": 500000,
+      "avg": 1200000,
+      "max": 3000000
+    },
+    "current_clients": 5
+  },
+  "g_gov": {
+    "name": "G端政务平台订阅",
+    "price_yearly": 12000000,
+    "contract_years": 3,
+    "cities": [
+      "杭州市",
+      "宁波市",
+      "温州市"
+    ]
+  }
+}

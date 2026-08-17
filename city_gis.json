@@ -1,0 +1,202 @@
+{
+  "city": "杭州市",
+  "center": [
+    120.1551,
+    30.2741
+  ],
+  "zones": [
+    {
+      "id": "z1",
+      "name": "西湖景区",
+      "type": "scenic",
+      "lat": 30.2458,
+      "lng": 120.14,
+      "area_km2": 6.5,
+      "capacity": 80000,
+      "buildings": 42,
+      "parking_spots": 1200
+    },
+    {
+      "id": "z2",
+      "name": "灵隐寺",
+      "type": "scenic",
+      "lat": 30.24,
+      "lng": 120.1,
+      "area_km2": 2.3,
+      "capacity": 25000,
+      "buildings": 18,
+      "parking_spots": 400
+    },
+    {
+      "id": "z3",
+      "name": "湖滨商圈",
+      "type": "commercial",
+      "lat": 30.255,
+      "lng": 120.16,
+      "area_km2": 1.8,
+      "capacity": 50000,
+      "merchants": 320,
+      "parking_spots": 800
+    },
+    {
+      "id": "z4",
+      "name": "杭州东站",
+      "type": "traffic",
+      "lat": 30.29,
+      "lng": 120.21,
+      "area_km2": 3.0,
+      "daily_capacity": 200000,
+      "platforms": 18,
+      "bus_lines": 24
+    },
+    {
+      "id": "z5",
+      "name": "钱江新城",
+      "type": "hotel",
+      "lat": 30.245,
+      "lng": 120.21,
+      "area_km2": 4.0,
+      "hotels": 45,
+      "rooms": 6800,
+      "restaurants": 120
+    },
+    {
+      "id": "z6",
+      "name": "河坊街",
+      "type": "commercial",
+      "lat": 30.235,
+      "lng": 120.165,
+      "area_km2": 0.8,
+      "capacity": 30000,
+      "merchants": 180,
+      "parking_spots": 200
+    },
+    {
+      "id": "z7",
+      "name": "西溪湿地",
+      "type": "scenic",
+      "lat": 30.265,
+      "lng": 120.06,
+      "area_km2": 11.5,
+      "capacity": 45000,
+      "buildings": 25,
+      "parking_spots": 1500
+    },
+    {
+      "id": "z8",
+      "name": "萧山机场",
+      "type": "traffic",
+      "lat": 30.23,
+      "lng": 120.43,
+      "area_km2": 7.0,
+      "daily_capacity": 120000,
+      "terminals": 3,
+      "runways": 2
+    }
+  ],
+  "roads": [
+    {
+      "id": "r1",
+      "name": "延安路",
+      "type": "arterial",
+      "length_km": 3.2,
+      "lanes": 6,
+      "speed_limit": 50
+    },
+    {
+      "id": "r2",
+      "name": "环城西路",
+      "type": "arterial",
+      "length_km": 4.5,
+      "lanes": 4,
+      "speed_limit": 60
+    },
+    {
+      "id": "r3",
+      "name": "西湖大道",
+      "type": "main",
+      "length_km": 2.8,
+      "lanes": 4,
+      "speed_limit": 50
+    },
+    {
+      "id": "r4",
+      "name": "机场高速",
+      "type": "highway",
+      "length_km": 18.0,
+      "lanes": 6,
+      "speed_limit": 100
+    },
+    {
+      "id": "r5",
+      "name": "庆春路",
+      "type": "main",
+      "length_km": 3.5,
+      "lanes": 4,
+      "speed_limit": 50
+    }
+  ],
+  "public_facilities": [
+    {
+      "id": "f1",
+      "type": "toilet",
+      "lat": 30.246,
+      "lng": 120.141,
+      "zone_id": "z1"
+    },
+    {
+      "id": "f2",
+      "type": "toilet",
+      "lat": 30.245,
+      "lng": 120.142,
+      "zone_id": "z1"
+    },
+    {
+      "id": "f3",
+      "type": "toilet",
+      "lat": 30.241,
+      "lng": 120.101,
+      "zone_id": "z2"
+    },
+    {
+      "id": "f4",
+      "type": "parking",
+      "lat": 30.256,
+      "lng": 120.161,
+      "zone_id": "z3",
+      "spots": 800
+    },
+    {
+      "id": "f5",
+      "type": "parking",
+      "lat": 30.291,
+      "lng": 120.211,
+      "zone_id": "z4",
+      "spots": 2000
+    },
+    {
+      "id": "f6",
+      "type": "bus_stop",
+      "lat": 30.2555,
+      "lng": 120.162,
+      "zone_id": "z3",
+      "lines": [
+        "K7",
+        "Y2",
+        "51"
+      ]
+    },
+    {
+      "id": "f7",
+      "type": "bus_stop",
+      "lat": 30.2465,
+      "lng": 120.1415,
+      "zone_id": "z1",
+      "lines": [
+        "Y9",
+        "K4",
+        "27"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel OS Phase 2 · 双模式核心引擎演示</title>
+<style>
+  :root {
+    --bg: #070b14; --panel: rgba(12,20,40,0.94);
+    --cyan: #00d4ff; --gold: #ffd700; --green: #00ff88;
+    --red: #ff4757; --purple: #a855f7; --orange: #ff8c00;
+    --blue: #3b82f6; --text: #e2e8f0; --text-dim: #64748b;
+    --border: rgba(0,212,255,0.12);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; }
+  .app { width:100%; height:100%; background:var(--bg); color:var(--text);
+    font-family:'Inter','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+    display:flex; flex-direction:column; overflow:hidden; }
+
+  .header { height:48px; background:linear-gradient(90deg,rgba(0,212,255,0.06),rgba(168,85,247,0.06));
+    border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between;
+    padding:0 16px; flex-shrink:0; }
+  .logo { display:flex; align-items:center; gap:8px; }
+  .logo-icon { width:26px; height:26px; background:linear-gradient(135deg,var(--cyan),var(--purple));
+    border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:bold; color:#fff; }
+  .logo-text { font-size:14px; font-weight:700; background:linear-gradient(90deg,var(--cyan),var(--gold));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .mode-tabs { display:flex; gap:3px; background:rgba(255,255,255,0.03); border-radius:18px; padding:3px; }
+  .mode-tab { padding:6px 18px; border-radius:14px; border:none; background:transparent;
+    color:var(--text-dim); font-size:12px; font-weight:600; cursor:pointer; transition:all 0.25s; }
+  .mode-tab.active { background:linear-gradient(135deg,var(--cyan),var(--purple)); color:#fff;
+    box-shadow:0 0 12px rgba(0,212,255,0.3); }
+  .badge { padding:4px 10px; border-radius:8px; font-size:10px; font-weight:600;
+    background:rgba(0,255,136,0.08); color:var(--green); border:1px solid rgba(0,255,136,0.2); }
+  .fs-btn { padding:4px 10px; border-radius:8px; font-size:10px; font-weight:600;
+    background:rgba(0,212,255,0.08); color:var(--cyan); border:1px solid rgba(0,212,255,0.2); cursor:pointer; margin-left:6px; }
+
+  .body { flex:1; display:flex; overflow:hidden; }
+
+  .left { width:180px; flex-shrink:0; background:var(--panel); border-right:1px solid var(--border);
+    padding:12px; display:flex; flex-direction:column; gap:10px; overflow-y:auto; }
+  .sec-title { font-size:10px; font-weight:700; color:var(--cyan); text-transform:uppercase; letter-spacing:1px; }
+  .card { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:8px; padding:8px; }
+  .card-title { font-size:10px; font-weight:600; color:var(--gold); margin-bottom:6px; }
+  .row { display:flex; align-items:center; justify-content:space-between; padding:5px 0; font-size:11px; color:var(--text-dim); cursor:pointer; }
+  .row:hover { color:var(--text); }
+  .tog { width:28px; height:14px; border-radius:7px; background:rgba(255,255,255,0.08); position:relative; cursor:pointer; }
+  .tog.on { background:var(--cyan); }
+  .tog::after { content:''; position:absolute; width:10px; height:10px; background:#fff; border-radius:50%; top:2px; left:2px; transition:transform 0.3s; }
+  .tog.on::after { transform:translateX(14px); }
+
+  .center { flex:1; position:relative; background:radial-gradient(ellipse at 50% 40%,#0f1a2e 0%,#050810 70%); overflow:hidden; }
+  .map3d { position:absolute; inset:0; perspective:700px; display:flex; align-items:center; justify-content:center; }
+  .plane { width:520px; height:380px; transform:rotateX(55deg) rotateZ(-12deg); position:relative; transform-style:preserve-3d; }
+  .blk { position:absolute; border-radius:3px; border:1px solid rgba(255,255,255,0.06);
+    display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding-bottom:4px;
+    font-size:9px; font-weight:600; cursor:pointer; transition:all 0.3s; }
+  .blk::before { content:''; position:absolute; inset:0; border-radius:3px;
+    background:linear-gradient(180deg,rgba(255,255,255,0.08),transparent); pointer-events:none; }
+  .blk:hover { transform:translateZ(10px) scale(1.06); box-shadow:0 0 18px rgba(0,212,255,0.3); z-index:20; }
+  .blk.sc { background:linear-gradient(180deg,rgba(0,212,255,0.22),rgba(0,212,255,0.04)); border-color:rgba(0,212,255,0.3); color:var(--cyan); }
+  .blk.cm { background:linear-gradient(180deg,rgba(255,215,0,0.22),rgba(255,215,0,0.04)); border-color:rgba(255,215,0,0.3); color:var(--gold); }
+  .blk.tr { background:linear-gradient(180deg,rgba(0,255,136,0.15),rgba(0,255,136,0.03)); border-color:rgba(0,255,136,0.25); color:var(--green); }
+  .blk.ht { background:linear-gradient(180deg,rgba(168,85,247,0.2),rgba(168,85,247,0.03)); border-color:rgba(168,85,247,0.3); color:var(--purple); }
+  .blk.alert { animation:alertPulse 1.2s infinite; border-color:var(--red) !important; }
+  @keyframes alertPulse { 0%,100%{box-shadow:0 0 8px rgba(255,71,87,0.3);} 50%{box-shadow:0 0 20px rgba(255,71,87,0.6);} }
+  .blk-lbl { font-size:8px; margin-bottom:1px; }
+  .blk-val { font-size:12px; font-weight:700; }
+  .blk-sub { font-size:7px; opacity:0.55; }
+  .rd { position:absolute; background:rgba(255,255,255,0.03); border-radius:1px; }
+  .heat { position:absolute; border-radius:50%; pointer-events:none; animation:hp 2.5s infinite ease-in-out; }
+  @keyframes hp { 0%,100%{transform:scale(1);opacity:0.6;} 50%{transform:scale(1.5);opacity:0.15;} }
+
+  .tl { position:absolute; bottom:14px; left:50%; transform:translateX(-50%); width:50%; min-width:340px;
+    height:38px; background:var(--panel); border:1px solid var(--border); border-radius:19px;
+    display:flex; align-items:center; padding:0 12px; gap:10px; backdrop-filter:blur(6px); }
+  .play { width:24px; height:24px; border-radius:50%; background:var(--cyan); border:none; color:#000;
+    font-size:9px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .tl-trk { flex:1; height:3px; background:rgba(255,255,255,0.06); border-radius:2px; position:relative; cursor:pointer; }
+  .tl-fl { height:100%; border-radius:2px; background:linear-gradient(90deg,var(--cyan),var(--purple)); position:relative; width:40%; }
+  .tl-th { position:absolute; right:-6px; top:-4px; width:11px; height:11px; background:#fff; border-radius:50%; box-shadow:0 0 6px rgba(0,212,255,0.4); }
+  .tl-tm { font-size:11px; font-weight:700; color:var(--cyan); min-width:70px; text-align:center; }
+
+  .right { width:360px; flex-shrink:0; background:var(--panel); border-left:1px solid var(--border);
+    padding:12px; display:flex; flex-direction:column; gap:8px; overflow-y:auto; }
+  .blk2 { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:8px; padding:10px; }
+  .bh { display:flex; align-items:center; gap:6px; font-size:12px; font-weight:700; margin-bottom:8px; }
+  .bhi { width:18px; height:18px; border-radius:3px; display:flex; align-items:center; justify-content:center; font-size:9px; }
+  .ic { background:rgba(0,212,255,0.12); color:var(--cyan); }
+  .ig { background:rgba(255,215,0,0.12); color:var(--gold); }
+  .igr { background:rgba(0,255,136,0.12); color:var(--green); }
+  .ir { background:rgba(255,71,87,0.12); color:var(--red); }
+  .ip { background:rgba(168,85,247,0.12); color:var(--purple); }
+  .io { background:rgba(255,140,0,0.12); color:var(--orange); }
+  .ib { background:rgba(59,130,246,0.12); color:var(--blue); }
+
+  .rev { background:rgba(255,255,255,0.015); border-radius:5px; padding:6px 8px; margin-bottom:5px; border-left:2px solid var(--cyan); }
+  .rev.gold { border-left-color:var(--gold); }
+  .rev.green { border-left-color:var(--green); }
+  .rev.purple { border-left-color:var(--purple); }
+  .rev.red { border-left-color:var(--red); }
+  .rev.orange { border-left-color:var(--orange); }
+  .rev-lbl { font-size:9px; color:var(--text-dim); }
+  .rev-val { font-size:14px; font-weight:700; }
+  .rev-sub { font-size:8px; color:var(--text-dim); margin-top:1px; }
+
+  .sl { margin-top:4px; }
+  .sl-l { display:flex; justify-content:space-between; font-size:9px; color:var(--text-dim); margin-bottom:3px; }
+  .sl-trk { width:100%; height:4px; background:rgba(255,255,255,0.06); border-radius:2px; position:relative; cursor:pointer; }
+  .sl-fl { height:100%; border-radius:2px; background:linear-gradient(90deg,var(--cyan),var(--purple)); position:relative; }
+  .sl-th { position:absolute; right:-4px; top:-2px; width:8px; height:8px; background:#fff; border-radius:50%; box-shadow:0 0 4px rgba(0,212,255,0.4); }
+
+  .metric { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.03); font-size:11px; }
+  .metric-k { color:var(--text-dim); }
+  .metric-v { font-weight:600; }
+
+  .chart { height:60px; background:rgba(255,255,255,0.015); border-radius:5px; margin-top:6px;
+    position:relative; overflow:hidden; display:flex; align-items:flex-end; justify-content:space-around; padding:3px 5px; }
+  .cbar { width:7%; border-radius:2px 2px 0 0; background:linear-gradient(to top,var(--cyan),rgba(0,212,255,0.15)); transition:height 0.5s; }
+
+  .pie-wrap { display:flex; align-items:center; gap:10px; margin-top:6px; }
+  .pie { width:50px; height:50px; border-radius:50%; position:relative; }
+  .pie-legend { flex:1; font-size:9px; }
+  .pie-item { display:flex; align-items:center; gap:4px; margin-bottom:3px; }
+  .pie-dot { width:6px; height:6px; border-radius:50%; }
+
+  .ftable { width:100%; border-collapse:collapse; font-size:10px; margin-top:6px; }
+  .ftable th { text-align:left; padding:4px 6px; color:var(--text-dim); border-bottom:1px solid rgba(255,255,255,0.06); font-weight:600; }
+  .ftable td { padding:4px 6px; border-bottom:1px solid rgba(255,255,255,0.02); }
+  .ftable tr:hover { background:rgba(255,255,255,0.02); }
+
+  .fw { display:flex; flex-direction:column; align-items:center; gap:3px; }
+  .fw-n { width:100%; padding:6px; border-radius:5px; text-align:center; font-size:9px; font-weight:600; }
+  .fw-in { background:linear-gradient(135deg,rgba(0,212,255,0.1),rgba(0,212,255,0.03)); border:1px solid rgba(0,212,255,0.2); color:var(--cyan); }
+  .fw-pr { background:linear-gradient(135deg,rgba(168,85,247,0.1),rgba(168,85,247,0.03)); border:1px solid rgba(168,85,247,0.2); color:var(--purple); }
+  .fw-out { background:linear-gradient(135deg,rgba(0,255,136,0.1),rgba(0,255,136,0.03)); border:1px solid rgba(0,255,136,0.2); color:var(--green); }
+  .fw-ar { color:var(--text-dim); font-size:12px; }
+  .fw-s { font-size:7px; opacity:0.7; font-weight:400; margin-top:1px; }
+
+  .comp { margin-top:6px; }
+  .comp-row { display:flex; align-items:center; gap:6px; margin-bottom:4px; }
+  .comp-label { width:40px; font-size:9px; color:var(--text-dim); text-align:right; }
+  .comp-bar-wrap { flex:1; height:14px; background:rgba(255,255,255,0.04); border-radius:3px; position:relative; overflow:hidden; }
+  .comp-bar { height:100%; border-radius:3px; transition:width 0.6s ease; }
+  .comp-val { position:absolute; right:4px; top:1px; font-size:8px; font-weight:600; }
+
+  .holiday-input { display:flex; gap:6px; margin-bottom:8px; }
+  .holiday-input input { flex:1; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+    border-radius:4px; padding:4px 8px; color:var(--text); font-size:11px; }
+  .holiday-input input:focus { outline:none; border-color:var(--cyan); }
+  .holiday-btn { padding:4px 12px; background:linear-gradient(135deg,var(--cyan),var(--purple));
+    border:none; border-radius:4px; color:#fff; font-size:10px; font-weight:600; cursor:pointer; }
+
+  .hidden { display:none !important; }
+  ::-webkit-scrollbar { width:2px; }
+  ::-webkit-scrollbar-thumb { background:rgba(0,212,255,0.2); }
+
+  .mod-bg { position:fixed; inset:0; background:rgba(0,0,0,0.6); display:none; align-items:center; justify-content:center; z-index:100; }
+  .mod-bg.show { display:flex; }
+  .mod-box { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:16px; width:380px; }
+  .mod-h { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .mod-t { font-size:14px; font-weight:700; color:var(--cyan); }
+  .mod-x { width:22px; height:22px; border-radius:50%; background:rgba(255,255,255,0.06); border:none; color:var(--text-dim); cursor:pointer; }
+
+  :fullscreen .app { width:100vw; height:100vh; }
+  :-webkit-full-screen .app { width:100vw; height:100vh; }
+  :-moz-full-screen .app { width:100vw; height:100vh; }
+</style>
+</head>
+<body>
+
+<div class="app" id="app">
+  <div class="header">
+    <div class="logo"><div class="logo-icon">◈</div><div class="logo-text">Travel OS Phase 2 · 双模式核心引擎</div></div>
+    <div class="mode-tabs">
+      <button class="mode-tab active" data-mode="gov" onclick="swMode('gov')">🏛 政务治理</button>
+      <button class="mode-tab" data-mode="biz" onclick="swMode('biz')">💼 商业投资</button>
+    </div>
+    <div style="display:flex;align-items:center;">
+      <div class="badge">● 推演引擎就绪</div>
+      <button class="fs-btn" onclick="toggleFS()">⛶ 全屏</button>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="left">
+      <div class="sec-title">图层控制</div>
+      <div class="card">
+        <div class="card-title">🏛 政府公共</div>
+        <div class="row" onclick="togLayer(this,'gis')"><span>GIS底图</span><div class="tog on" data-l="gis"></div></div>
+        <div class="row" onclick="togLayer(this,'heat')"><span>客流热力</span><div class="tog on" data-l="heat"></div></div>
+        <div class="row" onclick="togLayer(this,'traf')"><span>交通仿真</span><div class="tog on" data-l="traf"></div></div>
+        <div class="row" onclick="togLayer(this,'ind')"><span>产业统计</span><div class="tog" data-l="ind"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">🏨 文旅业态</div>
+        <div class="row" onclick="togLayer(this,'hot')"><span>酒店</span><div class="tog on" data-l="hot"></div></div>
+        <div class="row" onclick="togLayer(this,'res')"><span>餐饮</span><div class="tog" data-l="res"></div></div>
+        <div class="row" onclick="togLayer(this,'path')"><span>用户动线</span><div class="tog on" data-l="path"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">🔒 安全合规</div>
+        <div class="row" onclick="togLayer(this,'des')"><span>脱敏流程</span><div class="tog on" data-l="des"></div></div>
+      </div>
+    </div>
+
+    <div class="center">
+      <div class="map3d">
+        <div class="plane" id="plane">
+          <div class="rd" style="left:8%;top:46%;width:82%;height:2px;transform:rotate(-4deg);"></div>
+          <div class="rd" style="left:28%;top:8%;width:2px;height:82%;transform:rotate(6deg);"></div>
+          <div class="rd" style="left:58%;top:12%;width:2px;height:72%;transform:rotate(-2deg);"></div>
+
+          <div class="blk sc" id="b-z1" style="left:6%;top:10%;width:20%;height:24%;" onclick="openZ('西湖景区')">
+            <div class="blk-lbl">🏞 西湖景区</div><div class="blk-val" id="v1">12.5K</div><div class="blk-sub">实时客流</div>
+          </div>
+          <div class="blk sc" id="b-z2" style="left:56%;top:6%;width:16%;height:20%;" onclick="openZ('灵隐寺')">
+            <div class="blk-lbl">🏯 灵隐寺</div><div class="blk-val" id="v2">8.3K</div><div class="blk-sub">实时客流</div>
+          </div>
+          <div class="blk cm" id="b-z3" style="left:34%;top:46%;width:18%;height:22%;" onclick="openZ('湖滨商圈')">
+            <div class="blk-lbl">🏬 湖滨商圈</div><div class="blk-val" id="v3">¥284万</div><div class="blk-sub">日营收</div>
+          </div>
+          <div class="blk tr" id="b-z4" style="left:2%;top:56%;width:14%;height:16%;" onclick="openZ('杭州东站')">
+            <div class="blk-lbl">🚄 杭州东站</div><div class="blk-val" id="v4">45K</div><div class="blk-sub">日吞吐量</div>
+          </div>
+          <div class="blk ht" id="b-z5" style="left:62%;top:54%;width:16%;height:18%;" onclick="openZ('钱江新城')">
+            <div class="blk-lbl">🏨 钱江新城</div><div class="blk-val" id="v5">87%</div><div class="blk-sub">入住率</div>
+          </div>
+          <div class="blk cm" id="b-z6" style="left:18%;top:72%;width:14%;height:14%;" onclick="openZ('河坊街')">
+            <div class="blk-lbl">🏮 河坊街</div><div class="blk-val" id="v6">¥156万</div><div class="blk-sub">日营收</div>
+          </div>
+          <div class="blk sc" id="b-z7" style="left:76%;top:28%;width:14%;height:18%;" onclick="openZ('西溪湿地')">
+            <div class="blk-lbl">🌿 西溪湿地</div><div class="blk-val" id="v7">6.8K</div><div class="blk-sub">实时客流</div>
+          </div>
+
+          <div class="heat" style="left:40%;top:40%;width:45px;height:45px;background:radial-gradient(circle,rgba(255,71,87,0.45),transparent 70%);"></div>
+          <div class="heat" style="left:16%;top:26%;width:35px;height:35px;background:radial-gradient(circle,rgba(255,140,0,0.4),transparent 70%);animation-delay:0.7s;"></div>
+          <div class="heat" style="left:48%;top:58%;width:30px;height:30px;background:radial-gradient(circle,rgba(255,71,87,0.35),transparent 70%);animation-delay:1.3s;"></div>
+        </div>
+      </div>
+
+      <div class="tl">
+        <button class="play" id="pb" onclick="tPlay()">▶</button>
+        <div class="tl-trk" onclick="sTime(event)"><div class="tl-fl" id="tf" style="width:40%"><div class="tl-th"></div></div></div>
+        <div class="tl-tm" id="tt">14:30 周五</div>
+      </div>
+    </div>
+
+    <div class="right" id="rp">
+      <div id="pGov">
+        <div class="blk2">
+          <div class="bh"><span class="bhi ir">⚠</span>客流安全预警仿真</div>
+          <div class="rev red">
+            <div class="rev-lbl">当前预警等级</div>
+            <div class="rev-val" style="color:var(--red)">🟡 二级预警</div>
+            <div class="rev-sub">湖滨商圈 91% | 西湖景区 82% | 河坊街 78%</div>
+          </div>
+          <div class="sl">
+            <div class="sl-l"><span>人流预警阈值</span><span id="thDisp">80%</span></div>
+            <div class="sl-trk" onclick="adjTh(event)"><div class="sl-fl" style="width:80%"><div class="sl-th"></div></div></div>
+          </div>
+          <div style="margin-top:6px;font-size:9px;color:var(--text-dim);line-height:1.5;background:rgba(255,71,87,0.04);padding:6px;border-radius:4px;">
+            <b style="color:var(--red)">应急调度方案:</b><br>
+            ① 分流路线: 西湖→河坊街 (预计疏导 3,200人)<br>
+            ② 临时运力: 增派公交 12班次 / 出租车 80辆<br>
+            ③ 限流管控: 灵隐寺预约制，每小时限流 5,000人
+          </div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi io">📅</span>节假日人流压力推演</div>
+          <div class="holiday-input">
+            <input type="number" id="hdays" placeholder="天数" value="3" style="width:60px;">
+            <input type="number" id="hmult" placeholder="倍数" value="1.8" step="0.1" style="width:70px;">
+            <button class="holiday-btn" onclick="runHoliday()">推演</button>
+          </div>
+          <table class="ftable" id="hTable">
+            <tr><th>区域</th><th>峰值</th><th>负载</th><th>预警</th><th>缺口</th></tr>
+            <tr><td>西湖景区</td><td>208,800</td><td style="color:var(--red)">100%</td><td style="color:var(--red)">🔴</td><td>128,800</td></tr>
+            <tr><td>灵隐寺</td><td>65,250</td><td style="color:var(--red)">100%</td><td style="color:var(--red)">🔴</td><td>40,250</td></tr>
+            <tr><td>湖滨商圈</td><td>130,500</td><td style="color:var(--red)">100%</td><td style="color:var(--red)">🔴</td><td>80,500</td></tr>
+          </table>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi ic">📊</span>产业智能决策看板</div>
+          <div class="metric"><span class="metric-k">区域文旅总营收</span><span class="metric-v">¥4.2亿/月</span></div>
+          <div class="metric"><span class="metric-k">产业增长同比</span><span class="metric-v" style="color:var(--green)">+18.5%</span></div>
+          <div class="pie-wrap">
+            <div class="pie" style="background:conic-gradient(var(--cyan) 0% 35%, var(--gold) 35% 58%, var(--green) 58% 75%, var(--purple) 75% 88%, var(--red) 88% 100%);"></div>
+            <div class="pie-legend">
+              <div class="pie-item"><span class="pie-dot" style="background:var(--cyan)"></span>上海 35%</div>
+              <div class="pie-item"><span class="pie-dot" style="background:var(--gold)"></span>苏州 23%</div>
+              <div class="pie-item"><span class="pie-dot" style="background:var(--green)"></span>安徽 17%</div>
+              <div class="pie-item"><span class="pie-dot" style="background:var(--purple)"></span>浙江其他 13%</div>
+              <div class="pie-item"><span class="pie-dot" style="background:var(--red)"></span>其他 12%</div>
+            </div>
+          </div>
+          <div class="chart">
+            <div class="cbar" style="height:30%"></div><div class="cbar" style="height:42%"></div>
+            <div class="cbar" style="height:35%"></div><div class="cbar" style="height:55%"></div>
+            <div class="cbar" style="height:48%"></div><div class="cbar" style="height:68%"></div>
+            <div class="cbar" style="height:62%"></div><div class="cbar" style="height:78%"></div>
+          </div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi igr">🏗</span>公共服务优化推演</div>
+          <div class="holiday-input">
+            <input type="number" id="optPark" placeholder="停车场" value="2" style="width:60px;">
+            <input type="number" id="optRoute" placeholder="线路" value="1" style="width:60px;">
+            <button class="holiday-btn" onclick="runOptimize()">推演</button>
+          </div>
+          <div id="optResult">
+            <div class="metric"><span class="metric-k">拥堵率</span><span class="metric-v">0.75 → <span style="color:var(--green)">0.47</span> (↓37%)</span></div>
+            <div class="metric"><span class="metric-k">游客满意度</span><span class="metric-v" style="color:var(--green)">93.0%</span></div>
+            <div class="metric"><span class="metric-k">周转效率</span><span class="metric-v">↑24%</span></div>
+          </div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi ig">💰</span>G端平台订阅收益</div>
+          <div class="rev gold">
+            <div class="rev-lbl">年度平台订阅服务费</div>
+            <div class="rev-val" style="color:var(--gold)">¥1,200万/年</div>
+            <div class="rev-sub">稳定刚性现金流 | 3年合约 | 覆盖3个城市</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="pBiz" class="hidden">
+        <div class="blk2">
+          <div class="bh"><span class="bhi ic">🛒</span>Travel OS 主业收入</div>
+
+          <div class="rev">
+            <div class="rev-lbl">① C端消费交易分成 (佣金3.5%)</div>
+            <div class="rev-val" id="cRev2">¥186万/月</div>
+            <div class="rev-sub">订单 5,314笔 | 客单价 ¥420 | 毛利率65%</div>
+          </div>
+          <div class="sl">
+            <div class="sl-l"><span>月订单量</span><span id="oDisp">5,314</span></div>
+            <div class="sl-trk" onclick="adjBiz(event,'o')"><div class="sl-fl" style="width:53%"><div class="sl-th"></div></div></div>
+          </div>
+
+          <div class="rev gold">
+            <div class="rev-lbl">② B端商户年度订阅</div>
+            <div class="rev-val" id="sRev2">¥420万/年</div>
+            <div class="rev-sub">标准版120家(¥1.2万) / 专业版45家(¥3.6万) / 企业版8家(¥12万)</div>
+          </div>
+          <div class="sl">
+            <div class="sl-l"><span>商户总数</span><span id="mDisp">173</span></div>
+            <div class="sl-trk" onclick="adjBiz(event,'m')"><div class="sl-fl" style="width:35%"><div class="sl-th"></div></div></div>
+          </div>
+
+          <div class="rev green">
+            <div class="rev-lbl">③ B端API按量调用 (阶梯计费)</div>
+            <div class="rev-val" id="aRev2">¥68万/月</div>
+            <div class="rev-sub">调用 240万次 | 0.25→0.20→0.15元/千次 | 毛利率78%</div>
+          </div>
+          <div class="sl">
+            <div class="sl-l"><span>API调用(万次/月)</span><span id="aDisp">240</span></div>
+            <div class="sl-trk" onclick="adjBiz(event,'a')"><div class="sl-fl" style="width:48%"><div class="sl-th"></div></div></div>
+          </div>
+
+          <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.05);">
+            <div class="metric"><span class="metric-k">主业综合毛利率</span><span class="metric-v" style="color:var(--green)">62%</span></div>
+            <div class="metric"><span class="metric-k">主业年度总收入</span><span class="metric-v" style="color:var(--gold)">¥3,012万</span></div>
+          </div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi ip">🤖</span>具身智能增值收入</div>
+          <div class="rev purple">
+            <div class="rev-lbl">脱敏时空数据集年度订阅</div>
+            <div class="rev-val">¥580万/年</div>
+            <div class="rev-sub">合作企业 12家 | 城市交通45GB + 文旅人流68GB | 毛利率72%</div>
+          </div>
+          <div class="rev">
+            <div class="rev-lbl">数据API调用授权 (按数据时长)</div>
+            <div class="rev-val">¥156万/月</div>
+            <div class="rev-sub">600元/小时 | 月均2,600小时 | 年收¥1,872万</div>
+          </div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi io">🧠</span>文旅世界模型 WMaaS</div>
+          <div class="rev">
+            <div class="rev-lbl">① 一次性基础授权费</div>
+            <div class="rev-val">¥400万</div>
+            <div class="rev-sub">5家企业 × ¥80万/家 | 永久买断底座</div>
+          </div>
+          <div class="rev gold">
+            <div class="rev-lbl">② 年度算力&接口订阅</div>
+            <div class="rev-val">¥180万/年</div>
+            <div class="rev-sub">5家企业 × ¥36万/年 | 运维+推理接口</div>
+          </div>
+          <div class="rev purple">
+            <div class="rev-lbl">③ 定制场景微调项目</div>
+            <div class="rev-val">¥360万/年</div>
+            <div class="rev-sub">3个项目 × ¥120万/项目 | 专属机器人本体适配</div>
+          </div>
+          <div style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.05);">
+            <div class="metric"><span class="metric-k">WMaaS年度总收入</span><span class="metric-v" style="color:var(--gold)">¥940万</span></div>
+            <div class="metric"><span class="metric-k">研发周期缩短</span><span class="metric-v" style="color:var(--green)">60%</span></div>
+          </div>
+        </div>
+
+        <div class="blk2">
+          <div class="bh"><span class="bhi io">📈</span>多元现金流抗周期对比</div>
+          <div style="font-size:9px;color:var(--text-dim);margin-bottom:6px;">5年收入预测 (万元)</div>
+          <div class="comp">
+            <div class="comp-row"><div class="comp-label">传统</div><div class="comp-bar-wrap"><div class="comp-bar" style="width:28%;background:var(--red);"></div><div class="comp-val">2,800</div></div></div>
+            <div class="comp-row"><div class="comp-label">我方</div><div class="comp-bar-wrap"><div class="comp-bar" style="width:100%;background:linear-gradient(90deg,var(--green),var(--cyan));"></div><div class="comp-val" style="color:var(--green)">9,999</div></div></div>
+          </div>
+          <div style="margin-top:8px;font-size:9px;color:var(--text-dim);">
+            收入稳定性: 传统厂商变异系数 <span style="color:var(--red)">0.28</span> vs 我方 <span style="color:var(--green)">0.08</span>
+          </div>
+          <table class="ftable" style="margin-top:8px;">
+            <tr><th>年份</th><th>文旅主业</th><th>具身增值</th><th>政务订阅</th><th>总计</th></tr>
+            <tr><td>2026</td><td>3,012</td><td>2,452</td><td>3,600</td><td style="color:var(--green);font-weight:700">9,999</td></tr>
+            <tr><td>2027</td><td>3,566</td><td>2,857</td><td>3,780</td><td style="color:var(--green);font-weight:700">10,587</td></tr>
+            <tr><td>2028</td><td>4,121</td><td>3,263</td><td>3,969</td><td style="color:var(--green);font-weight:700">11,175</td></tr>
+            <tr><td>2029</td><td>4,675</td><td>3,668</td><td>4,167</td><td style="color:var(--green);font-weight:700">11,763</td></tr>
+            <tr><td>2030</td><td>5,230</td><td>4,074</td><td>4,376</td><td style="color:var(--green);font-weight:700">12,351</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="blk2">
+        <div class="bh"><span class="bhi ic">🔄</span>全链路数据飞轮</div>
+        <div class="fw">
+          <div class="fw-n fw-in">
+            <div>📥 数据流入</div>
+            <div class="fw-s">政府脱敏公共数据 + 文旅运营数据 + C端行为数据</div>
+          </div>
+          <div class="fw-ar">▼</div>
+          <div class="fw-n fw-pr">
+            <div>⚙ AI数据加工</div>
+            <div class="fw-s">清洗脱敏 → 时空对齐 → 4D数据集 → 世界模型训练</div>
+          </div>
+          <div class="fw-ar">▼</div>
+          <div class="fw-n fw-out">
+            <div>📤 三路价值输出</div>
+            <div class="fw-s">Travel OS主业(C端+B端) | 具身企业增值 | 城市治理平台</div>
+          </div>
+          <div class="fw-ar">▲</div>
+          <div class="fw-n fw-in" style="opacity:0.7">
+            <div>🔄 数据回流闭环</div>
+            <div class="fw-s">消费行为 + 机器人反馈 → 模型持续迭代优化</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mod-bg" id="zm" onclick="closeM(event)">
+  <div class="mod-box" onclick="event.stopPropagation()">
+    <div class="mod-h"><div class="mod-t" id="mt">区域详情</div><button class="mod-x" onclick="closeM()">×</button></div>
+    <div id="mb">
+      <div class="metric"><span class="metric-k">实时客流</span><span class="metric-v" id="mf">12,543人</span></div>
+      <div class="metric"><span class="metric-k">业态订单</span><span class="metric-v" id="mo">3,421笔/日</span></div>
+      <div class="metric"><span class="metric-k">消费总额</span><span class="metric-v" id="mr">¥284.6万/日</span></div>
+      <div class="metric"><span class="metric-k">资源负载</span><span class="metric-v" id="ml" style="color:var(--red)">82% (高)</span></div>
+      <div class="metric"><span class="metric-k">预警状态</span><span class="metric-v" id="ma" style="color:var(--gold)">🟡 二级预警</span></div>
+      <div class="metric"><span class="metric-k">容量上限</span><span class="metric-v" id="mc">80,000人</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let mode='gov', playing=false, timer, prog=40;
+  let zd={
+    '西湖景区':{f:12543,o:3421,r:284.6,l:0.82,c:80000,a:'🟡 二级预警'},
+    '灵隐寺':{f:8320,o:1860,r:156.2,l:0.67,c:25000,a:'🟢 正常'},
+    '湖滨商圈':{f:28400,o:12500,r:284.0,l:0.91,c:50000,a:'🔴 一级预警'},
+    '杭州东站':{f:45200,o:8600,r:0,l:0.45,c:200000,a:'🟢 正常'},
+    '钱江新城':{f:18600,o:4200,r:198.5,l:0.73,c:30000,a:'🟢 正常'},
+    '河坊街':{f:15600,o:6800,r:156.0,l:0.78,c:30000,a:'🟡 二级预警'},
+    '西溪湿地':{f:6800,o:1200,r:89.3,l:0.35,c:45000,a:'🟢 正常'}
+  };
+
+  function swMode(m){ mode=m;
+    document.querySelectorAll('.mode-tab').forEach(b=>b.classList.toggle('active',b.dataset.mode===m));
+    document.getElementById('pGov').classList.toggle('hidden',m!=='gov');
+    document.getElementById('pBiz').classList.toggle('hidden',m!=='biz');
+  }
+  function togLayer(el,k){ const t=el.querySelector('.tog'); t.classList.toggle('on');
+    if(k==='heat') document.querySelectorAll('.heat').forEach(p=>p.style.opacity=t.classList.contains('on')?'1':'0');
+  }
+  function tPlay(){ playing=!playing; document.getElementById('pb').textContent=playing?'⏸':'▶';
+    if(playing){ timer=setInterval(()=>{prog=(prog+0.4)%100;updT();},100);}
+    else clearInterval(timer);
+  }
+  function sTime(e){ const r=e.currentTarget.getBoundingClientRect(); prog=((e.clientX-r.left)/r.width)*100; updT(); }
+  function updT(){ document.getElementById('tf').style.width=prog+'%';
+    const h=Math.floor(6+(prog/100)*18), m=Math.floor((prog%2.78)*21.6);
+    const d=['周五','周六','周日','周一'][Math.min(Math.floor(prog/25),3)];
+    document.getElementById('tt').textContent=h.toString().padStart(2,'0')+':'+m.toString().padStart(2,'0')+' '+d;
+    const mult=0.6+(prog/100)*0.8;
+    document.getElementById('v1').textContent=(12.5*mult).toFixed(1)+'K';
+    document.getElementById('v2').textContent=(8.3*mult).toFixed(1)+'K';
+    document.getElementById('v3').textContent='¥'+(284*mult).toFixed(0)+'万';
+    document.getElementById('v4').textContent=(45*mult).toFixed(0)+'K';
+    document.getElementById('v5').textContent=Math.round(60+27*mult)+'%';
+    document.getElementById('v6').textContent='¥'+(156*mult).toFixed(0)+'万';
+    document.getElementById('v7').textContent=(6.8*mult).toFixed(1)+'K';
+  }
+  function openZ(n){ const d=zd[n]; if(!d)return;
+    document.getElementById('mt').textContent=n;
+    document.getElementById('mf').textContent=d.f.toLocaleString()+'人';
+    document.getElementById('mo').textContent=d.o.toLocaleString()+'笔/日';
+    document.getElementById('mr').textContent='¥'+d.r+'万/日';
+    document.getElementById('ml').textContent=Math.round(d.l*100)+'% ('+(d.l>0.8?'高':d.l>0.6?'中':'正常')+')';
+    document.getElementById('ml').style.color=d.l>0.8?'var(--red)':d.l>0.6?'var(--gold)':'var(--green)';
+    document.getElementById('ma').textContent=d.a;
+    document.getElementById('ma').style.color=d.a.includes('🔴')?'var(--red)':d.a.includes('🟡')?'var(--gold)':'var(--green)';
+    document.getElementById('mc').textContent=d.c.toLocaleString()+'人';
+    document.getElementById('zm').classList.add('show');
+  }
+  function closeM(e){ if(!e||e.target===document.getElementById('zm')) document.getElementById('zm').classList.remove('show'); }
+  function adjTh(e){ const r=e.currentTarget.getBoundingClientRect(); const p=Math.min(100,Math.max(0,((e.clientX-r.left)/r.width)*100));
+    e.currentTarget.querySelector('.sl-fl').style.width=p+'%'; document.getElementById('thDisp').textContent=Math.round(p)+'%';
+    document.querySelectorAll('.blk').forEach(b=>{ b.classList.toggle('alert', p<85); });
+  }
+  function adjBiz(e,t){ const r=e.currentTarget.getBoundingClientRect(); const p=Math.min(100,Math.max(0,((e.clientX-r.left)/r.width)*100));
+    e.currentTarget.querySelector('.sl-fl').style.width=p+'%';
+    if(t==='o'){ const v=Math.round(p*100); document.getElementById('oDisp').textContent=v.toLocaleString(); document.getElementById('cRev2').textContent='¥'+(v*0.35).toFixed(0)+'万/月';}
+    else if(t==='m'){ const v=Math.round(p*500); document.getElementById('mDisp').textContent=v; document.getElementById('sRev2').textContent='¥'+(v*2.42).toFixed(0)+'万/年';}
+    else if(t==='a'){ const v=Math.round(p*500); document.getElementById('aDisp').textContent=v; let rev=0; if(v<=100)rev=v*0.25; else if(v<=500)rev=25+(v-100)*0.20; else rev=105+(v-500)*0.15; document.getElementById('aRev2').textContent='¥'+rev.toFixed(0)+'万/月';}
+  }
+  function runHoliday(){
+    const days=parseFloat(document.getElementById('hdays').value)||3;
+    const mult=parseFloat(document.getElementById('hmult').value)||1.8;
+    const zones=[{n:'西湖景区',c:80000},{n:'灵隐寺',c:25000},{n:'湖滨商圈',c:50000},{n:'杭州东站',c:200000},{n:'钱江新城',c:30000},{n:'河坊街',c:30000},{n:'西溪湿地',c:45000}];
+    let html='<tr><th>区域</th><th>峰值</th><th>负载</th><th>预警</th><th>缺口</th></tr>';
+    zones.forEach(z=>{ const peak=Math.round(z.c*mult*(1+days*0.15)); const lr=Math.min(peak/z.c,1); const alert=lr>0.8?'🔴':lr>0.6?'🟡':'🟢'; const gap=Math.max(0,peak-z.c); const color=lr>0.8?'var(--red)':lr>0.6?'var(--gold)':'var(--green)'; html+=`<tr><td>${z.n}</td><td>${peak.toLocaleString()}</td><td style="color:${color}">${Math.round(lr*100)}%</td><td style="color:${color}">${alert}</td><td>${gap>0?gap.toLocaleString():'-'}</td></tr>`;});
+    document.getElementById('hTable').innerHTML=html;
+  }
+  function runOptimize(){
+    const park=parseInt(document.getElementById('optPark').value)||0;
+    const route=parseInt(document.getElementById('optRoute').value)||0;
+    const base=0.75; const nc=Math.max(0.2, base-park*0.08-route*0.12);
+    const sat=Math.min(95, 65+(base-nc)*100);
+    document.getElementById('optResult').innerHTML=`<div class="metric"><span class="metric-k">拥堵率</span><span class="metric-v">${base} → <span style="color:var(--green)">${nc.toFixed(2)}</span> (↓${Math.round((base-nc)*100)}%)</span></div><div class="metric"><span class="metric-k">游客满意度</span><span class="metric-v" style="color:var(--green)">${sat.toFixed(1)}%</span></div><div class="metric"><span class="metric-k">周转效率</span><span class="metric-v">↑${Math.round((1/nc-1/base)*100)}%</span></div>`;
+  }
+  function toggleFS(){
+    const el=document.getElementById('app');
+    if(!document.fullscreenElement){ el.requestFullscreen().catch(()=>alert('请按F11全屏')); }
+    else document.exitFullscreen();
+  }
+  document.addEventListener('fullscreenchange',()=>{
+    document.querySelector('.fs-btn').textContent=document.fullscreenElement?'⛶ 退出':'⛶ 全屏';
+  });
+</script>
+
+</body>
+</html>
