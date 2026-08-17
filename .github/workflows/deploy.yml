@@ -1,8 +1,9 @@
+# 推送到 main 分支后自动构建并部署到 GitHub Pages
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches: [main]
-    paths: ['xiongan-world/**']   # 只在这个子目录变化时触发
   workflow_dispatch:
 
 permissions:
@@ -10,24 +11,29 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: xiongan-world   # 指向子目录
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: xiongan-world/package-lock.json
+
       - run: npm ci
+
       - run: npm run build
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: xiongan-world/dist
+          path: dist
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
