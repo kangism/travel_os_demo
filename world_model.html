@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雄安智慧城市世界模型 - 领导汇报演示</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #eef2f7;
+  color: #1f2d3d;
+  font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+.header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(90deg, #ffffff 0%, #e8f1fd 50%, #ffffff 100%);
+  border-bottom: 2px solid #1677ff;
+  box-shadow: 0 2px 8px rgba(22,119,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  z-index: 100;
+}
+.header h1 {
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: #1677ff;
+}
+.header .status {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  color: #44576d;
+}
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.status-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+.dot-green { background: #22c55e; box-shadow: 0 0 6px rgba(34,197,94,0.6); }
+.dot-yellow { background: #eab308; box-shadow: 0 0 6px rgba(234,179,8,0.6); }
+.dot-red { background: #ef4444; box-shadow: 0 0 6px rgba(239,68,68,0.6); }
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.main-panel {
+  position: absolute;
+  top: 60px; left: 0; right: 0; bottom: 50px;
+  display: flex;
+}
+.left-panel {
+  position: relative;
+  width: 45%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-right: 1px solid #d9e2ec;
+}
+.panel-title {
+  font-size: 15px;
+  color: #1677ff;
+  letter-spacing: 2px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d9e2ec;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+.network-graph {
+  flex: 2;
+  min-height: 180px;
+  background: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(31,45,61,0.06);
+}
+#topology-canvas {
+  width: 100%;
+  height: 100%;
+}
+.loss-chart {
+  flex: 0 0 220px;
+  min-height: 220px;
+  max-height: 220px;
+  background: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  padding: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(31,45,61,0.06);
+}
+#loss-canvas {
+  width: 100%;
+  height: 100%;
+}
+.heatmap-panel {
+  flex: 2;
+  min-height: 140px;
+  background: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 1px 4px rgba(31,45,61,0.06);
+}
+#heatmap-canvas {
+  width: 100%;
+  height: 100%;
+}
+.right-panel {
+  width: 55%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.city-view {
+  flex: 2;
+  background: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(31,45,61,0.06);
+}
+#amap-container {
+  width: 100%;
+  height: 100%;
+}
+.compare-view {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+}
+.compare-box {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  padding: 12px;
+  position: relative;
+  box-shadow: 0 1px 4px rgba(31,45,61,0.06);
+}
+.compare-box h3 {
+  font-size: 13px;
+  color: #e0245e;
+  margin-bottom: 8px;
+}
+.compare-box.good h3 { color: #16a34a; }
+.compare-metric {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+.compare-box .metric-label {
+  font-size: 11px;
+  color: #6b7c93;
+}
+.control-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 50px;
+  background: #ffffff;
+  border-top: 1px solid #d9e2ec;
+  box-shadow: 0 -2px 8px rgba(31,45,61,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 100;
+}
+.control-btn {
+  padding: 8px 24px;
+  background: #eaf2fb;
+  border: 1px solid #1677ff;
+  color: #1677ff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+.control-btn:hover {
+  background: #1677ff;
+  color: #ffffff;
+}
+.control-btn.active {
+  background: #1677ff;
+  color: #ffffff;
+}
+.speed-btn {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+.timeline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6b7c93;
+  font-size: 12px;
+}
+#time-slider {
+  width: 300px;
+  accent-color: #1677ff;
+}
+.scene-label {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: rgba(224,36,94,0.9);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 10;
+}
+.scene-label.normal { background: rgba(22,163,74,0.9); }
+.scene-label.warning { background: rgba(217,119,6,0.9); }
+.tooltip {
+  position: absolute;
+  background: rgba(255,255,255,0.97);
+  border: 1px solid #1677ff;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 12px;
+  color: #1f2d3d;
+  pointer-events: none;
+  display: none;
+  z-index: 50;
+  min-width: 150px;
+  box-shadow: 0 4px 12px rgba(31,45,61,0.12);
+}
+/* 雨丝特效：细小短雨丝平铺，两层视差下落，稀疏不遮挡内容 */
+.storm-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: none;
+  z-index: 15;
+  background-color: rgba(96, 125, 160, 0.07);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='210' height='260'%3E%3Cg stroke='rgba(70,100,140,0.5)' stroke-width='1.2' stroke-linecap='round'%3E%3Cline x1='30' y1='12' x2='26' y2='23'/%3E%3Cline x1='120' y1='40' x2='116' y2='51'/%3E%3Cline x1='185' y1='20' x2='181' y2='31'/%3E%3Cline x1='70' y1='110' x2='66' y2='121'/%3E%3Cline x1='155' y1='150' x2='151' y2='161'/%3E%3Cline x1='45' y1='205' x2='41' y2='216'/%3E%3Cline x1='110' y1='235' x2='106' y2='246'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='190'%3E%3Cg stroke='rgba(70,100,140,0.32)' stroke-width='1' stroke-linecap='round'%3E%3Cline x1='25' y1='15' x2='22' y2='24'/%3E%3Cline x1='95' y1='55' x2='92' y2='64'/%3E%3Cline x1='55' y1='120' x2='52' y2='129'/%3E%3Cline x1='125' y1='160' x2='122' y2='169'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat, repeat;
+  animation: rainfall 0.9s linear infinite;
+}
+
+/* 大脑推演场景：左侧大脑面板高亮，引导视线 */
+body.scene-brain .network-graph,
+body.scene-brain .loss-chart,
+body.scene-brain .heatmap-panel {
+  border-color: #1677ff;
+  box-shadow: 0 0 14px rgba(22, 119, 255, 0.28);
+}
+.brain-badge {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  z-index: 30;
+  display: none;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #1677ff, #36cfc9);
+  box-shadow: 0 2px 8px rgba(22, 119, 255, 0.4);
+}
+.brain-badge.done {
+  background: linear-gradient(90deg, #16a34a, #4ade80);
+}
+
+@keyframes rainfall {
+  from { background-position: 0 -260px, 0 -190px; }
+  to { background-position: -26px 0, -13px 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>雄安智慧城市 · 世界模型推演系统</h1>
+  <div class="status">
+    <div class="status-item">
+      <div class="status-dot dot-green"></div>
+      <span>大脑模型: 在线</span>
+    </div>
+    <div class="status-item">
+      <div class="status-dot dot-green" id="redis-dot"></div>
+      <span>Redis数据桥: 在线</span>
+    </div>
+    <div class="status-item">
+      <div class="status-dot dot-green" id="ue-dot"></div>
+      <span>UE5孪生引擎: 在线</span>
+    </div>
+    <div class="status-item">
+      <div class="status-dot dot-green" id="data-dot"></div>
+      <span id="data-source">数据源: 世界模型实时推演</span>
+    </div>
+    <div class="status-item">
+      <span id="clock">17:00:00</span>
+    </div>
+  </div>
+</div>
+
+<div class="main-panel">
+  <div class="left-panel">
+    <div class="brain-badge" id="brain-badge"></div>
+    <div class="panel-title">大脑推演 - 时空因果预测</div>
+    <div class="network-graph">
+      <div class="scene-label normal" id="scene-label">正常通勤</div>
+      <canvas id="topology-canvas"></canvas>
+      <div class="tooltip" id="tooltip"></div>
+    </div>
+    <div class="loss-chart">
+      <div class="panel-title">PIML物理约束收敛</div>
+      <canvas id="loss-canvas"></canvas>
+    </div>
+    <div class="heatmap-panel">
+      <div class="panel-title">时空预测热力图</div>
+      <canvas id="heatmap-canvas"></canvas>
+    </div>
+  </div>
+  <div class="right-panel">
+    <div class="panel-title">数字孪生 - 雄安容东片区</div>
+    <div class="city-view">
+      <div class="scene-label normal" id="city-scene">工作日 17:00 正常通勤</div>
+      <div id="amap-container"></div>
+      <div class="storm-overlay" id="storm-overlay"></div>
+    </div>
+    <div class="compare-view">
+      <div class="compare-box">
+        <h3>无世界模型介入</h3>
+        <div class="compare-metric" id="no-model-metric">--</div>
+        <div class="metric-label">全城瘫痪时间</div>
+        <div style="margin-top:8px; font-size:11px; color:#ff3366;">暴雨中警笛闪烁、一片混乱</div>
+      </div>
+      <div class="compare-box good">
+        <h3>有世界模型介入</h3>
+        <div class="compare-metric" id="with-model-metric">--</div>
+        <div class="metric-label">提前分流距离</div>
+        <div style="margin-top:8px; font-size:11px; color:#16a34a;">车辆提前分流、井然有序</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="control-bar">
+  <div class="timeline">
+    <span>场景:</span>
+    <button class="control-btn" onclick="setScene(0)">正常通勤</button>
+    <button class="control-btn" onclick="setScene(1)">突发暴雨</button>
+    <button class="control-btn" onclick="setScene(2)">大脑推演</button>
+    <button class="control-btn" onclick="setScene(3)">C端分流</button>
+    <button class="control-btn" onclick="setScene(4)">最终对比</button>
+    <span>|</span>
+    <span>时间轴:</span>
+    <input type="range" id="time-slider" min="0" max="120" value="0" step="1" oninput="onTimeSlider(this.value)">
+    <span id="time-display">00:00</span>
+    <span style="margin-left:10px">|</span>
+    <span>倍速:</span>
+    <button class="control-btn speed-btn" data-speed="0" onclick="setSpeed(0)">暂停</button>
+    <button class="control-btn speed-btn" data-speed="0.01" onclick="setSpeed(0.01)">x0.01</button>
+    <button class="control-btn speed-btn" data-speed="0.1" onclick="setSpeed(0.1)">x0.1</button>
+    <button class="control-btn speed-btn active" data-speed="1" onclick="setSpeed(1)">x1</button>
+    <button class="control-btn speed-btn" data-speed="5" onclick="setSpeed(5)">x5</button>
+    <button class="control-btn speed-btn" data-speed="10" onclick="setSpeed(10)">x10</button>
+    <button class="control-btn speed-btn" data-speed="20" onclick="setSpeed(20)">x20</button>
+  </div>
+</div>
+
+<script>
+// ===================== 全局数据 =====================
+let forecastData = [];
+let lossHistory = [];
+let physLossHistory = [];
+let currentScene = 0;
+let currentTime = 0;
+let animationId = null;
+let isPlaying = false;
+let playSpeed = 1;
+
+const scenes = [
+  { name: '正常通勤', time: 0, weather: 0, accident: false, desc: '工作日17:00，容东核心景区周边，路网处于正常通勤状态' },
+  { name: '突发暴雨', time: 5, weather: 1, accident: true, desc: '17:05 暴雨突降(30mm/h)，景区正门十字路口三车追尾，占据2条车道' },
+  { name: '大脑推演', time: 30, weather: 1, accident: true, desc: '世界模型启动快进推演，预测未来30分钟A/B干道严重拥堵' },
+  { name: 'C端分流', time: 60, weather: 1, accident: true, desc: '导航引擎对500辆虚拟C端车辆进行博弈分流(20%绕路/30%错峰/50%绕行)' },
+  { name: '最终对比', time: 90, weather: 1, accident: true, desc: 'UE5高精三维孪生对比：无模型5分钟全城堵死 vs 有模型2km外提前分流' }
+];
+
+const nodes = [];
+for (let i = 0; i < 20; i++) {
+  nodes.push({ id: i, x: 50 + i * 35, y: 150 + Math.sin(i * 0.3) * 30, name: `link_${i.toString().padStart(2, '0')}` });
+}
+
+// ===================== 数据生成 =====================
+function generateMockData() {
+  forecastData = [];
+  for (let step = 0; step < 12; step++) {
+    const stepData = {};
+    for (let node = 0; node < 20; node++) {
+      let speed, density, weather;
+      if (step < 4) {
+        speed = 12 + Math.random() * 5;
+        density = 0.01 + Math.random() * 0.03;
+        weather = 0;
+      } else {
+        if (node === 3) { speed = 0.5 + Math.random() * 1.5; density = 0.14; }
+        else if (node === 2) { speed = 3 + Math.random() * 2; density = 0.10; }
+        else { speed = 5 + Math.random() * 4; density = 0.05 + Math.random() * 0.05; }
+        weather = 1;
+      }
+      stepData[`link_${node.toString().padStart(2, '0')}`] = { speed, density, weather };
+    }
+    forecastData.push(stepData);
+  }
+  lossHistory = [];
+  for (let i = 0; i < 50; i++) {
+    lossHistory.push(36 * Math.exp(-i * 0.05) + 5 + Math.random() * 2);
+  }
+  physLossHistory = lossHistory.map(l => l * 0.4 + Math.random() * 2);
+}
+
+// ===================== 数字孪生视窗（高德地图 + OSM 真实路网） =====================
+// 道路几何数据来自 OpenStreetMap 容东片区实测路网：
+//   主路 = 金湖街（东西向贯穿容东核心区，等弧长划分为 20 个 link）
+//   分流通道 = 乐民路（北侧平行环路，C端分流场景点亮）
+const MAIN_ROAD = [[115.888168, 39.055816], [115.888401, 39.055817], [115.891038, 39.055831], [115.893657, 39.055826], [115.896269, 39.055847], [115.897414, 39.055846], [115.899847, 39.055844], [115.903207, 39.055855], [115.905038, 39.055854], [115.905845, 39.05585], [115.907468, 39.055845], [115.910324, 39.055849], [115.912312, 39.055854], [115.913767, 39.055857], [115.914296, 39.055858], [115.914888, 39.0559], [115.915655, 39.055988], [115.916068, 39.056051], [115.916621, 39.056169], [115.91706, 39.056292], [115.917962, 39.056565], [115.918091, 39.056599], [115.920409, 39.057324], [115.920607, 39.057388], [115.920952, 39.057471], [115.922266, 39.057876], [115.92409, 39.058441], [115.925885, 39.058948], [115.926723, 39.059104], [115.927651, 39.0592], [115.931929, 39.05955], [115.933818, 39.059712], [115.935119, 39.059823], [115.935182, 39.059828], [115.937307, 39.059835], [115.939722, 39.05984], [115.942002, 39.059845], [115.944644, 39.059853]];
+const DETOUR_ROAD = [[115.908374, 39.065577], [115.910834, 39.066378], [115.911505, 39.066611], [115.912706, 39.067023], [115.913842, 39.067403], [115.915305, 39.067894], [115.916532, 39.068298], [115.917902, 39.068739], [115.918307, 39.068851], [115.920154, 39.069337], [115.921244, 39.069631], [115.922253, 39.069909], [115.922417, 39.069954], [115.923729, 39.070308], [115.925091, 39.070664], [115.926882, 39.071146], [115.928304, 39.071524], [115.9296, 39.071817], [115.932132, 39.072519], [115.934084, 39.073039], [115.934252, 39.073085], [115.936901, 39.073774], [115.938515, 39.07422], [115.938805, 39.074314], [115.940128, 39.07462], [115.940175, 39.074633], [115.942577, 39.075235], [115.944148, 39.075678], [115.945031, 39.075845], [115.945245, 39.075881]];
+const LINK_BOUNDS = [[115.888168, 39.055816], [115.891027, 39.055831], [115.893886, 39.055828], [115.896745, 39.055847], [115.899604, 39.055844], [115.902465, 39.055852], [115.905325, 39.055853], [115.908186, 39.055846], [115.911047, 39.055851], [115.91391, 39.055857], [115.916727, 39.056199], [115.919394, 39.057006], [115.922063, 39.057812], [115.924731, 39.058622], [115.927491, 39.059183], [115.930341, 39.05942], [115.93319, 39.059659], [115.936044, 39.059831], [115.938911, 39.059838], [115.941777, 39.059844], [115.944644, 39.059853]];
+
+// 分流路径：金湖街 × 津海大街路口（事故点上游）→ 北行 → 东折 → 汇入乐民路
+const JUNCTION_IDX = 3;
+const JUNCTION_S = JUNCTION_IDX / (MAIN_ROAD.length - 1);
+const CONNECTOR = [MAIN_ROAD[JUNCTION_IDX], [115.89372, 39.05900], [115.89380, 39.06250], [115.89395, 39.06555], [115.89850, 39.06557], [115.90350, 39.06557], DETOUR_ROAD[0]];
+const DIVERT_TAIL = [...CONNECTOR, ...DETOUR_ROAD.slice(1)];
+
+let amap = null;
+let amapPolyline = [];
+let detourLine = null;
+let trafficLayer = null;
+let trafficCanvas = null;
+let accidentMarker = null;
+let accidentDot = null;
+let accidentShown = null;
+let connectorLine = null;
+let lastTrafficTs = 0;
+let brainProgress = 0;  // 大脑推演快进进度 0~1
+
+// 车流光点仿真：500辆虚拟C端车辆的缩影（110个光点）
+// 路线分配遵循剧本：30% 错峰留在主路 / 20% 引导走环路 / 50% 绕行小道
+const vehicles = [];
+for (let i = 0; i < 110; i++) {
+  const r = Math.random();
+  vehicles.push({
+    s: Math.random(),
+    route: r < 0.30 ? 'main' : (r < 0.50 ? 'ring' : 'side'),
+    lane: Math.random() < 0.5 ? -3 : 3,
+    factor: 0.8 + Math.random() * 0.4,
+    color: ['#7fd4ff', '#c4b5fd', '#ffd166', '#ff9ec7', '#b8c7dd'][i % 5],
+    path: 'main',   // main=主路 divert=分流通道
+    d: 0            // 分流通道上的进度
+  });
+}
+
+function pathPoint(path, t) {
+  const n = path.length - 1;
+  const f = Math.max(0, Math.min(0.9999, t)) * n;
+  const i = Math.floor(f), u = f - i;
+  return [path[i][0] + (path[i+1][0]-path[i][0])*u, path[i][1] + (path[i+1][1]-path[i][1])*u];
+}
+
+
+// 当前拥堵路段范围：暴雨场景随时间蔓延；大脑推演随快进波浪扩展；分流后定格半幅
+function jamRange() {
+  if (currentScene === 1) {
+    const p = Math.max(0, Math.min(1, (currentTime - 5) / 25));
+    return [3, Math.round(3 + p * 9)];                     // 事故点 → 半幅逐渐扩散
+  }
+  if (currentScene === 2) {
+    const d = Math.round(brainProgress * 16);              // 波浪式向两端蔓延
+    return [Math.max(0, 3 - d), Math.min(19, 3 + d)];
+  }
+  if (currentScene >= 3) {
+    const p = Math.max(0, Math.min(1, (currentTime - 60) / 30));
+    return [3, Math.max(3, 12 - Math.round(p * 9))];         // 分流起效，红区逐步收缩
+  }
+  return null;
+}
+
+
+// 事故信息显示：进入暴雨及之后场景，或正常通勤播放到事故时刻(5:00)后出现
+function updateAccidentVisible() {
+  const visible = currentScene >= 1 || currentTime >= 5;
+  if (visible === accidentShown) return;
+  accidentShown = visible;
+  if (!accidentMarker || !accidentDot) return;
+  if (visible) { accidentMarker.show(); accidentDot.show(); }
+  else { accidentMarker.hide(); accidentDot.hide(); }
+}
+
+function initAMap() {
+  amap = new AMap.Map('amap-container', {
+    zoom: 14,
+    center: [115.9100, 39.0570],
+    viewMode: '2D'
+  });
+
+  // 主路 20 个 link 逐段贴合金湖街真实道路几何
+  for (let i = 0; i < 20; i++) {
+    const polyline = new AMap.Polyline({
+      path: [LINK_BOUNDS[i], LINK_BOUNDS[i+1]],
+      strokeColor: '#00ff88',
+      strokeWeight: 8,
+      strokeOpacity: 0.9,
+      zIndex: 60,
+      lineCap: 'round',
+      lineJoin: 'round'
+    });
+    amap.add(polyline);
+    amapPolyline.push(polyline);
+  }
+
+  // 分流通道（乐民路）：常态弱化显示，C端分流场景点亮
+  detourLine = new AMap.Polyline({
+    path: DETOUR_ROAD,
+    strokeColor: '#1a4a7a',
+    strokeWeight: 5,
+    strokeOpacity: 0.5,
+    strokeStyle: 'dashed',
+    zIndex: 50
+  });
+  amap.add(detourLine);
+
+  // 分流连接线：金湖街 → 津海大街 → 乐民路（C端分流场景点亮）
+  connectorLine = new AMap.Polyline({
+    path: CONNECTOR,
+    strokeColor: '#1a4a7a',
+    strokeWeight: 5,
+    strokeOpacity: 0.5,
+    strokeStyle: 'dashed',
+    zIndex: 50
+  });
+  amap.add(connectorLine);
+
+  // 事故标记：主路 link_03 中点（核心景区正门路口）
+  const accLng = (LINK_BOUNDS[3][0] + LINK_BOUNDS[4][0]) / 2;
+  const accLat = (LINK_BOUNDS[3][1] + LINK_BOUNDS[4][1]) / 2;
+  // 事发点小圆点（钉在事故位置）
+  accidentDot = new AMap.Marker({
+    position: [accLng, accLat],
+    content: '<div style="width:10px;height:10px;background:#e0245e;border:2px solid #fff;border-radius:50%;box-shadow:0 0 10px #e0245e;"></div>',
+    offset: new AMap.Pixel(-7, -7),
+    zIndex: 79
+  });
+  amap.add(accidentDot);
+  // 事故信息卡片：下移到事发点以南，顶部箭头指向事发点，不遮挡路面
+  accidentMarker = new AMap.Marker({
+    position: [accLng, accLat],
+    content: '<div style="display:flex;flex-direction:column;align-items:center;pointer-events:none;width:170px;">'
+      + '<div style="position:relative;width:2px;height:22px;background:#e0245e;">'
+      + '<div style="position:absolute;top:-7px;left:-5px;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:8px solid #e0245e;"></div>'
+      + '</div>'
+      + '<div style="background:#ffffff;border:1.5px solid #e0245e;color:#e0245e;padding:5px 10px;border-radius:6px;font-size:12px;font-weight:bold;box-shadow:0 2px 8px rgba(31,45,61,0.18);white-space:nowrap;">⚠ 三车追尾 · 占据2条车道</div>'
+      + '</div>',
+    offset: new AMap.Pixel(-85, 2),
+    zIndex: 80
+  });
+  amap.add(accidentMarker);
+  updateAccidentVisible();
+
+  // 分流连接线贴合真实路网：高德驾车规划 金湖街路口 → 乐民路西口
+  if (AMap.Driving) {
+    const driving = new AMap.Driving({ hideMarkers: true, showTraffic: false });
+    driving.search(MAIN_ROAD[JUNCTION_IDX], DETOUR_ROAD[0], function (status, result) {
+      if (status === 'complete' && result.routes && result.routes.length) {
+        const pts = [];
+        result.routes[0].steps.forEach(st => (st.path || []).forEach(lg => pts.push([lg.lng, lg.lat])));
+        if (pts.length > 1) {
+          connectorLine.setPath(pts);
+          // 原地更新分流尾段路径（保持数组引用，车流即刻走真实道路）
+          DIVERT_TAIL.length = 0;
+          pts.forEach(pt => DIVERT_TAIL.push(pt));
+          DETOUR_ROAD.slice(1).forEach(pt => DIVERT_TAIL.push(pt));
+        }
+      }
+    });
+  }
+
+  // 车流光点层：Canvas 自定义图层，车速由大脑预测矩阵逐帧锁定
+  trafficCanvas = document.createElement('canvas');
+  trafficLayer = new AMap.CustomLayer(trafficCanvas, { zIndex: 70, alwaysRender: true });
+  trafficLayer.render = drawTraffic;
+  amap.add(trafficLayer);
+
+  // 视野自适应：同时容纳主路与分流通道
+  amap.setFitView([...amapPolyline, detourLine, connectorLine, accidentMarker], false, [60, 40, 60, 40]);
+}
+
+function drawTraffic() {
+  if (!amap || !trafficCanvas) return;
+  const size = amap.getSize();
+  if (trafficCanvas.width !== size.width) trafficCanvas.width = size.width;
+  if (trafficCanvas.height !== size.height) trafficCanvas.height = size.height;
+  const ctx = trafficCanvas.getContext('2d');
+  ctx.clearRect(0, 0, trafficCanvas.width, trafficCanvas.height);
+  const now = performance.now();
+  const dt = Math.min(0.1, (now - (lastTrafficTs || now)) / 1000);
+  lastTrafficTs = now;
+  const step = Math.min(Math.floor(currentTime / 10), forecastData.length - 1);
+  const data = forecastData[step] || {};
+  const diverted = currentScene >= 3;
+
+  vehicles.forEach(v => {
+    const canDivert = diverted;  // 分流启动后所有未进入拥堵区的车辆都在路口被引导分流
+    // 切回事故前场景：分流车辆时间回卷，重新回到主路
+    if (!diverted && v.path !== 'main') { v.path = 'main'; v.d = 0; v.s = Math.random(); }
+
+    let path, px, px2, sp;
+    if (v.path === 'divert') {
+      // 分流通道：津海大街连接路 → 乐民路，匀速通过
+      path = DIVERT_TAIL;
+      sp = v.route === 'ring' ? 10 : (v.route === 'side' ? 8.5 : 6.5);
+      if (isPlaying) v.d += sp * v.factor * dt * 0.0016;
+      if (v.d > 1) { v.d = 0; v.path = 'main'; v.s = 0; path = MAIN_ROAD; }
+      px = amap.lngLatToContainer(pathPoint(path, Math.min(v.d, 0.999)));
+      px2 = amap.lngLatToContainer(pathPoint(path, Math.min(0.999, v.d + 0.004)));
+    } else {
+      path = MAIN_ROAD;
+      const linkIdx = Math.min(19, Math.floor(v.s * 20));
+      sp = (data[`link_${String(linkIdx).padStart(2, '0')}`] || { speed: 12 }).speed;
+      // 拥堵区内车流爬行亮起刹车灯（范围与路面红区同步）
+      const jr = jamRange();
+      if (jr && linkIdx >= jr[0] && linkIdx <= jr[1]) sp = Math.min(sp, currentScene >= 3 ? 5 : 1.5);
+      const prevS = v.s;
+      if (isPlaying) v.s += sp * v.factor * dt * 0.0016;
+      if (v.s > 1) v.s = 0;
+      // 到达津海大街路口即连续拐入分流通道，不再瞬移
+      if (canDivert && prevS < JUNCTION_S && v.s >= JUNCTION_S) {
+        v.path = 'divert'; v.d = 0;
+        px = amap.lngLatToContainer(MAIN_ROAD[JUNCTION_IDX]);
+        px2 = amap.lngLatToContainer(DIVERT_TAIL[1]);
+      } else {
+        px = amap.lngLatToContainer(pathPoint(path, v.s));
+        px2 = amap.lngLatToContainer(pathPoint(path, Math.min(0.999, v.s + 0.002)));
+      }
+    }
+    // 沿切向法线做上下行车道偏移
+    const dx = px2.x - px.x, dy = px2.y - px.y;
+    const len = Math.hypot(dx, dy) || 1;
+    const ox = (-dy / len) * v.lane, oy = (dx / len) * v.lane;
+    // 刹车红光晕：车速被锁到 3 m/s 以下时亮起
+    if (sp < 3) {
+      ctx.beginPath();
+      ctx.arc(px.x + ox, px.y + oy, 5, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,50,80,0.5)';
+      ctx.fill();
+    }
+    ctx.shadowColor = v.color;
+    ctx.shadowBlur = 7;
+    ctx.beginPath();
+    ctx.arc(px.x + ox, px.y + oy, 2.8, 0, Math.PI * 2);
+    ctx.fillStyle = v.color;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+  });
+}
+
+function updateAMapColors() {
+  if (!amap || !amapPolyline.length) return;
+  const step = Math.min(Math.floor(currentTime / 10), forecastData.length - 1);
+  const data = forecastData[step] || {};
+  amapPolyline.forEach((polyline, i) => {
+    const linkId = `link_${String(i).padStart(2, '0')}`;
+    const speed = (data[linkId] || { speed: 15 }).speed;
+    let color = '#00ff88';
+    if (speed < 5) color = '#ff3366';
+    else if (speed < 10) color = '#ffcc00';
+    // 事故后拥堵动态蔓延（范围由 jamRange 决定），边缘两段黄色过渡
+    const jr = jamRange();
+    if (jr) {
+      if (i >= jr[0] && i <= jr[1]) color = '#ff3366';
+      else if (i >= jr[1] + 1 && i <= jr[1] + 2 && color === '#00ff88') color = '#ffcc00';
+    }
+    polyline.setOptions({ strokeColor: color });
+  });
+  // 分流通道与连接线在 C 端联动场景点亮
+  const lit = currentScene >= 3;
+  if (detourLine) {
+    detourLine.setOptions(lit
+      ? { strokeColor: '#00d4ff', strokeOpacity: 0.95, strokeWeight: 6 }
+      : { strokeColor: '#2a6a9a', strokeOpacity: 0.6, strokeWeight: 5 });
+  }
+  if (connectorLine) {
+    connectorLine.setOptions(lit
+      ? { strokeColor: '#00d4ff', strokeOpacity: 0.95, strokeWeight: 6 }
+      : { strokeColor: '#2a6a9a', strokeOpacity: 0.6, strokeWeight: 5 });
+  }
+}
+
+// ===================== Canvas绘图 =====================
+function drawTopology() {
+  const canvas = document.getElementById('topology-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+  const step = Math.min(Math.floor(currentTime / 10), 11);
+  const data = forecastData[step] || {};
+  const maxNodeX = 50 + 19 * 35 + 50;
+  const scaleX = canvas.width / maxNodeX;
+  const scaleY = canvas.height / 200;
+  const scale = Math.min(scaleX, scaleY, 1);
+  const offsetX = (canvas.width - maxNodeX * scale) / 2;
+  const offsetY = (canvas.height - 200 * scale) / 2;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.save();
+  ctx.translate(offsetX, offsetY);
+  ctx.scale(scale, scale);
+  ctx.strokeStyle = '#dce6f2';
+  ctx.lineWidth = 2 / scale;
+  for (let i = 0; i < nodes.length - 1; i++) {
+    ctx.beginPath();
+    ctx.moveTo(nodes[i].x, nodes[i].y);
+    ctx.lineTo(nodes[i+1].x, nodes[i+1].y);
+    ctx.stroke();
+  }
+  nodes.forEach((node, i) => {
+    const linkData = data[node.name] || { speed: 15, density: 0.02 };
+    const speed = linkData.speed;
+    let r = 0, g = 255, b = 136;
+    if (speed < 5) { r = 255; g = 51; b = 102; }
+    else if (speed < 10) { r = 255; g = 204; b = 0; }
+    // 拥堵预测蔓延：与地图红区同步，大脑推演时呈波浪式前传
+    const jr = jamRange();
+    if (jr && i >= jr[0] && i <= jr[1]) { r = 255; g = 51; b = 102; }
+    const alpha = 0.3 + linkData.density * 5;
+    const radius = 6 + linkData.density * 80;
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, radius + 4, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha * 0.3})`;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${Math.min(alpha, 1)})`;
+    ctx.fill();
+    ctx.fillStyle = '#55677c';
+    ctx.font = `${10 / scale}px sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.fillText(node.name, node.x, node.y + radius + 14);
+    ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
+    ctx.font = `bold ${11 / scale}px sans-serif`;
+    ctx.fillText(speed.toFixed(1), node.x, node.y - radius - 6);
+  });
+  if (currentScene >= 1) {
+    const a = nodes[3];
+    ctx.beginPath();
+    ctx.arc(a.x, a.y, 20, 0, Math.PI * 2);
+    ctx.strokeStyle = '#ff3366';
+    ctx.lineWidth = 2 / scale;
+    ctx.setLineDash([4, 4]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#ff3366';
+    ctx.font = `bold ${12 / scale}px sans-serif`;
+    ctx.fillText('!事故', a.x, a.y - 30);
+  }
+  ctx.restore();
+  if (currentScene >= 1) {
+    ctx.fillStyle = 'rgba(2, 132, 199, 0.07)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  }
+}
+
+function drawLossChart() {
+  const canvas = document.getElementById('loss-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  if (!lossHistory.length) return;
+  // 大脑推演场景：曲线随快进推演进度逐步重绘，推演完成即收敛
+  const drawN = currentScene === 2 ? Math.max(2, Math.ceil(brainProgress * lossHistory.length)) : lossHistory.length;
+  const padding = 30;
+  const w = canvas.width - padding * 2;
+  const h = canvas.height - padding * 2;
+  const maxLoss = Math.max(...lossHistory);
+  const minLoss = Math.min(...lossHistory);
+  ctx.strokeStyle = '#e1e9f2';
+  ctx.lineWidth = 0.5;
+  for (let i = 0; i <= 5; i++) {
+    const y = padding + h * i / 5;
+    ctx.beginPath();
+    ctx.moveTo(padding, y);
+    ctx.lineTo(padding + w, y);
+    ctx.stroke();
+  }
+  ctx.beginPath();
+  ctx.strokeStyle = '#0284c7';
+  ctx.lineWidth = 2;
+  lossHistory.slice(0, drawN).forEach((loss, i) => {
+    const x = padding + (i / (lossHistory.length - 1)) * w;
+    const y = padding + h - ((loss - minLoss) / (maxLoss - minLoss)) * h;
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.strokeStyle = '#16a34a';
+  ctx.lineWidth = 1.5;
+  physLossHistory.slice(0, drawN).forEach((physLoss, i) => {
+    const x = padding + (i / (physLossHistory.length - 1)) * w;
+    const y = padding + h - ((physLoss - minLoss) / (maxLoss - minLoss)) * h;
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  ctx.fillStyle = '#0284c7';
+  ctx.fillRect(padding + 10, canvas.height - 20, 12, 3);
+  ctx.fillStyle = '#55677c';
+  ctx.font = '11px sans-serif';
+  ctx.fillText('数据 MSE Loss', padding + 28, canvas.height - 15);
+  ctx.fillStyle = '#16a34a';
+  ctx.fillRect(padding + 130, canvas.height - 20, 12, 3);
+  ctx.fillStyle = '#55677c';
+  ctx.font = '11px sans-serif';
+  ctx.fillText('物理守恒 Loss', padding + 148, canvas.height - 15);
+  ctx.fillStyle = '#d48806';
+  ctx.font = 'bold 11px sans-serif';
+  if (currentScene !== 2 || brainProgress >= 1) ctx.fillText('✓ 收敛', padding + w - 50, padding + h - 5);
+}
+
+function drawHeatmap() {
+  const canvas = document.getElementById('heatmap-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const sw = canvas.width / 12;
+  const nh = canvas.height / 20;
+  ctx.fillStyle = '#55677c';
+  ctx.font = '10px sans-serif';
+  for (let t = 0; t < 12; t++) ctx.fillText(`${t*5}min`, t * sw + 5, 12);
+  for (let s = 0; s < 12; s++) {
+    const d = forecastData[s] || {};
+    for (let n = 0; n < 20; n++) {
+      const sp = (d[`link_${n.toString().padStart(2, '0')}`] || { speed: 15 }).speed;
+      let cl = sp > 12 ? '#00ff88' : sp > 8 ? '#88ff00' : sp > 5 ? '#ffcc00' : sp > 2 ? '#ff6600' : '#ff0033';
+      ctx.fillStyle = cl;
+      ctx.fillRect(s * sw + 1, 20 + n * nh + 1, sw - 2, nh - 2);
+    }
+  }
+  ctx.fillStyle = '#55677c';
+  ctx.textAlign = 'right';
+  for (let n = 0; n < 20; n++) ctx.fillText(`L${n}`, canvas.width - 5, 20 + n * nh + nh / 2 + 4);
+  const cs = Math.min(Math.floor(currentTime / 10), 11);
+  ctx.strokeStyle = '#0284c7';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(cs * sw, 20);
+  ctx.lineTo(cs * sw, canvas.height);
+  ctx.stroke();
+}
+
+// ===================== 场景控制 =====================
+function setScene(idx) {
+  if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+  currentScene = idx;
+  currentTime = scenes[idx].time;
+  if (idx === 2) brainProgress = 0;
+  document.body.classList.toggle('scene-brain', idx === 2);
+  const badge = document.getElementById('brain-badge');
+  if (badge) badge.style.display = idx === 2 ? 'block' : 'none';
+  document.querySelectorAll('.control-btn').forEach((btn, i) => {
+    if (i < 5) btn.classList.toggle('active', i === idx);
+  });
+  const label = document.getElementById('scene-label');
+  const cityLabel = document.getElementById('city-scene');
+  label.textContent = scenes[idx].name;
+  cityLabel.textContent = scenes[idx].desc;
+  if (idx === 0) {
+    label.className = 'scene-label normal';
+    cityLabel.className = 'scene-label normal';
+  } else if (idx === 1) {
+    label.className = 'scene-label warning';
+    cityLabel.className = 'scene-label warning';
+  } else {
+    label.className = 'scene-label';
+    cityLabel.className = 'scene-label';
+  }
+  // 暴雨场景起叠加雨丝氛围层（DOM 级切换，不依赖地图是否加载成功）
+  const ov = document.getElementById('storm-overlay');
+  if (ov) ov.style.display = idx >= 1 ? 'block' : 'none';
+  updateAccidentVisible();
+  if (idx >= 4) {
+    document.getElementById('no-model-metric').textContent = '5:00';
+    document.getElementById('with-model-metric').textContent = '2km';
+  } else {
+    document.getElementById('no-model-metric').textContent = '--';
+    document.getElementById('with-model-metric').textContent = '--';
+  }
+  const redisDot = document.getElementById('redis-dot');
+  const ueDot = document.getElementById('ue-dot');
+  if (idx >= 2) {
+    redisDot.className = 'status-dot dot-green';
+    ueDot.className = 'status-dot dot-green';
+  } else {
+    redisDot.className = 'status-dot dot-yellow';
+    ueDot.className = 'status-dot dot-yellow';
+  }
+  document.getElementById('time-slider').value = currentTime;
+  updateTimeDisplay();
+}
+
+function onTimeSlider(val) {
+  currentTime = Math.max(0, Math.min(120, parseInt(val) || 0));
+  updateTimeDisplay();
+  if (currentTime < 5) setScene(0);
+  else if (currentTime < 30) setScene(1);
+  else if (currentTime < 60) setScene(2);
+  else if (currentTime < 90) setScene(3);
+  else setScene(4);
+}
+
+function updateTimeDisplay() {
+  const t = Math.floor(currentTime);
+  const m = Math.floor(t / 60);
+  const s = t % 60;
+  document.getElementById('time-display').textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+  const hour = 17 + m;
+  document.getElementById('clock').textContent = hour + ':' + (s < 10 ? '0' : '') + s + ':00';
+}
+
+function setSpeed(speed) {
+  if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+  playSpeed = speed;
+  isPlaying = speed > 0;
+  document.querySelectorAll('.speed-btn').forEach(btn => {
+    btn.classList.toggle('active', parseFloat(btn.dataset.speed) === speed);
+  });
+}
+
+// ===================== 动画循环 =====================
+function animate() {
+  drawTopology();
+  drawLossChart();
+  drawHeatmap();
+  updateAMapColors();
+  drawTraffic();
+  const ovRain = document.getElementById('storm-overlay');
+  if (ovRain) ovRain.style.animationPlayState = isPlaying ? 'running' : 'paused';
+  if (isPlaying) {
+    if (currentScene === 2 && brainProgress < 1) {
+      // 快进推演：约4秒(x1)跑完未来30分钟预测，时间轴同步高速前进
+      brainProgress = Math.min(1, brainProgress + 0.004 * playSpeed);
+      currentTime = 30 + brainProgress * 29;
+    } else {
+      currentTime += 0.05 * playSpeed;
+      if (currentTime > 120) currentTime = 0;
+    }
+    document.getElementById('time-slider').value = Math.floor(currentTime);
+    updateTimeDisplay();
+    updateAccidentVisible();
+  }
+  // 推演徽标文案
+  if (currentScene === 2) {
+    const badge = document.getElementById('brain-badge');
+    if (badge) {
+      if (brainProgress < 1) {
+        badge.className = 'brain-badge';
+        badge.textContent = '⚡ 世界模型快进推演中… 预测未来30分钟 ' + Math.round(brainProgress * 100) + '%';
+      } else {
+        badge.className = 'brain-badge done';
+        badge.textContent = '✓ 推演完成：未来30分钟全网严重拥堵';
+      }
+    }
+  }
+  animationId = requestAnimationFrame(animate);
+}
+
+// ===================== 数据加载 =====================
+// 优先加载大脑模型管线产出的真实推演数据（forecast_data.json / loss_history.json），
+// 加载失败时回退到内置模拟数据，保证演示页面永不黑屏
+async function initData() {
+  try {
+    const [fRes, lRes] = await Promise.all([
+      fetch('forecast_data.json'),
+      fetch('loss_history.json')
+    ]);
+    if (!fRes.ok || !lRes.ok) throw new Error('HTTP ' + fRes.status + '/' + lRes.status);
+    const fd = await fRes.json();
+    const lh = await lRes.json();
+    if (!Array.isArray(fd) || !fd.length || !Array.isArray(lh) || !lh.length) {
+      throw new Error('数据格式异常');
+    }
+    forecastData = fd;
+    lossHistory = lh;
+    // 物理守恒 Loss 曲线随数据一次性生成，之后静止绘制，暂停播放时不再抖动
+    physLossHistory = lh.map(l => l * 0.4 + Math.random() * 2);
+    document.getElementById('data-source').textContent = '数据源: 世界模型实时推演';
+    document.getElementById('data-dot').className = 'status-dot dot-green';
+  } catch (e) {
+    console.warn('真实推演数据加载失败，回退到内置模拟数据:', e);
+    generateMockData();
+    document.getElementById('data-source').textContent = '数据源: 内置模拟数据';
+    document.getElementById('data-dot').className = 'status-dot dot-yellow';
+  }
+}
+
+// ===================== 启动 =====================
+document.addEventListener('DOMContentLoaded', async function() {
+  // 看板与数据先行启动，绝不被外部地图脚本阻塞
+  await initData();
+  setScene(0);
+  // 立即同步绘制首帧，不等待 rAF，保证任何环境下打开即有内容
+  drawTopology();
+  drawLossChart();
+  drawHeatmap();
+  animate();
+  setTimeout(() => { isPlaying = true; }, 2000);
+  // 高德地图改为异步动态注入：加载成功即初始化孪生视窗，失败也不影响大脑看板
+  const s = document.createElement('script');
+  s.src = 'https://webapi.amap.com/maps?v=2.0&key=91836446fcdf3824d8a027c9dd922851&plugin=AMap.Scale,AMap.ToolBar,AMap.MapType,AMap.ControlBar,AMap.TileLayer.Traffic,AMap.MoveAnimation,AMap.Driving';
+  s.onload = function() {
+    try {
+      initAMap();
+      // 地图就绪后立即绘制一次车流光点与路段配色
+      setTimeout(() => { updateAMapColors(); drawTraffic(); }, 600);
+    } catch (e) { console.warn('地图初始化失败，看板继续运行:', e); }
+  };
+  s.onerror = function() { console.warn('高德地图脚本加载失败，仅看板部分运行'); };
+  document.head.appendChild(s);
+});
+
+// 键盘控制
+document.addEventListener('keydown', (e) => {
+  if (e.key === ' ') {
+    e.preventDefault();
+    isPlaying = !isPlaying;
+    if (isPlaying && playSpeed === 0) playSpeed = 1;
+    document.querySelectorAll('.speed-btn').forEach(btn => {
+      btn.classList.toggle('active', isPlaying ? parseFloat(btn.dataset.speed) === playSpeed : btn.dataset.speed === '0');
+    });
+  }
+  else if (e.key === 'ArrowRight') {
+    currentTime = Math.min(Math.floor(currentTime) + 5, 120);
+    document.getElementById('time-slider').value = currentTime;
+    onTimeSlider(currentTime);
+  } else if (e.key === 'ArrowLeft') {
+    currentTime = Math.max(Math.floor(currentTime) - 5, 0);
+    document.getElementById('time-slider').value = currentTime;
+    onTimeSlider(currentTime);
+  }
+});
+</script>
+</body>
+</html>
