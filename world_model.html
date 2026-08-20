@@ -96,6 +96,8 @@ body {
 }
 .loss-chart {
   flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
   min-height: 220px;
   max-height: 220px;
   background: #ffffff;
@@ -107,10 +109,13 @@ body {
 }
 #loss-canvas {
   width: 100%;
-  height: 100%;
+  flex: 1;
+  min-height: 0;
 }
 .heatmap-panel {
   flex: 2;
+  display: flex;
+  flex-direction: column;
   min-height: 140px;
   background: #ffffff;
   border: 1px solid #d9e2ec;
@@ -120,7 +125,8 @@ body {
 }
 #heatmap-canvas {
   width: 100%;
-  height: 100%;
+  flex: 1;
+  min-height: 0;
 }
 .right-panel {
   width: 55%;
