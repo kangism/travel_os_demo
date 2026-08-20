@@ -392,7 +392,36 @@ body.scene-brain .heatmap-panel {
 // ===================== 全局数据 =====================
 let forecastData = [];
 let lossHistory = [];
-let physLossHistory = [];
+let physLossHistory = [];    // 质量守恒（连续性方程）约束损失
+let greensLossHistory = [];  // Greenshields 基本图约束损失
+// 微扰相位/幅度：页面加载与每次进入 C端分流场景时重新随机，曲线形态随之变化
+const rawLoss = { mse: [], preservation: [], greenshields: [] };
+let curveJitter = [0, 0, 0];
+function varyCurve(arr, k) {
+  // 随机扰动（非正弦波）：逐点随机噪声经滑动平均平滑，训练初期明显、随收敛衰减到 0
+  const maxV = Math.max(...arr, 1e-6);
+  const n = arr.length;
+  const noise = [], noise2 = [];
+  for (let i = 0; i < n; i++) {
+    noise.push((Math.random() * 2 - 1));
+    noise2.push(Math.random());
+  }
+  const smooth = a => a.map((_, i) => ((a[Math.max(0, i - 1)] + a[i] + a[Math.min(n - 1, i + 1)]) / 3));
+  const s1 = smooth(noise), s2 = smooth(noise2);
+  return arr.map((v, i) => {
+    const decay = Math.pow(1 - i / n, 2);  // 初期 1 → 末期 0
+    return Math.max(0,
+      v * (1 + decay * curveJitter[k] * 1.5 * s1[i])
+      + maxV * decay * curveJitter[k] * 0.5 * s2[i]
+    );
+  });
+}
+function applyCurveVariation() {
+  curveJitter = [0.05 + Math.random() * 0.05, 0.08 + Math.random() * 0.08, 0.08 + Math.random() * 0.08];
+  lossHistory = varyCurve(rawLoss.mse, 0);
+  physLossHistory = varyCurve(rawLoss.preservation, 1);
+  greensLossHistory = varyCurve(rawLoss.greenshields, 2);
+}
 let currentScene = 0;
 let currentTime = 0;
 let animationId = null;
@@ -437,7 +466,10 @@ function generateMockData() {
   for (let i = 0; i < 50; i++) {
     lossHistory.push(36 * Math.exp(-i * 0.05) + 5 + Math.random() * 2);
   }
-  physLossHistory = lossHistory.map(l => l * 0.4 + Math.random() * 2);
+  rawLoss.mse = lossHistory.slice();
+  rawLoss.preservation = lossHistory.map(l => l * 0.3 + 0.02);
+  rawLoss.greenshields = lossHistory.map(l => l * 0.1 + 0.005);
+  applyCurveVariation();
 }
 
 // ===================== 数字孪生视窗（高德地图 + OSM 真实路网） =====================
@@ -476,7 +508,7 @@ for (let i = 0; i < 110; i++) {
     route: r < 0.30 ? 'main' : (r < 0.50 ? 'ring' : 'side'),
     lane: Math.random() < 0.5 ? -3 : 3,
     factor: 0.8 + Math.random() * 0.4,
-    color: ['#7fd4ff', '#c4b5fd', '#ffd166', '#ff9ec7', '#b8c7dd'][i % 5],
+    color: ['#0284c7', '#7c3aed', '#d97706', '#e11d48', '#2563eb'][i % 5],
     path: 'main',   // main=主路 divert=分流通道
     d: 0            // 分流通道上的进度
   });
@@ -635,7 +667,7 @@ function drawTraffic() {
     // 切回事故前场景：分流车辆时间回卷，重新回到主路
     if (!diverted && v.path !== 'main') { v.path = 'main'; v.d = 0; v.s = Math.random(); }
 
-    let path, px, px2, sp;
+    let path, px, px2, sp, inJam = false;
     if (v.path === 'divert') {
       // 分流通道：津海大街连接路 → 乐民路，匀速通过
       path = DIVERT_TAIL;
@@ -650,7 +682,8 @@ function drawTraffic() {
       sp = (data[`link_${String(linkIdx).padStart(2, '0')}`] || { speed: 12 }).speed;
       // 拥堵区内车流爬行亮起刹车灯（范围与路面红区同步）
       const jr = jamRange();
-      if (jr && linkIdx >= jr[0] && linkIdx <= jr[1]) sp = Math.min(sp, currentScene >= 3 ? 5 : 1.5);
+      inJam = !!(jr && linkIdx >= jr[0] && linkIdx <= jr[1]);
+      if (inJam) sp = Math.min(sp, currentScene >= 3 ? 5 : 1.5);
       const prevS = v.s;
       if (isPlaying) v.s += sp * v.factor * dt * 0.0016;
       if (v.s > 1) v.s = 0;
@@ -668,17 +701,31 @@ function drawTraffic() {
     const dx = px2.x - px.x, dy = px2.y - px.y;
     const len = Math.hypot(dx, dy) || 1;
     const ox = (-dy / len) * v.lane, oy = (dx / len) * v.lane;
-    // 刹车红光晕：车速被锁到 3 m/s 以下时亮起
-    if (sp < 3) {
+    // 刹车红光晕：只要车辆处于拥堵路段内就亮起，驶离拥堵路段即熄灭
+    if (inJam) {
       ctx.beginPath();
-      ctx.arc(px.x + ox, px.y + oy, 5, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255,50,80,0.5)';
+      ctx.arc(px.x + ox, px.y + oy, 9, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,50,80,0.35)';
       ctx.fill();
+      ctx.beginPath();
+      ctx.arc(px.x + ox, px.y + oy, 6.5, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,50,80,0.65)';
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(px.x + ox, px.y + oy, 9, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(255,30,60,0.8)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
     }
     ctx.shadowColor = v.color;
-    ctx.shadowBlur = 7;
+    ctx.shadowBlur = 8;
+    // 白色描边环：亮色底图上托出光点轮廓
     ctx.beginPath();
-    ctx.arc(px.x + ox, px.y + oy, 2.8, 0, Math.PI * 2);
+    ctx.arc(px.x + ox, px.y + oy, 4.2, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255,255,255,0.9)';
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(px.x + ox, px.y + oy, 3.2, 0, Math.PI * 2);
     ctx.fillStyle = v.color;
     ctx.fill();
     ctx.shadowBlur = 0;
@@ -802,8 +849,6 @@ function drawLossChart() {
   const padding = 30;
   const w = canvas.width - padding * 2;
   const h = canvas.height - padding * 2;
-  const maxLoss = Math.max(...lossHistory);
-  const minLoss = Math.min(...lossHistory);
   ctx.strokeStyle = '#e1e9f2';
   ctx.lineWidth = 0.5;
   for (let i = 0; i <= 5; i++) {
@@ -813,36 +858,38 @@ function drawLossChart() {
     ctx.lineTo(padding + w, y);
     ctx.stroke();
   }
-  ctx.beginPath();
-  ctx.strokeStyle = '#0284c7';
-  ctx.lineWidth = 2;
-  lossHistory.slice(0, drawN).forEach((loss, i) => {
-    const x = padding + (i / (lossHistory.length - 1)) * w;
-    const y = padding + h - ((loss - minLoss) / (maxLoss - minLoss)) * h;
-    if (i === 0) ctx.moveTo(x, y);
-    else ctx.lineTo(x, y);
+  // 三条损失曲线：量纲不同，各自独立归一化
+  const curves = [
+    { data: lossHistory, color: '#0284c7', width: 2, label: '数据 MSE Loss' },
+    { data: physLossHistory, color: '#16a34a', width: 1.5, label: '质量守恒约束 Loss' },
+    { data: greensLossHistory, color: '#d48806', width: 1.5, label: 'Greenshields 约束 Loss' }
+  ];
+  curves.forEach(cv => {
+    if (!cv.data.length) return;
+    const maxV = Math.max(...cv.data);
+    const minV = Math.min(...cv.data);
+    const span = (maxV - minV) || 1;
+    ctx.beginPath();
+    ctx.strokeStyle = cv.color;
+    ctx.lineWidth = cv.width;
+    cv.data.slice(0, drawN).forEach((v, i) => {
+      const x = padding + (i / (cv.data.length - 1)) * w;
+      const y = padding + h - ((v - minV) / span) * h;
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
   });
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.strokeStyle = '#16a34a';
-  ctx.lineWidth = 1.5;
-  physLossHistory.slice(0, drawN).forEach((physLoss, i) => {
-    const x = padding + (i / (physLossHistory.length - 1)) * w;
-    const y = padding + h - ((physLoss - minLoss) / (maxLoss - minLoss)) * h;
-    if (i === 0) ctx.moveTo(x, y);
-    else ctx.lineTo(x, y);
+  // 图例
+  ctx.font = '11px sans-serif';
+  let lx = padding + 10;
+  curves.forEach(cv => {
+    ctx.fillStyle = cv.color;
+    ctx.fillRect(lx, canvas.height - 20, 12, 3);
+    ctx.fillStyle = '#55677c';
+    ctx.fillText(cv.label, lx + 16, canvas.height - 15);
+    lx += 16 + ctx.measureText(cv.label).width + 18;
   });
-  ctx.stroke();
-  ctx.fillStyle = '#0284c7';
-  ctx.fillRect(padding + 10, canvas.height - 20, 12, 3);
-  ctx.fillStyle = '#55677c';
-  ctx.font = '11px sans-serif';
-  ctx.fillText('数据 MSE Loss', padding + 28, canvas.height - 15);
-  ctx.fillStyle = '#16a34a';
-  ctx.fillRect(padding + 130, canvas.height - 20, 12, 3);
-  ctx.fillStyle = '#55677c';
-  ctx.font = '11px sans-serif';
-  ctx.fillText('物理守恒 Loss', padding + 148, canvas.height - 15);
   ctx.fillStyle = '#d48806';
   ctx.font = 'bold 11px sans-serif';
   if (currentScene !== 2 || brainProgress >= 1) ctx.fillText('✓ 收敛', padding + w - 50, padding + h - 5);
@@ -885,7 +932,7 @@ function setScene(idx) {
   if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
   currentScene = idx;
   currentTime = scenes[idx].time;
-  if (idx === 2) brainProgress = 0;
+  if (idx === 2) { brainProgress = 0; applyCurveVariation(); }  // 每次启动大脑推演，曲线随本轮推演重新收敛
   document.body.classList.toggle('scene-brain', idx === 2);
   const badge = document.getElementById('brain-badge');
   if (badge) badge.style.display = idx === 2 ? 'block' : 'none';
@@ -1008,13 +1055,22 @@ async function initData() {
     if (!fRes.ok || !lRes.ok) throw new Error('HTTP ' + fRes.status + '/' + lRes.status);
     const fd = await fRes.json();
     const lh = await lRes.json();
-    if (!Array.isArray(fd) || !fd.length || !Array.isArray(lh) || !lh.length) {
-      throw new Error('数据格式异常');
-    }
+    if (!Array.isArray(fd) || !fd.length) throw new Error('数据格式异常');
     forecastData = fd;
-    lossHistory = lh;
-    // 物理守恒 Loss 曲线随数据一次性生成，之后静止绘制，暂停播放时不再抖动
-    physLossHistory = lh.map(l => l * 0.4 + Math.random() * 2);
+    if (lh && Array.isArray(lh.mse) && Array.isArray(lh.preservation) && Array.isArray(lh.greenshields) && lh.mse.length) {
+      // 新格式：训练时分别记录的数据误差 / 质量守恒 / Greenshields 约束损失
+      rawLoss.mse = lh.mse;
+      rawLoss.preservation = lh.preservation;
+      rawLoss.greenshields = lh.greenshields;
+    } else if (Array.isArray(lh) && lh.length) {
+      // 旧格式回退：仅复合损失
+      rawLoss.mse = lh;
+      rawLoss.preservation = lh.map(l => l * 0.3);
+      rawLoss.greenshields = lh.map(l => l * 0.1);
+    } else {
+      throw new Error('损失数据格式异常');
+    }
+    applyCurveVariation();
     document.getElementById('data-source').textContent = '数据源: 世界模型实时推演';
     document.getElementById('data-dot').className = 'status-dot dot-green';
   } catch (e) {
